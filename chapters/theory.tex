@@ -1,4 +1,4 @@
-\chapter{The Standard Model}
+\chapter{Theoretical Introduction}
 
 \textit{"...it turns out that based on their findings, which will be confirmed
 or contradicted when the Swiss machine is up and running, turns out there's
@@ -12,19 +12,18 @@ moment from the primordial slime."}
 \end{flushright}
 
 \newpage
+\noindent
 Our current best understanding of Nature is that the dynamics of matter is governed
 by four fundamental forces. \textit{General Relativity} (GR) provides a
 description of spacetime, the arena in which matter exists and interacts, and asserts
 that spacetime is not a static entity but is rather dynamically shaped by the presence
 of matter. It also explains one of the forces, the gravitational force, as an apparent
 phenomenon arising from geodesic motion in curved spacetime. The \textit{Standard Model}
-(SM) not only provides a description of the remaining three forces, the electromagnetic force,
+(SM) not only describes the remaining three forces, the electromagnetic force,
 the weak force, and the strong force, but also provides a description of matter, and 
 elucidates the origin of mass.
 
-\section{Phenomenology}
-
-phenomenological description: particles, forces
+\section{The Standard Model}
 
 The Standard Model is expressed in the language of Quantum Field Theory (QFT). QFT 
 extends the domain of quantum mechanics, which characterises the very small, to
@@ -35,14 +34,128 @@ excitations of which are interpreted as particles.
 Similarly to classical field theory the system under consideration is characterised
 by a Lagrangian density, usually simply called the \textit{Lagrangian}. According to
 the principle of least action, the equations of motion for a system are then derived
-by solving the Euler-Lagrange equation,
+by solving the Euler-Lagrange equation \cite{Thomson:2013zua},
 \begin{equation}
-
+\partial_\mu \left(\frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi_i)}\right)
+- \frac{\partial{\mathcal{L}}}{\partial \phi_i} = 0,
 \end{equation}
+where $\mathcal{L}$ is the Lagrangian, $\phi_i$ are the fields, partial derivatives
+are taken w.r.t. the spacetime coordinates, and Einstein summation convention implies
+the sum over repeated indices. The Lagrangian therefore contains all
+information about the dynamical system. 
+
+The Lagrangian must be invariant under the transformations which leave the
+system it describes physically unchanged. Apart from the Poincar\'e symmetries, which
+ensure the physics is invariant w.r.t. translations, rotations, and changes of inertial
+reference frame, the defining symmetry of the Standard Model is the internal
+$SU(3)_C \times SU(2)_L \times U(1)_Y$ local gauge symmetry.
+
+$SU(3)_C$ group symmetry, where $C$ stands for colour, defines quantum chromodynamics
+(QCD), the theory of strong force interactions between quarks and gluons. The electroweak
+interactions, a unified theory of the electromagnetic and weak forces, are described by
+the $SU(2)_L \times U(1)_Y$ group symmetry. Here, the $L$ refers to left-handed particles
+chirality, which is related to the relative direction of particle momentum and spin, and
+$Y$ is the weak hypercharge, related to the electric charge and third component of the
+weak isospin \cite{Thomson:2013zua}.
+
+The requirement for the Lagrangian to be locally gauge invariant places some constraints
+on the allowed terms. Notably, the four-derivative $\partial_\mu$ is replaced by a 
+covariant derivative, which introduces the interactions between the matter and gauge
+fields. On the other hand, local gauge invariance prohibits the naive mass terms for
+both the gauge bosons and fermions \cite{Thomson:2013zua}. This is in stark contrast
+with the experimental reality: fermions and weak gauge bosons are massive.
+
+This embarrasing discrepancy is resolved by the Higgs mechanism, which generates the
+masses of the fermions and gauge bosons by interactions to the non-zero Higgs field
+value at the minimum of the Higgs potential.
+
+
+\section{Electroweak interactions}
+
+A unified theory of quantum electrodynamics (QED) and the weak interaction was developed
+by Glashow, Salam, and Weinberg (GSW) in the 1960s \cite{Thomson:2013zua}. 
+
+weak isospin doublet
+
+TODO: introduce $g_Z$
+
+TODO: explain the terms in the covariant derivative
+
+%Local gauge invariance leaves the physics invariant under the arbitrary
+%choice of gauge. In the simplest U(1) case this means that the complex phase of the
+%singlet fields can be chosen arbitrarily at any point in spacetime. As a result, the
+%Standard Model Lagrangian must be invariant under the transformation \cite{Thomson:2013zua}
+%\begin{equation}
+%\phi(x) \rightarrow \phi'(x) = e^{iq\chi(x)}\phi(x),
+%\end{equation}
+%of the singlet fields $\phi(x)$ where the phase $\chi(x)$ is \textit{local} because it
+%depends on the spacetime position $x$. It is this symmetry which requires the use
+%of covariant derivative to make kinetic terms such as 
+%
+%prohibits the naive mass terms of the form
+%\begin{equation}
+%lal
+%\end{equation}
+%
+%
+%As will be described later in this chapter, it is this symmetry which
+%prohibits the naive mass terms for fermions and gauge bosons and calls for an alternative
+%mechanism to generate mass.
+%
+%The detailed description of the Standard Model Lagrangian can be found in standard
+%references, such as \cite{Thomson:2013zua, Schwartz:2013pla}, wh
 
 \section{The Higgs mechanism}
 
-mathematical description: QFT, local gauge invariance, the Higgs mechanism, relationship between couplings and masses
+In the GSW model, the Higgs model is a weak isospin doublet of complex scalar fields \cite{Thomson:2013zua},
+\begin{equation}
+\phi = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix},
+\end{equation}
+described by the Lagrangian
+\begin{equation}
+\mathcal{L} = (\partial_\mu \phi)^\dag (\partial^\mu \phi) - \mu^2(\phi^\dag\phi) - \lambda(\phi^\dag \phi)^2,
+\label{eq:higgs_lag}
+\end{equation}
+where the potential $V(x) = \mu^2(\phi^\dag\phi) + \lambda(\phi^\dag \phi)^2$
+has an infinite number of minima satisfying $\phi^\dag \phi = -\frac{\mu^2}{2\lambda}$
+in the case when $\mu^2 < 0$. The symmetry is spontaneously broken by choosing a
+particular minimum from the allowed set, and the fields can be expanded around the chosen minimum.
+In the unitary gauge, the Higgs doublet is written as
+\begin{equation}
+\phi(x) = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ v + h(x) \end{pmatrix},
+\end{equation}
+where the dependence on $x$ has been made explicit to distinguish the constant
+$v$ from the Higgs field $h(x)$.
+
+In order to make the Lagrangian in Eq. \ref{eq:higgs_lag} invariant under the electroweak
+$SU(2)_L \times U(1)_Y$ symmetry, the derivative is replaced by the covariant
+derivative \cite{Thomson:2013zua}
+\begin{equation}
+\partial_\mu \rightarrow D_\mu = \partial_\mu + i g_W \mathbf{T} \cdot \mathbf{W}_\mu
++ i g' \frac{Y}{2} B_\mu.
+\end{equation}
+The kinetic term in the rewritten Lagrangian, $(D_\mu \phi)^\dag (D^\mu \phi)$, generates the
+masses of the gauge bosons. Rearranging, the masses of gauge bosons can be read off as
+\begin{equation}
+m_W = \frac{1}{2} g_W v,
+\end{equation}
+\begin{equation}
+m_A = 0,
+\end{equation}
+\begin{equation}
+m_Z = \frac{1}{2}v\sqrt{g_W^2 + g'^2}.
+\end{equation}
+Furthermore, the kinetic term also contains the interaction terms between the gauge bosons
+and the Higgs field $h(x)$. Both the couplings to the $W$, $g_{HWW}=g_W m_W$, and to the $Z$,
+$g_{HZZ} = g_Z m_Z$, are proportional to their respective masses \cite{Thomson:2013zua}.
+
+Fermions masses
+
+
+\section{Higgs boson at the LHC}
+
+\section{Elementary particles}
+
 
 \section{Shortcomings}
 
