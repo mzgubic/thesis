@@ -2,11 +2,13 @@
 
 %load any additional packages
 \usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{hyperref}
+\usepackage{amsmath}  % maths
+\usepackage{hyperref} % references
 \usepackage{siunitx}
+\usepackage[numbers, sort&compress]{natbib} % nice bibilography
 
 \usepackage{defs}
+
 
 \title{Search for the decay of the Standard Model Higgs boson to muon pairs}
 
@@ -17,11 +19,11 @@
 \degreedate{Hilary 2020}
 
 
-%end the preamble and start the document
+
+
+
 \begin{document}
 
-%this baselineskip gives sufficient line spacing for an examiner to easily
-%markup the thesis with comments
 \baselineskip=18pt plus1pt
 
 %set the number of sectioning levels that get number and appear in the contents
@@ -49,12 +51,10 @@
 %\include{appendices/appendix1}
 %\include{appendices/appendix2}
 
-%next line adds the Bibliography to the contents page
+\small
 \addcontentsline{toc}{chapter}{Bibliography}
-%uncomment next line to change bibliography name to references
-%\renewcommand{\bibname}{References}
-\bibliographystyle{unsrt}  %use the plain bibliography style
-\bibliography{refs}        %use a bibtex bibliography file refs.bib
+\bibliographystyle{unsrt}
+\bibliography{refs}
 
 \end{document}
 
