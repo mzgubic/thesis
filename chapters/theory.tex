@@ -125,23 +125,76 @@ and the gluons for the strong interaction. Photons and gluons are massless, but
 the $Z$ and $W$ bosons are one of the heaviest fundamental particles in the
 Standard Model. The $W$ boson comes in two variants, $W^+$ is positively charged
 and $W^-$ negaively charged. Gluons come in eight variants, each with a different
-colour charge. The Higgs boson is the only known fundamental scalar (spin-0) particle.
-
+colour charge. The Higgs boson is the only known fundamental scalar (spin-0).
 
 \section{Electroweak interactions}
 
+Quantum electrodynamics (QED) describes the interaction between charged fermions
+mediated by the photon. In order for the Lagrangian to be invariant
+under local $U(1)$ transformation of the fermion fields,
+\begin{equation}
+\psi(x) \rightarrow \psi'(x) = e^{iq\chi(x)}\psi(x),
+\end{equation}
+where $\psi$ is a fermion field, $q$ is the charge, and $\chi(x)$ is local choice of
+the gauge, the four derivative in the naive Dirac Lagrangian must be replaced by
+the covariant derivative,
+\begin{equation}
+\partial_\mu \rightarrow D_\mu = \partial_\mu + i q A_\mu,
+\end{equation}
+where $A_\mu$ is the photon gauge field. This results in the following Lagrangian term for
+QED interactions between a fermion of mass $m$ and charge $q$ and the massless photon $A_\mu$:
+\begin{equation}
+\mathcal{L}_{\text{QED}} =
+i\bar{\psi}\gamma^\mu D_\mu \psi - m\bar\psi\psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu},
+\end{equation}
+where $\gamma^\mu$ is the gamma matrix and $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$
+is the field strength tensor.
+
+Similarly, the weak interaction is related to the invariance under $SU(2)_L$ local
+phase transformation of left-handed weak isospin doublets:
+\begin{equation}
+\varphi(x) = \begin{pmatrix} \nu_e(x) \\ e(x) \end{pmatrix} \rightarrow
+\varphi' = (\mathbf{I} + i g_W \mathbf{\alpha}(x)\cdot\mathbf{T}) \varphi(x),
+\end{equation}
+where $\mathbf{I}$ is the $2\times2$ identity matrix, $g_W$ is the weak coupling constant,
+$\alpha(x)$ are the three local choices of gauge, and $\mathbf{T} = \frac{1}{2}\sigma$,
+where $\sigma$ are the Pauli spin-matrices, are the three generators of the $SU(2)$ group.
+In order to achieve the gauge invariance of the Lagrangian under $SU(2)$ the four-derivative
+is replaced by the covariant derivative,
+\begin{equation}
+\partial_\mu \rightarrow D_\mu = \partial_\mu + i g_W \mathbf{T} \cdot \mathbf{W}_\mu(x),
+\end{equation}
+where $\mathbf{W}_\mu(x)$ are the gauge fields of the weak interaction.
+
 A unified theory of quantum electrodynamics (QED) and the weak interaction was developed
-by Glashow, Salam, and Weinberg (GSW) in the 1960s \cite{Thomson:2013zua}. 
+by Glashow, Salam, and Weinberg (GSW) in the 1960s \cite{Thomson:2013zua} to make the
+theory compatible with the fact that the observed $Z$ boson couples to both left- and
+right-handed particles. To this end a new $U(1)_Y$ symmetry is introduced with a new gauge
+field $B_\mu$, coupling $g'$, and a new charge $Y$, called the weak hypercharge. In this unified model,
+the physical bosons are the mixtures of the gauge fields
+\begin{equation}
+A_\mu = B_\mu \cos\theta_W + W_\mu^{(3)} \sin{\theta_W},
+\end{equation}
+\begin{equation}
+Z_\mu = - B_\mu \sin{\theta_W} + W_\mu^{(3)} \cos{\theta_W},
+\end{equation}
+\begin{equation}
+W^+_\mu = \frac{1}{\sqrt{2}}\left( W_\mu^{(1)} - W_\mu^{(2)} \right),
+\end{equation}
+\begin{equation}
+W^-_\mu = \frac{1}{\sqrt{2}}\left( W_\mu^{(1)} + W_\mu^{(2)} \right),
+\end{equation}
+and the couplings to the photon, and $W$ and $Z$ bosons are related as
+$e = g_W \sin{\theta_W}  = g_Z \sin{\theta_W} \cos{\theta_W}$.
 
-weak isospin doublet
-
-TODO: introduce $g_Z$
-
-TODO: explain the terms in the covariant derivative
+In this $SU(2)_L \times U(1)_Y$ model, however, the naive mass terms of the form $-m\bar\psi\psi$
+are no longer gauge invariant and thus both the fermions and bosons are massless in this theory.
+To reconcile this with the experimental reality of massive fermions and $W$ and $Z$ bosons, a
+mechanism is needed which would result in gauge invariant mass terms.
 
 \section{The Higgs mechanism}
 
-In the GSW model, the Higgs model is a weak isospin doublet of complex scalar fields \cite{Thomson:2013zua},
+The simplest Higgs model is a weak isospin doublet of complex scalar fields \cite{Thomson:2013zua},
 \begin{equation}
 \phi = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix},
 \end{equation}
@@ -196,7 +249,7 @@ g_f = \sqrt{2}\frac{m_f}{v},
 where $g_f$ is the Yukawa coupling for fermion $f$, $m_f$ is the mass of the fermion $f$,
 and $v$ is the vacuum expectation value of the Higgs field \cite{Thomson:2013zua}.
 
-\section{Higgs Phenomenology at the LHC}
+\section{Higgs phenomenology at the LHC}
 
 In July 2012 the ATLAS and CMS experiments reported and observation of a new elementary particle with the
 mass of approximately 125 GeV, consistent with the properties of the SM Higgs boson
