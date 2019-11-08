@@ -1,4 +1,4 @@
-\chapter{Theoretical Introduction}
+\chapter{The Standard Model}
 
 \textit{"...it turns out that based on their findings, which will be confirmed
 or contradicted when the Swiss machine is up and running, turns out there's
@@ -14,16 +14,14 @@ moment from the primordial slime."}
 \newpage
 \noindent
 Our current best understanding of Nature is that the dynamics of matter is governed
-by four fundamental forces. \textit{General Relativity} (GR) provides a
+by four fundamental forces. General Relativity (GR) provides a
 description of spacetime, the arena in which matter exists and interacts, and asserts
 that spacetime is not a static entity but is rather dynamically shaped by the presence
 of matter. It also explains one of the forces, the gravitational force, as an apparent
-phenomenon arising from geodesic motion in curved spacetime. The \textit{Standard Model}
-(SM) not only describes the remaining three forces, the electromagnetic force,
+phenomenon arising from geodesic motion in curved spacetime. The Standard Model
+(SM) not only describes the remaining three forces, the electromagnetic (EM) force,
 the weak force, and the strong force, but also provides a description of matter, and 
 elucidates the origin of mass.
-
-\section{The Standard Model}
 
 The Standard Model is expressed in the language of Quantum Field Theory (QFT). QFT 
 extends the domain of quantum mechanics, which characterises the very small, to
@@ -32,7 +30,7 @@ proposing that the fundamental objects are not particles, but rather fields, the
 excitations of which are interpreted as particles.
 
 Similarly to classical field theory the system under consideration is characterised
-by a Lagrangian density, usually simply called the \textit{Lagrangian}. According to
+by a Lagrangian density, usually simply called the Lagrangian. According to
 the principle of least action, the equations of motion for a system are then derived
 by solving the Euler-Lagrange equation \cite{Thomson:2013zua},
 \begin{equation}
@@ -70,6 +68,62 @@ masses of the fermions and gauge bosons by interactions to the non-zero Higgs fi
 value at the minimum of the Higgs potential.
 
 \section{Elementary particles}
+
+The particle content of the Standard Model can be classified according to spin, the
+intrinsic angular momentum. Particles with half-integer spin obey Fermi-Dirac statistics
+and are called fermions, while particles with integer spin obey Bose-Einstein
+statistics and are called bosons.
+
+\begin{table}[h]
+\centering
+\caption{Fermions of the Standard Model}
+\label{tab:the:fermions}
+\begin{tabular}{c c ccc ccc}
+\toprule
+ & & \multicolumn{3}{c}{generation} & \multicolumn{3}{c}{interaction} \\ 
+ & & \nth{1} & \nth{2} & \nth{3} & weak & EM & strong \\
+\midrule
+\multirow{2}{*}{\textbf{Quarks}}
+& up-type    & $u$ & $c$ & $t$ & \cmark & \cmark & \cmark \\
+& down-type  & ~$d$~ & ~$s$~ & ~$b$~ & \cmark & \cmark & \cmark \\
+\multirow{2}{*}{\textbf{Leptons}}
+& charged    & ~$e$~ & ~$\mu$~ & ~$\tau$~ & \cmark & \cmark & \\
+& neutrinos  & ~$\nu_e$~ & ~$\nu_\mu$~ & ~$\nu_\tau$~ & \cmark & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All known fundamental (i.e. non-composite) fermions have spin-$\frac{1}{2}$ and are
+shown in Table \ref{tab:the:fermions}. They are categorised in quarks, which interact via
+the strong force, and leptons, which don't. Both quarks and charged leptons interact
+via the electromagnetic force, and all fermions interact via the weak force. There
+are three generations of up- and down-type quarks as well as charged leptons and
+neutrinos. Only the mass differs between generations, other quantum numbers are
+identical.
+
+\begin{table}[h]
+\centering
+\caption{Bosons of the Standard Model}
+\label{tab:the:bosons}
+\begin{tabular}{c c ccc}
+\toprule
+ & & & multiplicity & interaction \\ 
+\midrule
+\multirow{4}{*}{\textbf{Spin-1}}
+ & photon    & $\gamma$ & 1 & EM      \\
+ & $Z$ boson & $Z$      & 1 & weak    \\
+ & $W$ boson & $W^\pm$  & 2 & weak    \\
+ & gluon     & $g$      & 8 & strong  \\
+\textbf{Spin-0} & Higgs boson & $H$ & 1 &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Spin-1 bosons in the Standard Model are the force carriers, the photon for the
+electromagnetic interaction, the $Z$ and $W$ bosons for the weak interaction,
+and the gluons for the strong interaction. Photons and gluons are massless, but
+the $Z$ and $W$ bosons are one of the heaviest fundamental particles in the
+Standard Model.
 
 \section{Electroweak interactions}
 
@@ -144,7 +198,7 @@ and $v$ is the vacuum expectation value of the Higgs field \cite{Thomson:2013zua
 In July 2012 the ATLAS and CMS experiments reported and observation of a new elementary particle with the
 mass of approximately 125 GeV, consistent with the properties of the SM Higgs boson
 \cite{Aad:2012tfa, Chatrchyan:2012xdj}. The mass of the new boson was later measured
-jointly by both experiments to be $125.09 \pm 0.21 (stat) \pm 0.11 (syst)~\GeV$
+jointly by the two experiments to be $125.09 \pm 0.21 (\text{stat.}) \pm 0.11 (\text{syst.})~\GeV$
 \cite{Aad:2015zhl}. Further studies of spin, parity, and production
 and decay rates in both experiments have found no evidence of deviation from the SM
 Higgs boson \cite{Aad:2015mxa, PhysRevD.92.012004, Khachatryan:2016vau, Aad:2019mbh}.
@@ -152,7 +206,7 @@ Higgs boson \cite{Aad:2015mxa, PhysRevD.92.012004, Khachatryan:2016vau, Aad:2019
 The four main production modes of the Higgs boson at the proton-proton ($pp$) collisions
 at the Large Hadron Collider (LHC) are the gluon-gluon fusion ($\ggf$), vector boson fusion
 (\vbf), asociated production with a vector boson (\vh), and the associated production with
-a $\ttbar$ pair ($\tth$), all shown in Fig. \ref{fig:the:prod}.
+a $\ttbar$ pair ($\tth$), all shown in Figure \ref{fig:the:prod}.
 
 \begin{figure}[h]
   \centering
@@ -186,7 +240,7 @@ a $\ttbar$ pair ($\tth$), all shown in Fig. \ref{fig:the:prod}.
 The majority of the Higgs bosons at the LHC are produced via the $\ggf$ production mode,
 followed by $\vbf$, $\vh$, and $\tth$ production. Another two production modes are $\bbh$
 and $\tH$, but they are more difficult to tag experimentally. The cross-sections and
-relative fractions depend on the centre-of-mass energy as shown in Fig. \ref{fig:the:prod}.
+relative fractions depend on the centre-of-mass energy as shown in Figure \ref{fig:the:prod}.
 At 13 \TeV, the production cross section for the $\ggf$ production mode is
 $\sigma_{\ggf} = 48.58~\pb
 ~^{+4.56\%}_{-6.72\%}~(\text{theory})
@@ -212,7 +266,7 @@ $\sigma_{\vbf} = 3781.7~\fb
 The Higgs boson is an unstable particle and can decay in a variety of ways. As noted,
 the strength of the interaction with bosons and fermions is proportional to the mass,
 meaning that the Higgs boson preferentially decays to the heavier particles, if they
-are kinematically allowed. Fig. \ref{fig:the:decay} shows the Higgs boson branching
+are kinematically allowed. Figure \ref{fig:the:decay} shows the Higgs boson branching
 ratios, defined as the fractions of the rate of a particular decay to the total
 rate of decay. For the SM Higgs boson with $m_H = 125~\GeV$, the predicted decay rate to muon pairs
 is $2.176 \times 10^{-4}
