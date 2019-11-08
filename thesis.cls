@@ -98,7 +98,7 @@
     \renewcommand{\footnotesize}{\small}
     \renewcommand{\footnoterule}{\relax}
     \thispagestyle{empty}
-  \null\vfill
+  %\null\vfill
   \begin{center}
     { \Huge {\bfseries {\@title}} \par}
 {\large \vspace*{40mm} {\logo \par} \vspace*{25mm}}
@@ -114,7 +114,7 @@
 \vspace*{2ex}
     {\@degreedate}}
   \end{center}
-  \null\vfill
+  %\null\vfill
 \end{alwayssingle}}
 
 % DEDICATION
