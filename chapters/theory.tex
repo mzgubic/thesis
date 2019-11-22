@@ -19,8 +19,8 @@ Our current best understanding of Nature is that the dynamics of matter is gover
 by four fundamental forces. General Relativity (GR) provides a
 description of spacetime, the arena in which matter exists and interacts, and asserts
 that spacetime is not a static entity but is rather dynamically shaped by the presence
-of matter. It also explains one of the forces, the gravitational force, as an apparent
-phenomenon arising from geodesic motion in curved spacetime. The Standard Model
+of matter and energy. It also explains one of the forces, the gravitational force, as an apparent
+phenomenon arising from geodesic motion in curved spacetime. The Standard Model of particle physics
 (SM) not only describes the remaining three forces, the electromagnetic (EM) force,
 the weak force, and the strong force, but also provides a description of matter, and 
 elucidates the origin of mass.
@@ -39,8 +39,9 @@ by solving the Euler-Lagrange equation,
 \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi_i)}\right)
 - \frac{\partial{\mathcal{L}}}{\partial \phi_i} = 0,
 \end{equation}
-where $\mathcal{L}$ is the Lagrangian, $\phi_i$ are the fields, partial derivatives
-are taken w.r.t. the spacetime coordinates, and Einstein summation convention implies
+where $\mathcal{L}$ is the Lagrangian, $\phi_i$ are the fields, whose explicit dependence
+on $x^\mu$ is suppressed for clarity, partial derivatives
+are taken with resepct to the spacetime coordinates, and Einstein summation convention implies
 the sum over repeated indices \cite{Thomson:2013zua}. The Lagrangian therefore contains all
 information about the dynamical system. 
 
@@ -48,12 +49,12 @@ The Lagrangian must be invariant under the transformations which leave the
 system it describes physically unchanged. Apart from the Poincar\'e symmetries, which
 ensure the physics is invariant w.r.t. translations, rotations, and changes of inertial
 reference frame, the defining symmetry of the Standard Model is the internal
-$SU(3)_C \times SU(2)_L \times U(1)_Y$ local gauge symmetry.
+$SU(3)_C \times SU(2)_L \times U(1)_Y$ local gauge redundancy.
 
 $SU(3)_C$ group symmetry, where $C$ stands for colour, defines quantum chromodynamics
 (QCD), the theory of strong force interactions between quarks and gluons. The electroweak
 interactions, a unified theory of the electromagnetic and weak forces, are described by
-the $SU(2)_L \times U(1)_Y$ group symmetry. Here, the $L$ refers to left-handed particles
+the $SU(2)_L \times U(1)_Y$ group symmetry. Here, the $L$ refers to left-handed
 chirality, which is related to the relative direction of particle momentum and spin, and
 $Y$ is the weak hypercharge, related to the electric charge and third component of the
 weak isospin \cite{Thomson:2013zua}.
@@ -124,10 +125,10 @@ identical.
 Vector (spin-1) bosons in the Standard Model are the force carriers, the photon for the
 electromagnetic interaction, the $Z$ and $W$ bosons for the weak interaction,
 and the gluons for the strong interaction. Photons and gluons are massless, but
-the $Z$ and $W$ bosons are one of the heaviest fundamental particles in the
+the $Z$ and $W$ bosons are among of the heaviest fundamental particles in the
 Standard Model. The $W$ boson comes in two variants, $W^+$ is positively charged
-and $W^-$ negaively charged. Gluons come in eight variants, each with a different
-colour charge. The Higgs boson is the only known fundamental scalar (spin-0) \cite{Thomson:2013zua}.
+and $W^-$ negaively charged. Gluons come in eight variants, each with a unique
+colour charge combination. The Higgs boson is the only known fundamental scalar (spin-0) \cite{Thomson:2013zua}.
 
 \section{Electroweak interactions}
 
@@ -143,7 +144,11 @@ the covariant derivative,
 \begin{equation}
 \partial_\mu \rightarrow D_\mu = \partial_\mu + i q A_\mu,
 \end{equation}
-where $A_\mu$ is the photon gauge field \cite{Thomson:2013zua}.
+where $A_\mu$ is the photon gauge field which transforms as
+\begin{equation}
+A_\mu \rightarrow A_\mu' = A_\mu - \partial_\mu \chi(x)
+\end{equation}
+\cite{Thomson:2013zua}.
 %This results in the following Lagrangian term for
 %QED interactions between a fermion of mass $m$ and charge $q$ and the massless photon $A_\mu$:
 %\begin{equation}
@@ -239,9 +244,8 @@ Furthermore, the kinetic term also contains the interaction terms between the ga
 and the Higgs boson $h(x)$. Both the couplings to the $W$, $g_{HWW}=g_W m_W$, and to the $Z$,
 $g_{HZZ} = g_Z m_Z$, are proportional to the masses of the bosons \cite{Thomson:2013zua}.
 
-Similarly, naive fermion mass terms of the form $-m \bar{\psi}\psi$ are not allowed because
-they violate the $SU(2)_L \times U(1)_Y$ symmetry. However, terms of the form
-$\bar{\psi_L}\phi\psi_R$ are allowed, and they give rise to both the fermion mass terms
+Unlike the naive fermion mass terms $-m \bar{\psi}\psi$, terms of the form $\bar{\psi_L}\phi\psi_R$ 
+are invariant under $SU(2)_L \times U(1)_Y$ transformations. They give rise to both the fermion mass terms
 via the coupling of fermions to the non-zero vacuum expectation value of the Higgs field,
 as well as the couplings to the Higgs boson itself. Importantly for this thesis, there is 
 a direct relationship between the Yukawa couplings to the Higgs boson and the
@@ -254,7 +258,7 @@ where $g_f$ is the Yukawa coupling for fermion $f$, and $m_f$ is the mass of the
 
 \section{Higgs phenomenology at the LHC}
 
-In July 2012 the ATLAS and CMS experiments reported and observation of a new elementary particle with the
+In July 2012 the ATLAS and CMS experiments reported an observation of a new elementary particle with the
 mass of approximately 125 GeV, consistent with the properties of the SM Higgs boson
 \cite{Aad:2012tfa, Chatrchyan:2012xdj}. The mass of the new boson was later measured
 jointly by the two experiments to be $125.09 \pm 0.21 (\text{stat.}) \pm 0.11 (\text{syst.})~\GeV$
@@ -324,7 +328,7 @@ $\sigma_{\vbf} = 3781.7~\fb
 
 The Higgs boson is an unstable particle and can decay in a variety of ways. As noted,
 the strength of the interaction with bosons and fermions is proportional to the mass,
-meaning that the Higgs boson preferentially decays to the heavier particles, if they
+meaning that the Higgs boson preferentially decays to the heavier particles, if the decays
 are kinematically allowed. Figure \ref{fig:the:decay} shows the Higgs boson branching
 ratios, defined as the fractions of the rate of a particular decay to the total
 rate of decay. For the SM Higgs boson with $m_H = 125~\GeV$, the predicted decay rate to muon pairs
