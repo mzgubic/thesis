@@ -56,24 +56,41 @@ which are much rarer than the commonplace QCD processes involving
 low transverse momentum transfer (``soft''), meaning that the majority
 of bunch crossings result in either zero or one hard scatter interactions.
 
-This idea of 
+The ability of colliders to generate interactions is formalised by
+instantaneous luminosity $\mathcal{L}$, which relates the rate of a process $R_p$
+to the cross section of the process $\sigma_p$ as
+\begin{equation}
+R_p = \sigma_p \mathcal{L},
+\end{equation}
+and depends only on the properties of the colliding beams. Assuming a
+Gaussian profile for the beams and that they collide head on, the
+instantaneous luminosity is given by
+\begin{equation}
+\mathcal{L} = f \frac{n_1 n_2 }{4 \pi \sigma_x \sigma_y}
+\end{equation}
+where $f$ is the bunch crossing frequency, $n_{1, 2}$ are the number of
+particles in the beams, and $\sigma_{x,y}$ are the horizontal and vertical
+beam widths \cite{Thomson:2013zua}. The sizes of datasets are conventionally
+given in integrated luminosity, the time integral of the instantaneous
+luminosity.
+
+Figure \ref{fig:exp:pileup} shows the ATLAS recorded luminosity as a
+function of the mean number of interactions per bunch crossing for
+the data-taking runs in 2015-2018 period.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=1\textwidth]{figures/experiment/pileup}
-  \caption[Mean number of interactions per bunch crossing]{Mean number
-  of interactions per bunch crossing. From Ref. \cite{pileup}}
+  \caption[Mean number of interactions per bunch crossing]{ATLAS recorded
+  integrated luminosity as a function of the mean number
+  of interactions per bunch crossing. Different years of data-taking
+  are shown in distinct colours. From Ref. \cite{pileup}.}
   \label{fig:exp:pileup}
 \end{figure}
 
-
-
-
-
-Each proton beam is accelerated to 6.5 TeV, resulting
-in 13 TeV centre-of-mass energy.
-
 \section{Trigger}
+
+A large number 
 
 \section{Tracking}
 
