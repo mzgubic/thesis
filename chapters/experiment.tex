@@ -104,12 +104,39 @@ the data-taking runs in 2015-2018 period.
 The ATLAS detector schematic is shown in Figure \ref{fig:exp:atlas} and
 reveals its cylindrical geometry that divides most systems in a coaxial 
 tubular ``barrel'' parts, and disc-shaped ``endcap'' parts, providing
-nearly $4\pi$ solid angle coverage.
+a nearly $4\pi$ solid angle coverage. The ATLAS coordinate system places
+the origin at the centre of the detector at the nominal collision point,
+points the $x$-axis towards the centre of the ring, the $y$-axis vertically
+upwards, and the $z$-axis along the beampipe in the direction that
+completes the right-handed coordinate system. The azimuthal angle $\phi$
+and polar angle $\theta$ are defined as usual in spherical coordinates.
+However, rapidity
+\begin{equation}
+y = \frac{1}{2}\ln{\left( \frac{E+p_z}{E-p_z}\right)}
+\end{equation}
+is preferred over $\theta$ as the differences in rapidity are invariant
+under boosts in the $z$ direction. In the relativistic limit pseudorapidity
+\begin{equation}
+\eta = - \ln{\left(\tan{\frac{\theta}{2}}\right)}
+\end{equation}
+can be used instead \cite{Thomson:2013zua}.
+
+ATLAS magnet system consists of a solenoid just outside the tracker
+system, which provides a relatively uniform 2 T magnetic field for the
+tracker, and a toroidal magnet system outside the calorimeters, which provides
+magnetic field for the muon spectrometer.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=1\textwidth]{figures/experiment/atlas}
-  \caption[The ATLAS detector.]{The ATLAS detector. From Ref. \cite{CERN:39038}}
+  \caption[The ATLAS detector.]{The ATLAS detector schematic. Inner
+  Detector contains a tracker system and is immersed in a 2 T magnetic field
+  provided by the solenoid magnet. Outside the solenoid there is
+  and electromagnetic calorimeter, followed by the hadronic calorimeter.
+  Finally, in the outermost layer, a muon spectrometer identifies muons
+  and measures their curvature in a magnetic field provided by the
+  toroidal magnet system.
+  From Ref. \cite{CERN:39038}}
    \label{fig:exp:atlas}
 \end{figure}
 
