@@ -130,7 +130,7 @@ magnetic field for the muon spectrometer.
   \centering
   \includegraphics[width=1\textwidth]{figures/experiment/atlas}
   \caption[The ATLAS detector.]{The ATLAS detector schematic. Inner
-  Detector contains a tracker system and is immersed in a 2 T magnetic field
+  detector contains a tracker system and is immersed in a 2 T magnetic field
   provided by the solenoid magnet. Outside the solenoid there is
   and electromagnetic calorimeter, followed by the hadronic calorimeter.
   Finally, in the outermost layer, a muon spectrometer identifies muons
@@ -140,9 +140,40 @@ magnetic field for the muon spectrometer.
    \label{fig:exp:atlas}
 \end{figure}
 
+As particles travel outwards from the interaction point they pass a
+sequence of detector components. The first is the inner detector (ID),
+a silicon and transition radiation tracker which precisely measures the
+positions of charged particles at several concentric layers, allowing for
+the reconstruction of their trajectories. After passing the solenoid
+surrounding the inner detector charged particles and photons deposit
+energy in the electromagnetic calorimeter (ECAL), which stops most electrons
+and photons. Hadrons are mostly stopped in the hadronic calorimeter
+just outside the ECAL. Only muons and neutrinos reach the muon spectrometer
+which provides a position measurement of muons allowing for their
+identification and a complementary measurement of transverse momentum \cite{Aad:2008zzm}.
+
 \section{Trigger}
 
-A large number 
+The enormous collision rate and the associated data rate makes it
+impossible for the readout system to record every single event. A fast
+event filtering is performed by the ATLAS trigger, a two level system
+designed to reduce event rates from 40 MHz to a more manageable 1 kHz.
+
+Level-1 trigger is implemented in hardware and reduces the rate of
+collisions from 40 MHz to 100 kHz. It works by utilising information
+from the calorimeters and the dedicated muon triggers using simple
+and fast logic. High-level trigger (HLT) is software-based and further
+reduces event rates to 1 kHz, using basic tracking information from both
+the tracker and the muon spectrometer.
+
+Events can be selected by the trigger by passing one of the several
+requirements, motivated by different physics purposes. These requirements
+can be changed in different data-taking periods to balance physics needs
+and the changing beam conditions. Some requirements are satisfied too
+often and need to be prescaled, keeping only a certain fraction of events
+passing the trigger. Un-prescaled triggers keep all of the events that
+pass the trigger \cite{Aaboud:2016leb}.
+
 
 \section{Tracking}
 
