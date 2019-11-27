@@ -132,11 +132,11 @@ magnetic field for the muon spectrometer.
   \caption[The ATLAS detector.]{The ATLAS detector schematic. Inner
   detector contains a tracker system and is immersed in a 2 T magnetic field
   provided by the solenoid magnet. Outside the solenoid there is
-  and electromagnetic calorimeter, followed by the hadronic calorimeter.
+  an electromagnetic calorimeter, followed by the hadronic calorimeter.
   Finally, in the outermost layer, a muon spectrometer identifies muons
   and measures their curvature in a magnetic field provided by the
   toroidal magnet system.
-  From Ref. \cite{CERN:39038}}
+  From Ref. \cite{Aad:2008zzm}}
    \label{fig:exp:atlas}
 \end{figure}
 
@@ -172,12 +172,41 @@ can be changed in different data-taking periods to balance physics needs
 and the changing beam conditions. Some requirements are satisfied too
 often and need to be prescaled, keeping only a certain fraction of events
 passing the trigger. Un-prescaled triggers keep all of the events that
-pass the trigger \cite{Aaboud:2016leb}.
-
+pass the requirements \cite{Aaboud:2016leb}.
 
 \section{Tracking}
 
+Tracking of particle trajectories near the interaction point is critical
+for a number of essential reconstruction tasks, including not only
+measurements of position, charge, and momentum of particle tracks, but also
+the ability to associate tracks to vertices, and flavour tagging.
+
+Arguably the most important task of the tracker is to precisely measure
+the momentum of the charged particles. The trajectories of charged
+particles follow a helical path in a uniform magnetic field provided
+by the solenoid. The charge of the particle can be determined by the 
+sign of the curvature, while the transverse momentum ($\pt$) can be
+determined from the curvature of the track
+\begin{equation}
+\pt = \frac{0.3 B L^2}{8s},
+\end{equation}
+in the limit where $L \ll R$, where $L$ is the size of the tracker,
+$R$ is the radius of curvature of the track, $B$ is the magnetic field
+strength, and $s$ is the \textit{sagitta}, the largest distance between
+the arc and the chord perpendicular to the chord \cite{Ragusa:2007zz}.
+
+As particles pass the tracker layers they ionise the active material,
+which is digitised and recorded as hits. 
+
 \section{Calorimetry}
 
+Wise words on energy measurements.
+
+
 \section{Muon spectrometry}
+
+Wiser words on detecting muons!
+
+
+
 
