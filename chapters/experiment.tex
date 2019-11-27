@@ -91,7 +91,7 @@ the data-taking runs in 2015-2018 period.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=1\textwidth]{figures/experiment/pileup}
+  \includegraphics[width=0.8\textwidth]{figures/experiment/pileup}
   \caption[Mean number of interactions per bunch crossing]{ATLAS recorded
   integrated luminosity as a function of the mean number
   of interactions per bunch crossing. Different years of data-taking
@@ -178,7 +178,7 @@ pass the requirements \cite{Aaboud:2016leb}.
 
 Tracking of particle trajectories near the interaction point is critical
 for a number of essential reconstruction tasks, including not only
-measurements of position, charge, and momentum of particle tracks, but also
+the measurements of position, charge, and momentum of particle tracks, but also
 the ability to associate tracks to vertices, and flavour tagging.
 
 Arguably the most important task of the tracker is to precisely measure
@@ -198,29 +198,46 @@ $R$ is the radius of curvature of the track, $B$ is the magnetic field
 strength, and $s$ is the \textit{sagitta}, the largest distance between
 the arc and the chord, perpendicular to the chord \cite{Ragusa:2007zz}.
 
-The tracker is built of several subcomponents, shown in Figure
+The tracker is designed to reconstruct tracks with $\pt > 0.5$ \GeV, and
+$|\eta| < 2.5$, and comprises several subcomponents, shown in Figure
 \ref{fig:exp:tracker}:
 \begin{itemize}
-\item Pixel detector is the innermost part of the tracker system,
-and consists of three layers of silicon pixel detectors in the barrel
-and endcap regions with a total of approximately 80 million channels.
-Before LHC Run 2 a new layer, called insertable B-layer (IBL), was
-added between the beam pipe and the then innermost pixel layer
-in order to provide robustness against inefficiencies in the
-pixels caused by radiation damage and improve resolution. The
-resolution in the bending plane, relevant for the measurement of
-$\pt$, is about $10\mu m$ \cite{CERN-LHCC-97-016, Capeans:1291633}. 
-\item SCT
-\item TRT
+\item Pixel detector is the innermost part of the tracker system and
+consists of three cylindrical layers of silicon pixel detectors in the
+barrel region, and three disks in the endcap regions with a total of
+approximately 80 million channels. A large number of channels is needed
+to prevent occupancy issues in the high track multiplicity environments
+and to enable good position resolution. Before LHC Run 2 a new layer,
+called insertable B-layer (IBL), was added between the beam pipe and the
+then innermost pixel layer in order to provide robustness against
+inefficiencies in the pixels caused by radiation damage and improve
+resolution. The strip pitch in the bending plane, relevant for the
+measurement of $\pt$, is 50 $\um$ \cite{CERN-LHCC-97-016, Aad:2008zzm, Capeans:1291633}. 
+\item SCT, a silicon microstrip detector, is the intermediate subcomponent
+of the tracker and consists of four cylindrical layers in the barrel region
+and 9 disks in each of the endcaps with a total of approximately 6 million
+channels. The strip pitch in the bending plane is 80 $\um$ to maintain
+precision in the bending plane, while the reduction in the number of
+channels is achieved by longer sensors in $z$ direction \cite{CERN-LHCC-97-016, Aad:2008zzm}.
+\item TRT, the transition radiation tracker, is the outermost part of the
+tracker system. Unlike the silicon counterparts it does not come in layers
+but rather a homogenous set of straw drift tubes, as illustrated in
+Figure \ref{fig:exp:tracker}. It measures the distance between the track
+and the central wire by measuring the time it takes for the ionisation
+created by the track to drift to the central wire. The tubes are 4 $\mm$
+in diameter, but their resolution in the bending plane for individual
+straws is about 130 $\um$, and combined with a large number (typically 36)
+of hits per track the TRT provides a meaningful contribution to the
+$\pt$ measurement \cite{CERN-LHCC-97-016, Aad:2008zzm}.
 \end{itemize}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=1\textwidth]{figures/experiment/tracker}
+  \includegraphics[width=0.8\textwidth]{figures/experiment/tracker}
   \caption[The ATLAS tracker.]{A cross-section of the barrel region
   of the ATLAS tracker system. It consists of the pixel detector,
-  the silicon strip detector, called the SCT, and a transition
-  radiation tracker, called TRT.
+  the silicon strip detector (SCT), and the transition radiation
+  tracker (TRT).
   From Ref. \cite{Potamianos:2016ptf}}
    \label{fig:exp:tracker}
 \end{figure}
