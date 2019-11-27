@@ -183,8 +183,11 @@ the ability to associate tracks to vertices, and flavour tagging.
 
 Arguably the most important task of the tracker is to precisely measure
 the momentum of the charged particles. The trajectories of charged
-particles follow a helical path in a uniform magnetic field provided
-by the solenoid. The charge of the particle can be determined by the 
+particles follow a helical path in an axial magnetic field provided
+by the solenoid. Particles passing the tracker layers ionise the active material,
+which is digitised and recorded as hits, and finally a fit is performed
+to obtain the parameters of the tracks and the associated uncertainties.
+The charge of the particle can be determined by the 
 sign of the curvature, while the transverse momentum ($\pt$) can be
 determined from the curvature of the track
 \begin{equation}
@@ -193,10 +196,34 @@ determined from the curvature of the track
 in the limit where $L \ll R$, where $L$ is the size of the tracker,
 $R$ is the radius of curvature of the track, $B$ is the magnetic field
 strength, and $s$ is the \textit{sagitta}, the largest distance between
-the arc and the chord perpendicular to the chord \cite{Ragusa:2007zz}.
+the arc and the chord, perpendicular to the chord \cite{Ragusa:2007zz}.
 
-As particles pass the tracker layers they ionise the active material,
-which is digitised and recorded as hits. 
+The tracker is built of several subcomponents, shown in Figure
+\ref{fig:exp:tracker}:
+\begin{itemize}
+\item Pixel detector is the innermost part of the tracker system,
+and consists of three layers of silicon pixel detectors with a total
+of approximately 80 million channels. Before LHC Run 2 a new layer,
+called insertable B-layer (IBL), was added in order to provide
+robustness against inefficiencies in the pixels caused by radiation
+damage and improve resolution. The resolution in the bending plane,
+relevant for the measurement of $\pt$, is about 10$\mu m$
+\cite{CERN-LHCC-97-016, Capeans:1291633}. 
+
+\item SCT
+\item TRT
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/experiment/tracker}
+  \caption[The ATLAS tracker.]{The ATLAS tracker. 
+  From Ref. \cite{Potamianos:2016ptf}}
+   \label{fig:exp:tracker}
+\end{figure}
+
+
+
 
 \section{Calorimetry}
 
