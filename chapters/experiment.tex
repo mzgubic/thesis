@@ -246,7 +246,11 @@ $\pt$ measurement \cite{CERN-LHCC-97-016, Aad:2008zzm}.
 
 Unlike the tracker, which aims to minimally disrupt the traversing
 particles, the calorimeter system is designed to measure the
-particle energy by stopping them completely. It provides coverage
+particle energy by stopping them completely. This ensures a less
+noisy measurement of the energy and allows the measurement of
+missing transverse momentum.
+
+The calorimeter system provides coverage
 up to $|\eta| < 4.9$ with granularity and number of layers varying
 throughout the $\eta$ range to satisfy physics requirements. The
 components of the calorimeter are sampling rather than homogeneous
@@ -257,7 +261,12 @@ the relative energy resolution improves with increasing $\pt$ of
 the traversing particle, in contrast with the performance of the
 tracker.
 
-Explain radiation length and hadron interaction length. TODO
+Radiation length ($X_0$) of a material is the length that a high
+energy electron traverses before its energy decreases to $1/e$ of
+its initial energy, primarily via bremsstrahlung and e$^+$e$^-$
+pair production. A related quantity for hadrons is the nuclear
+interaction length ($\lambda$), defined as the mean distance traversed by a
+hadron before an inelastic nuclear interaction. 
 
 While complex geometrically, the calorimeter system can be divided
 in two parts based on their physics task:
@@ -270,10 +279,15 @@ showers, and the liquid argon as the active material. The total
 material budget of the ECAL is larger than 22 $X_0$ radiation
 lengths in the barrel and larger than 24 $X_0$ in the endcaps 
 \cite{CERN-LHCC-96-041, Aad:2008zzm}.
-
-\item Hadronic calorimeter
-(HCAL), used for energy measurements of hadronic showers and 
-containment of neutral particles. TODO
+\item Hadronic calorimeter (HCAL), used for energy measurements
+of hadronic showers and containment of neutral particles, extends
+up to $|\eta| < 4.9$ and provides approximately 11 interaction
+lengths ($\lambda$) of hadronic depth. The hadronic endcap
+calorimeter and the forward calorimeter both work with liquid
+argon as the active material, while the tile calorimeter in the
+barrel uses steel as the absorbing material and scintillating
+plastic tiles as the active material \cite{CERN-LHCC-96-041,
+artamonov2008atlas, Aad:2008zzm}.
 \end{itemize}
 
 
