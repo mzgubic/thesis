@@ -45,7 +45,7 @@ well as increase the probability of proton-proton interaction.
 The protons are obtained by stripping electrons from the hydrogen atoms,
 and then pre-accelerated by a sequence of linear and circular accelerators
 before entering the main ring. In the main ring the proton beams are
-accelerated to 6.5 \TeV and are moving in the opposite directions next to each other
+accelerated to 6.5 TeV and are moving in the opposite directions next to each other
 in separate beam pipes. The ring is not perfectly circular but rather consists
 of alternating straight sections, which accelerate the protons by passing
 them through electromagnetic fields in the superconducting radiofrequency
@@ -290,10 +290,60 @@ plastic tiles as the active material \cite{CERN-LHCC-96-041,
 artamonov2008atlas, Aad:2008zzm}.
 \end{itemize}
 
-
 \section{Muon spectrometry}
 
-Wiser words on detecting muons!
+Muon spectrometer is the outermost part of ATLAS and was designed to
+trigger on muons up to $|\eta| < 2.4$ and measure their momentum up
+to $|\eta| < 2.7$. It works by measuring the bending of the tracks
+in a magnetic field, similarly to the tracker. However, the field
+bends muon tracks in the $y-z$ plane, and is provided by three
+toroidal magnets, one in the barrel, and one in each of the endcaps,
+as shown in Figure \ref{fig:exp:atlas}. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/experiment/muonspectrometer}
+  \caption[The ATLAS muon spectrometer.]{Schematic of the ATLAS muon
+  spectrometer geometry in the $x-y$ plane in the barrel region. MDT
+  chambers, shown in cyan, provide the precision $\pt$ measurement
+  capabilities, while the RPC chambers allow triggering. ATLAS support
+  structures are shown in yellow.
+  From Ref. \cite{Aad:2010ag}}
+   \label{fig:exp:ms}
+\end{figure}
+
+Monitored drift tube (MDT) chambers provide precision tracking up to
+$|\eta| < 2.7$ with the goal of measuring a $\pt = 1$ TeV muon
+to 10\% accuracy. The sagitta at this $\pt$ is about 500 $\um$,
+meaning that the required accuracy is better than 50 $\um$.
+In the barrel, the chambers are arranged in three concentric
+layers approximately 5 m, 7.5 m, and 10 m away from the beampipe, as
+shown in Figure \ref{fig:exp:ms}. The chambers in the two endcaps are
+arranged in wheels perpendicular to the $z$-axis. There is a gap in
+the MDTs close to $\eta = 0$ to allow for cabling and services to
+the solenoid, calorimeter, and the tracker. Another gap is required
+for the detector support structure. The chambers are typically
+made of three layers of tubes on each side of the support structure
+and achieve a resolution of about 80 $\um$ per tube and about
+35 $\um$ per chamber. The relative position of the chambers must also be
+known to about 30 $\um$ to achieve the required precision on the sagitta
+measurement, which is made possible by a combination of an optical alignment
+system and track-based alignment \cite{Aad:2010ag, Aefsky:1380912, Aad:2008zzm}.
+
+% drift time ~ 700 ns, counting rates 30kHz per tube expected at 'full LHC lumi'
+% which gives 30us to each if equally spaced arrivals
+
+Cathode strip chambers (CSC) are multiwire proportional chambers
+used in the very forward region ($2 < |\eta| < 2.7$)
+in the innermost layer in the two endcaps because of their capability
+to deal with a higher rate of collisions and better time resolution
+\cite{Aad:2010ag}.
+
+Resistive plate chambers (RPC) are gaseous detectors used for
+triggering in the barrel ($|\eta| < 1.05$) due to their good time resolution
+and tolerance to high rates \cite{Cattani_2011}. In the endcaps ($1.05 < |\eta| < 2.4$)
+thin gap chambers (TGC), operating on the same principle as the multiwire
+proportional chambers, are used instead \cite{Nagai:1996mf}.
 
 
 
