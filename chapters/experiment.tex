@@ -27,7 +27,7 @@ components are the tracker, which reconstructs the tracks of charged
 particles, the calorimeter system, which measures the energy of
 electrons, photons, and hadrons, and a muon spectrometer, which identifies
 the muons and improves their momentum measurement. The two remaining 
-indispensable componentas are the magnet system, which provides a 
+indispensable components are the magnet system, which provides a 
 magnetic field that bends charged particle trajectories and enables 
 momentum measurement, and the trigger system, which selects a small
 fraction of events to be recorded.
@@ -53,8 +53,8 @@ cavities, and arcs, which bend the proton beam using dipole magnets.
 Quadrupole magnets are used close to the interaction points to focus the
 beam prior to collisions to increase the collision probability \cite{Brüning:782076}. 
 
-The beams are not a continuous stream of protons but rather a sequence of
-proton bunches, each comprising of approximately $10^{11}$ protons. The
+The beams are not a continuous stream of protons but rather sequences of
+proton bunches, each comprising approximately $10^{11}$ protons. The
 bunches cross each other at the interaction point every 25 ns, i.e. a
 40 MHz rate. A bunch crossing may result in a collision between
 individual protons, and indeed collisions between multiple pairs of
@@ -71,10 +71,10 @@ The ability of colliders to generate interactions is formalised by
 instantaneous luminosity $\mathcal{L}$, which relates the rate of a process $R_p$
 to the cross section of the process $\sigma_p$ as
 \begin{equation}
-R_p = \sigma_p \mathcal{L},
+R_p = \mathcal{L} \sigma_p,
 \end{equation}
 and depends only on the properties of the colliding beams. Assuming a
-Gaussian profile for the beams and that they collide head on, the
+Gaussian profile for the beams and head on collisions, the
 instantaneous luminosity is given by
 \begin{equation}
 \mathcal{L} = f \frac{n_1 n_2 }{4 \pi \sigma_x \sigma_y}
@@ -82,8 +82,8 @@ instantaneous luminosity is given by
 where $f$ is the bunch crossing frequency, $n_{1, 2}$ are the number of
 particles in the beams, and $\sigma_{x,y}$ are the horizontal and vertical
 beam widths \cite{Thomson:2013zua}. The sizes of datasets are conventionally
-given in integrated luminosity, the time integral of the instantaneous
-luminosity.
+reported in recorded integrated luminosity, the time integral of the
+instantaneous luminosity. 
 
 Figure \ref{fig:exp:pileup} shows the ATLAS recorded luminosity as a
 function of the mean number of interactions per bunch crossing for
@@ -94,8 +94,9 @@ the data-taking runs in 2015-2018 period.
   \includegraphics[width=0.8\textwidth]{figures/experiment/pileup}
   \caption[Mean number of interactions per bunch crossing]{ATLAS recorded
   integrated luminosity as a function of the mean number
-  of interactions per bunch crossing. Different years of data-taking
-  are shown in distinct colours. From Ref. \cite{pileup}.}
+  of interactions per bunch crossing. Years of data-taking
+  are shown in distinct colours, with the combined dataset profile in blue.
+  From Ref. \cite{pileup}.}
   \label{fig:exp:pileup}
 \end{figure}
 
@@ -104,7 +105,9 @@ the data-taking runs in 2015-2018 period.
 The ATLAS detector schematic is shown in Figure \ref{fig:exp:atlas} and
 reveals its cylindrical geometry that divides most systems in a coaxial 
 tubular ``barrel'' parts, and disc-shaped ``endcap'' parts, providing
-a nearly $4\pi$ solid angle coverage. The ATLAS coordinate system places
+a nearly $4\pi$ solid angle coverage.
+
+The ATLAS coordinate system places
 the origin at the centre of the detector at the nominal collision point,
 points the $x$-axis towards the centre of the ring, the $y$-axis vertically
 upwards, and the $z$-axis along the beampipe in the direction that
@@ -115,14 +118,15 @@ However, rapidity
 y = \frac{1}{2}\ln{\left( \frac{E+p_z}{E-p_z}\right)}
 \end{equation}
 is preferred over $\theta$ as the differences in rapidity are invariant
-under boosts in the $z$ direction. In the relativistic limit pseudorapidity
+under Lorentz transformations in the $z$ direction. In the relativistic
+limit pseudorapidity
 \begin{equation}
 \eta = - \ln{\left(\tan{\frac{\theta}{2}}\right)}
 \end{equation}
 can be used instead \cite{Thomson:2013zua}.
 
-ATLAS magnet system consists of a solenoid just outside the tracker
-system, which provides a relatively uniform 2 T magnetic field for the
+ATLAS magnet system consists of a solenoid just outside the tracker,
+which provides a relatively uniform 2 T magnetic field for the
 tracker, and a toroidal magnet system outside the calorimeters, which provides
 magnetic field for the muon spectrometer.
 
@@ -150,7 +154,10 @@ energy in the electromagnetic calorimeter (ECAL), which stops most electrons
 and photons. Hadrons are mostly stopped in the hadronic calorimeter
 just outside the ECAL. Only muons and neutrinos reach the muon spectrometer
 which provides a position measurement of muons allowing for their
-identification and a complementary measurement of transverse momentum \cite{Aad:2008zzm}.
+identification and a complementary measurement of transverse momentum
+\cite{Aad:2008zzm}. A trigger system, described in the next section,
+decides whether an event is kept or discarded to reduce the data
+rates to a manageable level.
 
 \section{Trigger}
 
@@ -293,10 +300,10 @@ artamonov2008atlas, Aad:2008zzm}.
 \section{Muon spectrometry}
 
 Muon spectrometer is the outermost part of ATLAS and was designed to
-trigger on muons up to $|\eta| < 2.4$ and measure their momentum up
-to $|\eta| < 2.7$. It works by measuring the bending of the tracks
+trigger on muons up to $|\eta| < 2.4$ and measure their transverse momentum up
+to $|\eta| < 2.7$. It works by measuring the sagitta of the tracks
 in a magnetic field, similarly to the tracker. However, the field
-bends muon tracks in the $y-z$ plane, and is provided by three
+bends muon tracks in the $y-z$ plane, and is provided by three sets of
 toroidal magnets, one in the barrel, and one in each of the endcaps,
 as shown in Figure \ref{fig:exp:atlas}. 
 
