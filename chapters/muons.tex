@@ -33,12 +33,33 @@ to improve muon momentum resolution.
 
 \section{Reconstruction}
 
-Track reconstruction in ID. vertex finding.
+Tracks in the inner detector are reconstructed indiscriminately for
+all charged particles. First, raw data from the detectors is converted
+into space-points which form the basis of tracking. The main track finding
+algorithm proceeds inside-out by finding the seeds in the silicon layers.
+The seeds are then combined into roads and the extension to the TRT layer
+is probed to add hits in the outermost layer. The final collection of hits
+is fit to obtain the track parameters \cite{ATLAS-CONF-2010-072, Cornelissen:1020106}.
+Tracks with at least $\pt > 400$ \MeV~and some other requirements, found
+in Ref. \cite{ATL-PHYS-PUB-2015-026} are then used to find the primary
+vertices. The reconstruction of primary vertices proceeds by first finding
+the vertices and then fitting them \cite{Aaboud:2016rmg}. Finally, tracks
+are associated with vertices which allows the computation of $d_0$, the
+transverse impact parameter, which quantifies the shortest distance
+between the track and the beam-line, and $z_0$, the longitudinal impact
+parameter, which quantifies the difference between the $z$ coordinate
+of the associated primary vertex, and the $z$ coordinate of the point
+where $d_0$ is computed.
+
+
+Muon reco in MS, combination.
 
 Muon reconstruction algorithms, muon types.
 
+\cite{ILLINGWORTH198887} % hough transform
+
 Efficiencies, scale factors, tag and probe method.
-\cite{Aad:2016jkr}
+\cite{Aad:2016jkr} % muons
 
 \section{Momentum calibration}
 
