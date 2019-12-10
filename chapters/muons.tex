@@ -61,11 +61,42 @@ segments are needed to form a track, apart from the transition region
 in which a single high quality segment can be used to build a track.
 Finally, a global $\chi^2$ fit of the track is performed and the track
 accepted if it satisfies the quality criteria. Otherwise, hits with 
-high contribution to the $\chi^2$ value are removed and the track refit.
+high contribution to the $\chi^2$ value are removed and the track re-fit.
 Hits can also be added to the track if they are consistent with the
-track and the track is refit if these candidates are found \cite{Aad:2016jkr}.
+track and the track is re-fit if these candidates are found \cite{Aad:2016jkr}.
 
-Muon reconstruction algorithms, muon types.
+Finally, the information from subdetectors is combined to form muon
+candidates. Depending on which subdetectors are used for building the
+candidate, four muon types are defined:
+\begin{itemize}
+\item Combined (CB) muons are reconstructed from a pair of tracks
+in the ID and the MS. A global re-fit is performed using hits from 
+both subdetectors with the flexibility to add or remove hits in the
+MS to improve the fit quality. Most muons are reconstructed by the
+outside-in approach extrapolating the MS tracks to the ID, but the
+inside-out reconstruction is also used as the complementary approach 
+\cite{Aad:2016jkr}.
+\item Segment-tagged (ST) muons are formed by combining the ID track
+with a single segment in the MDT or CSC chambers and were designed
+to recover muon reconstruction efficiency for low $\pt$ muons which
+only cross a single layer of the MS or cross the regions where
+MS has poor acceptance \cite{Aad:2016jkr}.
+\item Calorimeter-tagged (CT) muons match an ID track with a 
+calorimeter deposit consistent with a minimum-ionising particle.
+This type recovers the muon reconstruction efficiency in the regions
+not covered by the MS, for example in the $|\eta|<0.1$, where cabling
+and services to the ID are located, and where the support structure
+is located. As a consequence of using the calorimeter this type has
+the lowest purity \cite{Aad:2016jkr}.
+\item Extrapolated (ME) muons are built from tracks in the MS that
+are loosely compatible with originating from the interaction point.
+This type is used to recover the reconstruction efficiency in the 
+forward region $2.5 < |\eta| < 2.7$ not covered by the ID \cite{Aad:2016jkr}.
+\end{itemize}
+Finally, overlaps between different muons are resolved by order of
+precedence starting with CB muons, followed by ST muons, and
+finally the CT muons. ME ambiguities are resolved by analysing the
+track fit quality and the number of hits \cite{Aad:2016jkr}.
 
 Efficiencies, scale factors, tag and probe method.
 
