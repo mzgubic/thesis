@@ -129,12 +129,40 @@ systematic uncertainties arising from the selection requirements.
 Tight muons maximise the purity of muons at the cost of some
 identification efficiency and use only CB muons with additional
 requirements on the track quality. Medium muons include CB and ME
-muon types are the default selection that minimises the systematic
+muon types and are the default selection that minimises the systematic
 uncertainties. Loose muons are designed to maximise the selection
 efficiency and include all four muon types, with the CT and ST types
 restricted to the $|\eta| < 0.1$ \cite{Aad:2016jkr}.
 
-Efficiencies, scale factors, tag and probe method.
+The fraction of prompt muons that are reconstructed and identified
+is called reconstruction efficiency, and is in general different
+in data and MC simulation. Efficiencies for Loose, Medium, and Tight
+selections are shown in Figure \ref{fig:muon:reco_eff} for data and
+MC simulation as a function of muon pseudorapidity. In the analysis,
+MC simulation is corrected to data by applying weights, known as
+scale factors, to account for the differences in efficiencies between
+data and MC simulation. The scale factors are defined as
+\begin{equation}
+\text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}},
+\end{equation}
+where SF is the scale factor, and $\epsilon$ is some efficiency,
+as measured in data or MC simulation. The measurement of the
+efficiencies, scale factors, and the associated
+uncertainties is described in detail in Ref. \cite{Aad:2016jkr}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/muons/reco_eff}
+  \caption[Muon reconstruction efficiency.]{Muon reconstruction
+  efficiency measurement for the Loose (yellow diamonds), Medium
+  (red squares), and Tight (blue circles) selections in data
+  (filled markers) and MC simulation (empty markers) as a function
+  of muon pseudorapidity with $\pt > 15~\GeV$. The measurement
+  uses $Z\rightarrow\mu\mu$ events in full Run 2 dataset of 139 $\ifb$
+  at $\sqrt{s}=13~\TeV$. Error bars represent a quadratic sum of
+  statistical and systematic uncertainties. From Ref. \cite{Junggeburth:2685295}}
+  \label{fig:muon:reco_eff}
+\end{figure}
 
 \section{Momentum calibration}
 
