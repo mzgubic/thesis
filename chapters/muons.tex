@@ -160,13 +160,73 @@ uncertainties is described in detail in Ref. \cite{Aad:2016jkr}.
   of muon pseudorapidity with $\pt > 15~\GeV$. The measurement
   uses $Z\rightarrow\mu\mu$ events in full Run 2 dataset of 139 $\ifb$
   at $\sqrt{s}=13~\TeV$. Error bars represent a quadratic sum of
-  statistical and systematic uncertainties. From Ref. \cite{Junggeburth:2685295}}
+  statistical and systematic uncertainties. From Ref. \cite{Junggeburth:2685295}.}
   \label{fig:muon:reco_eff}
 \end{figure}
 
 \section{Momentum calibration}
 
-Things that affect the resolution.
+The response of the ATLAS detector is accurately modelled by the
+MC simulation. However, additional momentum calibration of MC simulation
+is needed to achieve per mille level precision in muon momentum scale
+and percent level precision in momentum resolution \cite{Aad:2016jkr}.
+
+The corrections are applied separately to ID and MS tracks and 
+have a dependence on the $\eta$ and $\phi$ of the muon track. The
+corrected momentum
+\begin{equation}
+\pt^\text{Cor} = \frac{\pt + \sum_{n=0}^1 s_n(\eta, \phi) \cdot \pt^n}
+{1 + \sum_{m=0}^2 \Delta r_m (\eta, \phi) \cdot \pt^{m-1} \cdot g_m},
+\label{eq:muon:calibration}
+\end{equation}
+where $s_n(\eta, \phi)$ are the scale corrections, and
+$\Delta r_m (\eta, \phi)$ are the resolution corrections,
+and $g_m$ is a random variate from a normal distribution with zero mean
+and variance of 1, 
+can be computed from the uncorrected transverse momentum in simulation,
+$\pt$, once the values of $s_n$ and $\Delta r_m$ are known \cite{Aad:2016jkr}. The
+denominator in Eq. \ref{eq:muon:calibration} assumes that the relative
+transverse momentum resolution can be parametrised as
+\begin{equation}
+\frac{\sigma(\pt)}{\pt} = \frac{r_0}{\pt} \oplus r_1 \oplus r_2 \cdot \pt
+\end{equation}
+where the $r_0$ term accounts for the fluctuations of the energy loss, the
+$r_1$ term for multiple scattering, and the $r_2$ term for the
+resolution in the measurement of the sagitta due to intrinsic hit resolution
+and misalignment of the MS \cite{Aad:2016jkr}.
+
+The corrected momentum of CB muons is then determined by combining the
+corrected momenta of ID and MS muons
+\begin{equation}
+\pt^\text{CB, Cor} = f \cdot \pt^\text{ID, Cor} + (1-f) \cdot \pt^\text{MS, Cor},
+\end{equation}
+with the weight $f$ derived for each muon individually from the equivalent
+equation with uncorrected momenta, thus assuming the relative contributions
+of the two subdetectors are unchanged by the momentum corrections \cite{Aad:2016jkr}.
+
+The determination of $s_n$ and $\Delta r_m$ constants proceeds by an
+iterative fitting procedure described in detail in Ref. \cite{Aad:2016jkr}.
+It extracts the constants by binned maximum likelihood fits of the
+invariant mass spectra of $Z\rightarrow\mu\mu$ and $J/\psi\rightarrow\mu\mu$.
+The validation of the calibration using CB muons in $Z\rightarrow\mu\mu$
+events is shown in Figure \ref{fig:muon:calibration} as a function of the
+pseudorapidity of the leading muon. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/muons/scale} \
+  \includegraphics[width=0.8\textwidth]{figures/muons/reso}
+  \caption[Muon calibration validation.]{Muon calibrations
+  validation compares the scale (top) and resolution (bottom)
+  of $Z\rightarrow\mu\mu$ events using CB muons in part of
+  2018 data (black circles) to the corrected MC simulation
+  (red line). The systematic uncertainty on the corrected MC
+  simulation is shown as blue bands. The bottom panel in each
+  figure shows the ratio between the data and MC simulation.
+  From Ref. \cite{Barone:2320120}}
+  \label{fig:muon:calibration}
+\end{figure}
+
 
 \section{Isolation}
 
