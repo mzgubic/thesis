@@ -33,7 +33,7 @@ to improve muon momentum resolution.
 
 \section{Reconstruction}
 
-Tracks in the inner detector are reconstructed indiscriminately for
+Tracks in the inner detector (ID) are reconstructed indiscriminately for
 all charged particles. First, raw data from the detectors is converted
 into space-points which form the basis of tracking. The main track finding
 algorithm proceeds inside-out by finding the seeds in the silicon layers.
@@ -51,15 +51,23 @@ parameter, which quantifies the difference between the $z$ coordinate
 of the associated primary vertex, and the $z$ coordinate of the point
 where $d_0$ is computed.
 
-
-Muon reco in MS, combination.
+The reconstruction of tracks in the muon spectrometer (MS) proceeds by
+first finding track segments in the MDT chambers using a Hough transform
+\cite{ILLINGWORTH198887}, and then reconstructing them by fitting a
+straight line to the associated hits. The segments are combined to
+form MS tracks starting from the middle layer and finding compatible
+segments in the inner and outer layers of the spectrometer. At least two
+segments are needed to form a track, apart from the transition region
+in which a single high quality segment can be used to build a track.
+Finally, a global $\chi^2$ fit of the track is performed and the track
+accepted if it satisfies the quality criteria. Otherwise, hits with 
+high contribution to the $\chi^2$ value are removed and the track refit.
+Hits can also be added to the track if they are consistent with the
+track and the track is refit if these candidates are found \cite{Aad:2016jkr}.
 
 Muon reconstruction algorithms, muon types.
 
-\cite{ILLINGWORTH198887} % hough transform
-
 Efficiencies, scale factors, tag and probe method.
-\cite{Aad:2016jkr} % muons
 
 \section{Momentum calibration}
 
