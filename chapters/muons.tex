@@ -96,7 +96,43 @@ forward region $2.5 < |\eta| < 2.7$ not covered by the ID \cite{Aad:2016jkr}.
 Finally, overlaps between different muons are resolved by order of
 precedence starting with CB muons, followed by ST muons, and
 finally the CT muons. ME ambiguities are resolved by analysing the
-track fit quality and the number of hits \cite{Aad:2016jkr}.
+track fit quality and the number of hits.
+The requirements on the number of hits and holes
+\footnote{A \textit{hole} is an active sensor traversed by the
+track that contains no hits. It also falls between two hits assigned to the track.}
+in the ID and MS detectors are also used to guarantee a robust
+measurement of $\pt$ \cite{Aad:2016jkr}.
+
+In addition to that, a number of quality requirements must be
+satisfied to differentiate between muons originating from the
+interaction point (prompt muons) and the muons coming from the
+decay of light hadrons. To this end the following variables are
+defined for CB muons:
+\begin{itemize}
+\item normalised $\chi^2$ of the combined track fit.
+\item $\rho' = \frac{|\pt^{\text{ID}} - \pt^{\text{MS}}|}{\pt^{\text{CB}}}$,
+where the superscript denotes whether the $\pt$ refers to the
+ID or MS muon candidate, or the CB muon.
+\item $q/p$ significance $ = \frac{\left|\left(\frac{q}{p}\right)_\text{ID}
+- \left(\frac{q}{p}\right)_\text{MS}\right|}
+{\sqrt{\sigma^2_\text{ID} + \sigma^2_\text{MS}}}$,
+where the $\left(\frac{q}{p}\right)$ is the measurement of the ratio of
+the charge and the momentum, $\sigma$ are the uncertainties on
+the corresponding quantities, and the subscript refers to whether
+the measurement comes from the ID or the MS muon candidate.
+\end{itemize}
+
+Four overlapping muon identification selections, namely Loose, Medium, Tight,
+and High-$\pt$, are supported by the muon performance group to 
+serve different physics analyses and unify the evaluation of
+systematic uncertainties arising from the selection requirements.
+Tight muons maximise the purity of muons at the cost of some
+identification efficiency and use only CB muons with additional
+requirements on the track quality. Medium muons include CB and ME
+muon types are the default selection that minimises the systematic
+uncertainties. Loose muons are designed to maximise the selection
+efficiency and include all four muon types, with the CT and ST types
+restricted to the $|\eta| < 0.1$ \cite{Aad:2016jkr}.
 
 Efficiencies, scale factors, tag and probe method.
 
