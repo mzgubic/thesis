@@ -292,8 +292,8 @@ or non-prompt muons, collectively referred to as background. In order
 to measure the efficiency of prompt muons, the background must be
 subtracted in the efficiency measurement in data. The old method of
 background subtraction relied on the assumption that the number of
-background events in data is the same in the same charge (SC) as in
-the opposite charge (OC) phase space:
+background events in data is the same in the same charge
+(SC) as in the opposite charge (OC) phase space:
 \begin{equation}
 \epsilon_{\zmumu} =
 \frac{N_\text{match}^\text{OC} - T \cdot N_\text{match}^\text{SC}}
@@ -303,8 +303,8 @@ where $T$ is the transfer factor, $N_\text{probe}$ is the number of
 probe muons and $N_\text{match}$ is the number of probe muons passing
 the isolation selection in either SC or OC phase space, as indicated by
 the superscript. The leading systematic uncertainty at low muon $\pt$
-comes from the background subtraction, as the assumption $T=1$ is
-challenged. Additional systematic uncertainties on the scale factor
+comes from the background subtraction, namely the assumption $T=1$.
+Additional systematic uncertainties on the scale factor
 measurement are computed by varying the selection requirements and
 adding individual unceratinties in quadrature, and adding a fixed
 uncertainty due to variation in $\eta$ as the scale factors are
@@ -313,8 +313,8 @@ summarised in Table \ref{tab:muon:systs} below.
 
 \begin{table}[h]
 \centering
-\caption{Systematic uncertainties associated with the measurement
-of the isolation selection scale factors.}
+\caption{Systematic uncertainties in the measurement of the isolation
+selection scale factors.}
 \label{tab:muon:systs}
 \begin{tabular}{c c}
 \toprule
@@ -338,8 +338,48 @@ method, described in the next section.
 
 \section{Isolation efficiency background subtraction}
 
+The core idea of the novel background subtraction method is to
+reduce the assumption that the number of SC events is the same as
+the number of OC events, to the assumption that the shape of the
+invariant mass spectrum for background events is the same in the
+SC and OC events. The SC region is used to determine the shape
+of the background events, while the normalisation is determined
+from the template fit to OC data.
+
+Efficiency measured in data is a sum of efficiencies of the
+components, weighted by the component fractions
+\begin{equation}
+\epsilon_\text{measured} =
+\text{f}_{\zmumu}   \cdot \epsilon_{\zmumu} +
+\text{f}_\text{EWK} \cdot \epsilon_\text{EWK}
+\text{f}_\text{QCD} \cdot \epsilon_\text{QCD},
+\end{equation}
+where $f$ represents the fraction of the component, and $\epsilon$
+the efficiency of the component. Subscript QCD refers to the
+background component due to muons in jets, and EWK refers to the
+background from electroweak processes\footnote{Consists of
+$W^\pm\rightarrow\mu^\pm \nu$, $Z\rightarrow \tau\tau$,
+$WW\rightarrow \ell \nu \ell \nu$, $WZ\rightarrow \ell \nu \ell \ell$,
+$WZ\rightarrow qq \ell \ell$, $ZZ\rightarrow\ell\ell\ell\ell$,
+$ZZ\rightarrow\nu\nu\ell\ell$, $ZZ\rightarrow qq\ell\ell$,
+$t\bar t$ MC samples generated with \textsc{Powheg}+\textsc{Pythia}8.}.
+The efficiency of $\zmumu$ events in data can therefore be expressed as
+\begin{equation}
+\epsilon_{\zmumu} = \frac
+{\epsilon_\text{measured} - \text{f}_\text{EWK} \cdot \epsilon_\text{EWK} - \text{f}_\text{QCD} \cdot \epsilon_\text{QCD}}
+{1 - \text{f}_\text{EWK} - \text{f}_\text{QCD}},
+\end{equation}
+where $\text{f}_{\zmumu} = 1 - \text{f}_\text{EWK} - \text{f}_\text{QCD}$
+was used. The efficiency of the EWK component is measured in MC,
+while the efficiencies of QCD components are measured in SC data.
+
+
 LooseTrackOnly, PflowFixedCutLoose
+
+\section{Other isolation studies}
 
 \section{VADER4mu}
 
 \section{Other objects}
+
+
