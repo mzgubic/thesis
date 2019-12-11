@@ -141,7 +141,7 @@ selections are shown in Figure \ref{fig:muon:reco_eff} for data and
 MC simulation as a function of muon pseudorapidity. In the analysis,
 MC simulation is corrected to data by applying weights, known as
 scale factors, to account for the differences in efficiencies between
-data and MC simulation. The scale factors are defined as
+data and MC simulation. The scale factors (SF) are defined as
 \begin{equation}
 \text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}},
 \end{equation}
@@ -158,7 +158,7 @@ uncertainties is described in detail in Ref. \cite{Aad:2016jkr}.
   (red squares), and Tight (blue circles) selections in data
   (filled markers) and MC simulation (empty markers) as a function
   of muon pseudorapidity with $\pt > 15~\GeV$. The measurement
-  uses $Z\rightarrow\mu\mu$ events in full Run 2 dataset of 139 $\ifb$
+  uses $\zmumu$ events in full Run 2 dataset of 139 $\ifb$
   at $\sqrt{s}=13~\TeV$. Error bars represent a quadratic sum of
   statistical and systematic uncertainties. From Ref. \cite{Junggeburth:2685295}.}
   \label{fig:muon:reco_eff}
@@ -212,7 +212,7 @@ The validation of the calibration using CB muons in $Z\rightarrow\mu\mu$
 events is shown in Figure \ref{fig:muon:calibration} as a function of the
 pseudorapidity of the leading muon. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/muons/scale} \
   \includegraphics[width=0.8\textwidth]{figures/muons/reso}
@@ -227,10 +227,118 @@ pseudorapidity of the leading muon.
   \label{fig:muon:calibration}
 \end{figure}
 
-
 \section{Isolation}
 
-\section{Isolation background subtraction}
+Prompt muons, produced at the interaction point or from the decay of heavy
+bosons, often need to be distinguished from muons coming from a secondary
+vertex as a result of the decay of a $\tau$ lepton, heavy quarks, or
+hadrons. Other processes can also fake a muon signature in the detector,
+for example a jet punching through the hadron calorimeter in the muon
+spectrometer could be reconstructed as a muon. The key to identification
+of non-fake prompt muons is that they are produced in isolation from
+other particles, unlike fake or non-prompt muons which are usually
+surrounded by a jet of other particles. Two sets of variables, one based
+on the tracker information and the other on calorimeter information, are
+used to identify prompt muons.
+
+Track-based isolation variable, $\pt^{\text{varcone}, R}$, is defined
+as the scalar sum of $\pt$ of non-muon tracks inside the cone of radius
+$\Delta R = \min(R, 10~\GeV/\pt^\mu)$, where $R = \sqrt{\Delta \eta^2 +
+\Delta \phi^2}$ and $\pt^\mu$ is the transverse momentum of the muon.
+The tracks used in the sum have $\pt > 1~\GeV$,
+$|\eta| < 2.5$, longitudinal impact parameter $< 3~\mm$, and satisfy a
+Loose track quality. The cone size is chosen to vary with $\pt^\mu$
+to follow the collimation of tracks in highly boosted systems \cite{Aad:2016jkr}.
+
+Calorimeter-based isolation variable relies on the notion of a topological
+cluster, built by seeding the cluster with a calorimeter cell with
+signal-to-noise (S/N) greater than four, adding the neighbouring cells with
+S/N $ > 2$, and finally adding the surrounding cells \cite{Aad:2011he}. The
+variable $E_\text{T}^\text{topocone20}$ is defined as the sum of
+the transverse energy of topological clusters in a cone of size $\Delta
+R = 0.2$, after subtracting for the energy deposited by the muon itself
+and the estimate of the energy coming from \pileup~related effects. The
+\pileup~contributions are estimated using jet area technique \cite{CACCIARI2008119}
+and are corrected on event-by-event basis \cite{Aad:2016jkr}.
+
+Isolation selections are defined as cuts on these variables. Various
+selections have been supported in the past few years, to target the needs
+of different analyses and to adapt to higher \pileup~conditions. The 
+selections differ in signal efficiency and backgorund rejection
+throughout the $\pt$ regime. For each of the isolation selections a
+measurement of efficiencies in data and MC simulation is performed, as
+well as the evaluation of scale factors, which vary as a function
+of muon $\pt$. The measurement of the efficiencies is performed on
+$Z\rightarrow\mu\mu$ events in data and MC simulation using the
+tag-and-probe method \cite{Aad:2016jkr}.
+
+Tag-and-probe selects events with a pair of muons with invariant mass
+within 10 GeV of the $Z$ boson mass, where the tag muon is required to
+have triggered the event, and the probe muon is used for the efficiency
+measurements. More precisely, the tag muon is required to satisfy
+$\pt > 24~\GeV$, pass Loose isolation selection, and must be trigger
+matched to the muon firing the trigger. Both tag and probe muons are
+required to be CB muons, passing the Medium quality requirements,
+and pass requirements on transverse and longitudinal impact parameters
+or their significances $d_0/\sigma_{d_0} < 3.0$, $|z_0| < 10~\mm$ and
+$|z_0 \sin{\theta}| < 0.5~\mm$. They are also required to be well
+separated $R_{\mu,\mu} > 0.3$ from each other, and the probe should
+be separated from jets $R_{j,\mu} > 0.4$.
+
+The MC simulation contains a pure sample of $Z\rightarrow\mu\mu$ events,
+but the recorded data consists of an unknown mixed stream of underlying
+processes, both the $Z\rightarrow\mu\mu$ decays as well events with fake
+or non-prompt muons, collectively referred to as background. In order
+to measure the efficiency of prompt muons, the background must be
+subtracted in the efficiency measurement in data. The old method of
+background subtraction relied on the assumption that the number of
+background events in data is the same in the same charge (SC) as in
+the opposite charge (OC) phase space:
+\begin{equation}
+\epsilon_{\zmumu} =
+\frac{N_\text{match}^\text{OC} - T \cdot N_\text{match}^\text{SC}}
+     {N_\text{probe}^\text{OC} - T \cdot N_\text{probe}^\text{SC}},
+\end{equation}
+where $T$ is the transfer factor, $N_\text{probe}$ is the number of
+probe muons and $N_\text{match}$ is the number of probe muons passing
+the isolation selection in either SC or OC phase space, as indicated by
+the superscript. The leading systematic uncertainty at low muon $\pt$
+comes from the background subtraction, as the assumption $T=1$ is
+challenged. Additional systematic uncertainties on the scale factor
+measurement are computed by varying the selection requirements and
+adding individual unceratinties in quadrature, and adding a fixed
+uncertainty due to variation in $\eta$ as the scale factors are
+provided only as a function of $\pt$. The systematic variations are
+summarised in Table \ref{tab:muon:systs} below.
+
+\begin{table}[h]
+\centering
+\caption{Systematic uncertainties associated with the measurement
+of the isolation selection scale factors.}
+\label{tab:muon:systs}
+\begin{tabular}{c c}
+\toprule
+Description & Variation \\
+\midrule
+Background estimation         & $T=0.5, T=2.0$ \\
+Dependence on $\eta$          & Flat 0.2\% uncertainty \\
+$m_{\mu\mu}$ window           & $m_Z \pm 5, 20~\GeV$ \\ 
+Probe muon quality            & Loose, Tight \\
+Tag muon isolation            & Every other isolation selection \\ 
+Probe muon to jet separation  & $\Delta R_{j, \mu} > 0.3, 0.5$ \\
+Probe to tag muon separation  & $\Delta R_{\mu, \mu} > 0.2, 0.5$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+The scale factors are evaluated as a function of probe muon $\pt$,
+with uncertainties compute in each bin separately. At low $\pt$
+($< 15~\GeV$), the leading uncertainty is the background subtraction,
+which prompted the development of a new background subtraction
+method, described in the next section.
+
+\section{Isolation efficiency background subtraction}
+
+LooseTrackOnly, PflowFixedCutLoose
 
 \section{VADER4mu}
 
