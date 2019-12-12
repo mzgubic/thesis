@@ -370,9 +370,83 @@ The efficiency of $\zmumu$ events in data can therefore be expressed as
 {1 - \text{f}_\text{EWK} - \text{f}_\text{QCD}},
 \end{equation}
 where $\text{f}_{\zmumu} = 1 - \text{f}_\text{EWK} - \text{f}_\text{QCD}$
-was used. The efficiency of the EWK component is measured in MC,
-while the efficiencies of QCD components are measured in SC data.
+was used. The efficiency $\epsilon_\text{EWK}$ is measured in MC,
+while the efficiency $\epsilon_\text{QCD}$ is measured in SC data.
 
+The fractions $\text{f}_\text{EWK}$ and $\text{f}_\text{QCD}$ are
+determined via a template fit to the OC data, shown in Figure
+\ref{fig:muon:fit}, in each of the $\pt^\text{probe}$ bins.
+The shapes of the templates are allowed to vary in the fit within
+statistical uncertainties.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/muons/fit}
+  \caption[Muon isolation background subtraction fit.]{Muon isolation
+  background subtraction template fit in OC data to determine the
+  $\text{f}_\text{EWK}$ and $\text{f}_\text{QCD}$ fractions in the
+  $4 < \pt^\text{probe} < 5~\GeV$ bin.
+  Data is shown as blue points, QCD template, taken from SC data, is
+  shown in blue. The other template is determine from MC and is a
+  combination of the $\zmumu$ events, shown in white, and the EWK
+  processes, shown in green. Error bars show statistical
+  uncertainties. A maximum likelihood fit with the exponential
+  function to the EWK component is shown in red. The reduced $\chi^2$
+  values are shown on the figure for both the template fit and the
+  subsequent exponential function fit. Furthermore, fraction values
+  are shown both for the full invariant mass range, over which the
+  fit is performed, and in the $\pm 10~\GeV$ mass window (mw) around
+  the $Z$ peak.}
+  \label{fig:muon:fit}
+\end{figure}
+
+While the fit is performed over a wide invariant mass range ($\pm30~\GeV$)
+around the $Z$ peak, the fractions need to be determined in a narrower
+mass range in which the efficiency measurement is made ($\pm10~\GeV$).
+This is done by integrating the fitted templates in the desired range,
+using linear interpolation where necessary. For the EWK template, in
+order to decrease the statistical fluctuations, an exponential fit
+to the template is integrated instead. When varying the mass range
+of the measurement, as shown in Table \ref{tab:muon:systs}, the fractions
+are recomputed in the adjusted range.
+
+The current method no longer assumes that the normalisation of background
+events is the same in SC and OC data. Instead, the assumption is reduced
+to the shape of the background to be the same, with normalisation 
+determined via the fit. In order to estimate the associated systematic
+uncertainty the scale factors are re-computed using different QCD templates.
+Recall, the nominal template is taken from the SC data, where the number of
+genuine $\zmumu$ events is negligible. Similarly, two other templates are
+constructed in the $\zmumu$ depleted regions, where the requirement on the
+impact parameter significance ($|d_0/\sigma_{d_0}|$) is inverted in both
+the SC and OC data. Region definitions are shown in Table \ref{tab:muon:reg}.
+
+\begin{table}[h]
+\centering
+\caption{Region definitions from which the QCD template shape is taken
+for the isolation background subtraction fit.}
+\label{tab:muon:reg}
+\begin{tabular}{c c c c c}
+\toprule
+Region   & Charge & $\pt$ range & Tag muon $|d_0/\sigma_{d_0}|$ & Probe muon $|d_0/\sigma_{d_0}|$ \\
+\midrule
+Region B & SC & 3-25 \GeV & $|d_0/\sigma_{d_0}|_\text{tag} < 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} < 3.0$ \\
+\midrule
+\multirow{2}{*}{Region C} & OC & 3-25 \GeV  & $|d_0/\sigma_{d_0}|_\text{tag} > 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} > 3.0$ \\
+& OC & 3-25 \GeV  & $|d_0/\sigma_{d_0}|_\text{tag} > 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} > 3.0$ \\
+\midrule
+Region D & SC & 3-25 \GeV & $|d_0/\sigma_{d_0}|_\text{tag} > 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} > 3.0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+validation study with pseudodata.
+
+talk about the range in which the method is applicable
+
+possible improvements of the method.
 
 LooseTrackOnly, PflowFixedCutLoose
 
