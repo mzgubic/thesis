@@ -310,7 +310,6 @@ adding individual unceratinties in quadrature, and adding a fixed
 uncertainty due to variation in $\eta$ as the scale factors are
 provided only as a function of $\pt$. The systematic variations are
 summarised in Table \ref{tab:muon:systs} below.
-
 \begin{table}[h]
 \centering
 \caption{Systematic uncertainties in the measurement of the isolation
@@ -378,7 +377,6 @@ determined via a template fit to the OC data, shown in Figure
 \ref{fig:muon:fit}, in each of the $\pt^\text{probe}$ bins.
 The shapes of the templates are allowed to vary in the fit within
 statistical uncertainties.
-
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/muons/fit}
@@ -399,7 +397,6 @@ statistical uncertainties.
   the $Z$ peak.}
   \label{fig:muon:fit}
 \end{figure}
-
 While the fit is performed over a wide invariant mass range ($\pm30~\GeV$)
 around the $Z$ peak, the fractions need to be determined in a narrower
 mass range in which the efficiency measurement is made ($\pm10~\GeV$).
@@ -420,7 +417,6 @@ genuine $\zmumu$ events is negligible. Similarly, two other templates are
 constructed in the $\zmumu$ depleted regions, where the requirement on the
 impact parameter significance ($|d_0/\sigma_{d_0}|$) is inverted in both
 the SC and OC data. Region definitions are shown in Table \ref{tab:muon:reg}.
-
 \begin{table}[h]
 \centering
 \caption{Region definitions from which the QCD template shape is taken
@@ -428,25 +424,76 @@ for the isolation background subtraction fit.}
 \label{tab:muon:reg}
 \begin{tabular}{c c c c c}
 \toprule
-Region   & Charge & $\pt$ range & Tag muon $|d_0/\sigma_{d_0}|$ & Probe muon $|d_0/\sigma_{d_0}|$ \\
+Region   & Charge & $\pt^\text{probe}$ range & $|d_0/\sigma_{d_0}|_\text{tag}$ & $|d_0/\sigma_{d_0}|_\text{probe}$ \\
 \midrule
-Region B & SC & 3-25 \GeV & $|d_0/\sigma_{d_0}|_\text{tag} < 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} < 3.0$ \\
+Region B & SC & full & $< 3.0$ & $ < 3.0$ \\
 \midrule
-\multirow{2}{*}{Region C} & OC & 3-25 \GeV  & $|d_0/\sigma_{d_0}|_\text{tag} > 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} > 3.0$ \\
-& OC & 3-25 \GeV  & $|d_0/\sigma_{d_0}|_\text{tag} > 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} > 3.0$ \\
+\multirow{2}{*}{Region C} &  \multirow{2}{*}{OC} & $ < 10~\GeV$ & $ > 3.0$ & $ > 2.0$ \\
+                          &                      & $ > 10~\GeV$ & $ > 5.0$ & $ > 5.0$ \\
 \midrule
-Region D & SC & 3-25 \GeV & $|d_0/\sigma_{d_0}|_\text{tag} > 3.0$ & $|d_0/\sigma_{d_0}|_\text{probe} > 3.0$ \\
+Region D & SC & full & $ > 3.0$ & $ > 2.0$ \\
 \bottomrule
 \end{tabular}
 \end{table}
+Region C definition becomes tighter above $\pt^\text{probe} > 10~\GeV$
+in order reduce the number of $\zmumu$ events to negligible levels. The
+systematic uncertainty is taken to be the largest variation in efficiency
+compared to the nominal efficiency obtained by taking the QCD template
+from region B. Denoting the $\zmumu$ efficiency computed by taking the
+QCD template from region $X$ with $\epsilon_X$, the systematic
+uncertainty associated with the novel method of background subtraction
+can be written as
+\begin{equation}
+\text{bkg. sub. syst. unc.} = \max_{X \in \{C, D\}} \{ \vert \epsilon_B - \epsilon_X\vert \}.
+\end{equation}
+and is computed in each $\pt^\text{probe}$ bin separately. The effect
+of subtraction is shown in Figure \ref{fig:muon:sub}.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/muons/subtraction}
+  \caption[Muon isolation efficiencies.]{Muon isolation efficiencies
+  for the FixedCutLoose isolation selection as a function of $\pt$.
+  MC simulation efficiency is shown in red, mixed efficiency measured
+  in data directly is shown in black, and the $\zmumu$ efficiency
+  in data, obtained via the background subtraction, is shown in blue.
+  Error bars are statistical, the systematic uncertainty arising from
+  the use of different templates is shown as a blue band.}
+  \label{fig:muon:sub}
+\end{figure}
+The efficiencies and scale factors computed with this method, along with
+full systematic uncertainties, are shown in Figure \ref{fig:muon:sf} for
+the GradientLoose isolation selection.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/muons/sf}
+  \caption[Muon isolation scale factors.]{Muon isolation efficiencies
+  (top panel) and scale factors (bottom panel) for the GradientLoose
+  isolation selection as a function of $\pt$ in 2016 data (black filled
+  circles) and MC simulation (empty red circles). Error bars represent
+  statistical uncertainties, error bands on the scale factors represent
+  statistical uncertainties (purple) and statistical and systematic
+  uncertainties added in quadrature (yellow).
+  From Ref. \cite{Zgubic:2293041}.}
+  \label{fig:muon:sf}
+\end{figure}
+Overall, the method greatly reduces the systematic uncertainty from
+background subtraction in the determination of isolation scale factors.
+At low $\pt$, where background subtraction used to be the leading
+uncertainty, the overall systematic uncertainty on the scale factors
+is reduced by up to 75\%. This enabled a better reach in searches for
+electroweak SUSY scenarios with compressed mass spectra
+\cite{PhysRevD.97.052010} and a more precise studies of low mass
+Drell-Yan double differential cross section \cite{Giuli:2681125}.
 
 
 
-validation study with pseudodata.
 
-talk about the range in which the method is applicable
 
 possible improvements of the method.
+
+better treatment of EWK components and efficiencies measured in data.
+
+talk about the range in which the method is applicable
 
 LooseTrackOnly, PflowFixedCutLoose
 
