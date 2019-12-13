@@ -542,6 +542,9 @@ resolution of the ATLAS detector. This could potentially be exploited
 the improve the sensitivity of the search and prompted the study to
 understand the \textbf{V}ariables \textbf{A}ffecting \textbf{DE}tector
 \textbf{R}esolution \textbf{for} \textbf{mu}ons (VADER4$\mu$).
+Ultimately the results were not used in the $\hmumu$ analysis
+because the achievable gain is too small to justify the additional
+complexity.
 
 There are two main motivations for the study in the context of
 improving the sensitivity of the $\hmumu$ analysis:
@@ -563,7 +566,8 @@ tracks, along with their uncertainties, and combined statistically.
 \end{itemize}
 Two datasets are prepared to facilitate the study. The "single muon"
 dataset consists of reconstructed prompt muons from the MC simulation
-of a variety of physics processes, with truth-level $\pt$ information
+of a variety of physics processes\footnote{no $\zmumu$ to avoid overlap
+with the dimuon dataset}, with truth-level $\pt$ information
 available. It is preprocessed by removing some of the muons, resulting
 in a $\pt$ distribution that is uniform for $\pt < 200~\GeV$. The "dimuon"
 dataset consists of data and MC simulation of the $\zmumu$ process
@@ -592,25 +596,27 @@ to predict a correction for the MS muons.
 A trained model is then used to provide corrections to the
 measured $\pt^\text{ID}$. The distribution of residuals before and
 after the correction is shown in Figure \ref{fig:muon:vader-single}
-for the training and test splits of the single muon dataset.
-The reduction in the standard deviation of the residual distribution
-is 17\% for the test set, compared to the uncorrected distribution.
+for the training and test splits of the single muon dataset for muons
+with $1.12 < |\eta| < 1.25$. The reduction in the standard deviation
+of the residual distribution is 17\% for the test set, compared to
+the uncorrected distribution. Similar improvements are observed for
+other $\eta$ slices.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/muons/vader-single}
+  \includegraphics[width=0.7\textwidth]{figures/muons/vader-single}
   \caption[VADER4$\mu$ correction on single muon dataset.]
-  {The distribution of residuals for uncorrected (dark blue) and 
-  corrected (blue) measurements of momentum for the training (dotted)
+  {The distribution of residuals for (un)corrected measurements of
+  momentum is shown in (dark) blue for the training (dotted)
   and test (solid) parts of the single muon dataset with
   $1.12 < |\eta| < 1.25$.}
   \label{fig:muon:vader-single}
 \end{figure}
-A simple grid search, shown in Table \ref{tab:muon:grid} is then
+A simple grid search, shown in Table \ref{tab:muon:grid}, is then
 performed to find the best hyperparameter settings. For each 
-set of settings in the cartesian product of the search space a
+set of settings in the search space a 
 model is trained on the single muon dataset and applied to muons
-in the MC simulation part of the dimuon dataset. The full-width
-half-maximum of the $Z$ boson peak is chosen as the figure of
+in the MC simulation subset of the dimuon dataset. The full-width
+half-maximum (FWHM) of the $Z$ boson peak is chosen as the figure of
 merit. The chosen values of the hyperparameters are shown in bold
 font in Table \ref{tab:muon:grid}.
 \begin{table}[h]
@@ -628,7 +634,27 @@ learning\_rate& \{0.001, 0.003, 0.01, \textbf{0.03}, 0.1\} \\
 \bottomrule
 \end{tabular}
 \end{table}
-Finally, the 
+Finally, the model is applied to the data subset of the dimuon dataset.
+The same procedure is applied to the MS tracks, as well as to the CB
+tracks as a sanity check. The results are shown in Figure
+\ref{fig:muon:vader-dimuon} for ID tracks and show an improvement
+of 7.5\% in the FWHM. However, no improvement is observed for CB tracks.
+Upon further study it turns out that the improvement for ID muons comes
+from the SNS and SCS variables, which contain information about the CB
+tracks in some convoluted way, and that no improvement is achievable
+for the CB tracks. This shows that if any biases are present in
+the muon reconstruction algorithms their effect on performance is minimal.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/muons/vader-dimuon-ID}
+  %\includegraphics[width=0.48\textwidth]{figures/muons/vader-dimuon-CB}
+  \caption[VADER4$\mu$ correction on the dimuon dataset.]
+  {Validation of momentum corrections on the MC simulation of the $\zmumu$
+  peak. Invariant mass spectrum computed using the (un)corrected values
+  of muon momenta is shown in (dark) blue for the ID muon tracks. Bottom
+  panel shows the ratio of the two distributions.}
+  \label{fig:muon:vader-dimuon}
+\end{figure}
 
 
 
