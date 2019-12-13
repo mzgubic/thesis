@@ -681,13 +681,14 @@ would be 1. However, the uncertainties are generally too optimistic (too
 small), making $\alpha$ larger than 1. The goal, therefore, is to estimate
 $\alpha$ on muon-by-muon basis and provide a correction to the estimate
 of the uncertainty. This is done using a gradient boosting regression model
-using the same datasets and variables as for the first model described in
-the text above.
+using the same datasets as for the first model described in the text above.
 
-However, the loss function is different. In order to estimate $\alpha$,
-the 84$^\text{th}$ (68\% + one tail) quantile of the distribution in Eq.
-\ref{eq:muon:pull} is estimated. A quantile loss function, a
-generalisation of the least absolute deviation, is used \cite{qreg}. 
+However, the input variables and the loss function are different. In order
+to estimate $\alpha$, the 84$^\text{th}$ (68\% + one tail) quantile of the
+distribution in Eq. \ref{eq:muon:pull} is estimated. A quantile loss
+function, a generalisation of the least absolute deviation, is used
+\cite{qreg}. The input variables are restricted to $\pt^\text{CB}$, $\eta$
+$\phi$, and reduced $\chi^2$.
 
 
 
