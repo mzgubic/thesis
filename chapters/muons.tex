@@ -546,7 +546,7 @@ Ultimately the results were not used in the $\hmumu$ analysis
 because the achievable gain is too small to justify the additional
 complexity.
 
-There are two main motivations for the study in the context of
+There are three main motivations for the study in the context of
 improving the sensitivity of the $\hmumu$ analysis:
 \begin{itemize}
 \item The muon $\pt$ resolution can be estimated for each individual muon
@@ -555,6 +555,11 @@ resolution of individual muons can be propagated to estimate the resolution
 of the invariant mass measurement of the muon pair. Finally, the estimate
 can be used to split events in resolution categories and the sensitivity of
 the analyses may be improved. This can be done directly on the CB muons.
+\item Uncertainties on the $\pt$ of ID and MS tracks are known to be
+poorly modelled, which is the reason a combined re-fit is used instead of
+the statistical combination of the IS and MS tracks. If the uncertainties
+on ID and MS $\pt$ can be assessed more accurately, can a statistical
+combination improve measurement of the CB momentum over the combined re-fit?
 \item Somewhat more speculatively, does the muon reconstruction
 algorithms contain bugs, biases, or inefficiencies? Is it possible to 
 derive a correction to the muon $\pt$ to improve the dimuon resolution
@@ -571,11 +576,11 @@ with the dimuon dataset}, with truth-level $\pt$ information
 available. It is preprocessed by removing some of the muons, resulting
 in a $\pt$ distribution that is uniform for $\pt < 200~\GeV$. The "dimuon"
 dataset consists of data and MC simulation of the $\zmumu$ process
-and does not contain any truth-level information. 
+and does not contain any truth-level information.
 
-Single muon dataset is used to train a gradient boosting regression
-model, implemented in \texttt{scikit-learn} \cite{scikit-learn} to
-predict the correction to transverse momentum,
+To test the third idea, the single muon dataset is used to train a
+gradient boosting regression model, implemented in \texttt{scikit-learn}
+\cite{scikit-learn} to predict the correction to transverse momentum,
 $\pt^\text{truth}/\pt^\text{ID}$, from the following variables:
 \begin{itemize}
 \item $\pt^\text{ID}$, the transverse momentum of the muon as
@@ -656,6 +661,33 @@ the muon reconstruction algorithms their effect on performance is minimal.
   \label{fig:muon:vader-dimuon}
 \end{figure}
 
+To test the first two ideas a model for the prediction of the uncertainty
+on the $\pt$ measurement is constructed. An estimate of the uncertainty
+of the sagitta measurement (equivalent to $q/p$ measurement) exists in the
+ATLAS event model, but they are poorly modelled. More precisely, the
+pull distribution approximately follows the normal distribution with
+zero mean and width $\alpha$:
+\begin{equation}
+\frac{\left(\frac{q}{p}\right)_\text{reco}
+- \left(\frac{q}{p}\right)_\text{truth}}
+{\sigma_{\left(\frac{q}{p}\right)}}
+\sim \mathcal{N}(0, \alpha),
+\label{eq:muon:pull}
+\end{equation}
+where $q$ is the charge, $p$ is the momentum, and
+$\sigma_{\left(\frac{q}{p}\right)}$ is the provided estimate of the
+uncertainty. If the provided estimate was accurate the value of $\alpha$
+would be 1. However, the uncertainties are generally too optimistic (too
+small), making $\alpha$ larger than 1. The goal, therefore, is to estimate
+$\alpha$ on muon-by-muon basis and provide a correction to the estimate
+of the uncertainty. This is done using a gradient boosting regression model
+using the same datasets and variables as for the first model described in
+the text above.
+
+However, the loss function is different. In order to estimate $\alpha$,
+the 84$^\text{th}$ (68\% + one tail) quantile of the distribution in Eq.
+\ref{eq:muon:pull} is estimated. A quantile loss function, a
+generalisation of the least absolute deviation, is used \cite{qreg}. 
 
 
 
