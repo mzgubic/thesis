@@ -569,6 +569,70 @@ in a $\pt$ distribution that is uniform for $\pt < 200~\GeV$. The "dimuon"
 dataset consists of data and MC simulation of the $\zmumu$ process
 and does not contain any truth-level information. 
 
+Single muon dataset is used to train a gradient boosting regression
+model, implemented in \texttt{scikit-learn} \cite{scikit-learn} to
+predict the correction to transverse momentum,
+$\pt^\text{truth}/\pt^\text{ID}$, from the following variables:
+\begin{itemize}
+\item $\pt^\text{ID}$, the transverse momentum of the muon as
+measured in the ID,
+\item $\eta$ and $\phi$ of the muon,
+\item $d_0/\sigma_{d_0}$, the transverse impact parameter significance,
+\item $z_0$, the longitudinal impact parameter,
+\item $\chi^2/N_\text{dof}$, the reduced $\chi^2$ value of the fit,
+\item SNS (scattering curvature significance), SCS (scattering
+neighbour significance), two variables designed to capture the changes
+in track direction across the detector layers in order to detect 
+in-flight decays.
+\end{itemize}
+L1 loss function is used as the L2 loss was found to give biased
+results due to asymetric residuals. The equivalent method is used
+to predict a correction for the MS muons.
+
+A trained model is then used to provide corrections to the
+measured $\pt^\text{ID}$. The distribution of residuals before and
+after the correction is shown in Figure \ref{fig:muon:vader-single}
+for the training and test splits of the single muon dataset.
+The reduction in the standard deviation of the residual distribution
+is 17\% for the test set, compared to the uncorrected distribution.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/muons/vader-single}
+  \caption[VADER4$\mu$ correction on single muon dataset.]
+  {The distribution of residuals for uncorrected (dark blue) and 
+  corrected (blue) measurements of momentum for the training (dotted)
+  and test (solid) parts of the single muon dataset with
+  $1.12 < |\eta| < 1.25$.}
+  \label{fig:muon:vader-single}
+\end{figure}
+A simple grid search, shown in Table \ref{tab:muon:grid} is then
+performed to find the best hyperparameter settings. For each 
+set of settings in the cartesian product of the search space a
+model is trained on the single muon dataset and applied to muons
+in the MC simulation part of the dimuon dataset. The full-width
+half-maximum of the $Z$ boson peak is chosen as the figure of
+merit. The chosen values of the hyperparameters are shown in bold
+font in Table \ref{tab:muon:grid}.
+\begin{table}[h]
+\centering
+\caption{VADER4$\mu$ hyperparameter search space with selected settings
+in bold text. Other parameters are set to default values.}
+\label{tab:muon:grid}
+\begin{tabular}{c c c c }
+\toprule
+Variable & Set of values \\
+\midrule
+n\_estimators & \{100, 200, 400, \textbf{800}\} \\
+max\_depth & \{3, 4, 5, \textbf{6}\} \\
+learning\_rate& \{0.001, 0.003, 0.01, \textbf{0.03}, 0.1\} \\
+\bottomrule
+\end{tabular}
+\end{table}
+Finally, the 
+
+
+
+
 
 
 
