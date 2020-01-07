@@ -16,7 +16,7 @@ the reconstruction of physics objects.
 
 Muons, the central physics object in this thesis, are reconstructed
 by combining the information from the tracker and the muon spectrometer.
-In order to be able to do precision studies the Monte Carlo (MC)
+In order to be able to do precision studies, the Monte Carlo (MC)
 simulation of the detector response needs to be calibrated to match
 the response in the real detector. In particular, the transverse momentum of
 muons needs to be calibrated to the resolution obtained in the real
@@ -40,8 +40,8 @@ algorithm proceeds inside-out by finding the seeds in the silicon layers.
 The seeds are then combined into roads and the extension to the TRT layer
 is probed to add hits in the outermost layer. The final collection of hits
 is fit to obtain the track parameters \cite{ATLAS-CONF-2010-072, Cornelissen:1020106}.
-Tracks with at least $\pt > 400$ \MeV~and some other requirements, found
-in Ref. \cite{ATL-PHYS-PUB-2015-026} are then used to find the primary
+Tracks with at least $\pt > 400$ \MeV~and some additional requirements, detailed
+in Ref. \cite{ATL-PHYS-PUB-2015-026}, are then used to find the primary
 vertices. The reconstruction of primary vertices proceeds by first finding
 the vertices and then fitting them \cite{Aaboud:2016rmg}. Finally, tracks
 are associated with vertices which allows the computation of $d_0$, the
@@ -330,7 +330,7 @@ Probe to tag muon separation  & $\Delta R_{\mu, \mu} > 0.2, 0.5$ \\
 \end{tabular}
 \end{table}
 The scale factors are evaluated as a function of probe muon $\pt$,
-with uncertainties compute in each bin separately. At low $\pt$
+with uncertainties computed in each bin separately. At low $\pt$
 ($< 15~\GeV$), the leading uncertainty is the background subtraction,
 which prompted the development of a new background subtraction
 method, described in the next section.
@@ -350,7 +350,7 @@ components, weighted by the component fractions
 \begin{equation}
 \epsilon_\text{measured} =
 \text{f}_{\zmumu}   \cdot \epsilon_{\zmumu} +
-\text{f}_\text{EWK} \cdot \epsilon_\text{EWK}
+\text{f}_\text{EWK} \cdot \epsilon_\text{EWK} + 
 \text{f}_\text{QCD} \cdot \epsilon_\text{QCD},
 \end{equation}
 where $f$ represents the fraction of the component, and $\epsilon$
@@ -401,7 +401,7 @@ While the fit is performed over a wide invariant mass range ($\pm30~\GeV$)
 around the $Z$ peak, the fractions need to be determined in a narrower
 mass range in which the efficiency measurement is made ($\pm10~\GeV$).
 This is done by integrating the fitted templates in the desired range,
-using linear interpolation where necessary. For the EWK template, in
+using linear interpolation in the edge bins if necessary. For the EWK template, in
 order to decrease the statistical fluctuations, an exponential fit
 to the template is integrated instead. When varying the mass range
 of the measurement, as shown in Table \ref{tab:muon:systs}, the fractions
@@ -412,8 +412,8 @@ events is the same in SC and OC data. Instead, the assumption is reduced
 to the shape of the background to be the same, with normalisation 
 determined via the fit. In order to estimate the associated systematic
 uncertainty the scale factors are re-computed using different QCD templates.
-Recall, the nominal template is taken from the SC data, where the number of
-genuine $\zmumu$ events is negligible. Similarly, two other templates are
+Recall, the nominal QCD template is taken from the SC data, where the number of
+genuine $\zmumu$ events is negligible. Similarly, two other QCD templates are
 constructed in the $\zmumu$ depleted regions, where the requirement on the
 impact parameter significance ($|d_0/\sigma_{d_0}|$) is inverted in both
 the SC and OC data. Region definitions are shown in Table \ref{tab:muon:reg}.
