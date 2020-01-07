@@ -616,7 +616,7 @@ other $\eta$ slices.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/muons/vader-single}
-  \caption[VADER4$\mu$ correction on single muon dataset.]
+  \caption[VADER4$\mu$ correction on the single muon dataset.]
   {The distribution of residuals for (un)corrected measurements of
   momentum is shown in (dark) blue for the training (dotted)
   and test (solid) parts of the single muon dataset with
@@ -704,7 +704,26 @@ $y_i$ is the target value of example $i$, and $\hat{y}_i$ is the prediction
 for example $i$. The input variables are restricted to $\pt^\text{CB}$, $\eta$
 $\phi$, and reduced $\chi^2$.
 
-
+The (un)corrected pull distribution is shown in Figure \ref{fig:muon:std-single}
+for muons with $0.2 < |\eta| < 0.3$.
+It can be seen that the corrected pull distribution, shown in red, is much closer
+to the unit normal distribution, shown as a dashed line, than the uncorrected
+pull distribution, shown in black. This shows that the estimate of the
+uncertainty has been improved. Other pseudorapidity slices show similar improvement.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/muons/vader-std-single}
+  \caption[VADER4$\mu$ uncertainty correction on the single muon dataset]
+  {Pull distribution of sagitta measurement for muons with $0.2 < |\eta| < 0.3$.
+  Pulls computed with the uncorrected estimate of the uncertainty are shown
+  as black solid lines. Unit normal distribution is shown as a black dashed
+  line. Corrected pulls are shown separately for the test and training parts
+  of the single muon datasets as solid and dashed red lines respectively.
+  Means and standard deviations of the distributions are shown on the left
+  along with the associated statistical uncertainties.
+  }
+  \label{fig:muon:std-single}
+\end{figure}
 
 
 
