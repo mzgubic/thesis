@@ -758,9 +758,21 @@ using uncorrected uncertainties.
   }
   \label{fig:muon:std-dimuon}
 \end{figure}
-
-Hyperparameter search is performed 
-
+Hyperparameter search over the same grid space as shown in Table
+\ref{tab:muon:grid} is performed by using the Kolmogorov-Smirnov (KS)
+statistic \cite{ks-test} as a way to quantify the performance of the
+hyperparameter choice. KS statistic is the supremum of the set of
+distances between an empirical cumulative distribution and a reference
+cumulative distribution. In this case, the unit normal distribution is
+the reference distribution and the pull distribution, computed with
+corrected uncertainties, is the empirical distribution. Figure
+\ref{fig:muon:std-ks} shows the cumulative distributions for the unit
+normal distribution and for corrected and uncorrected cumulative pull
+distributions from Figure \ref{fig:muon:std-dimuon}. It also visualises
+the differences between the empirical and reference distributions, clearly
+showing that the corrected uncertainty values result in a smaller 
+value of the KS statistic, meaning that the pull distribution is closer
+to the unit normal distribution.
 
 \begin{figure}[h!]
   \centering
