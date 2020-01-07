@@ -715,7 +715,7 @@ uncertainty has been improved. Other pseudorapidity slices show similar improvem
   \centering
   \includegraphics[width=0.7\textwidth]{figures/muons/vader-std-single}
   \caption[VADER4$\mu$ uncertainty correction on the single muon dataset]
-  {Pull distribution of sagitta measurement for muons with $0.2 < |\eta| < 0.3$.
+  {Pull distribution of $q/p$ measurement for muons with $0.2 < |\eta| < 0.3$.
   Pulls computed with the uncorrected estimate of the uncertainty are shown
   as black solid lines. Unit normal distribution is shown as a black dashed
   line. Corrected pulls are shown separately for the test and training parts
@@ -726,7 +726,40 @@ uncertainty has been improved. Other pseudorapidity slices show similar improvem
   \label{fig:muon:std-single}
 \end{figure}
 
+The uncertainty on invariant mass of the muon pair can be computed from the 
+uncertainties on the individual muon measurements of $q/p$. Assuming that the
+uncertainties on the measurements of $\eta$ and $\phi$ are negligible, the
+relative uncertainty on the invariant mass is
+\begin{equation}
+\sigma_{m_{\mu\mu}} = \frac{1}{2}m_{\mu\mu}
+\left[ \sigma^2_{\mu_1} + \sigma^2_{\mu_2}\right]^\frac{1}{2},
+\end{equation}
+where $\sigma^2_{\mu_i}$ is the uncertainty on $1/\pt$ of muon $i$.
 
+The uncertainty on the invariant mass is computed for the both the corrected
+and uncorrected estimates of uncertainties on $q/p$ of individual muons.
+The distributions of the pulls for the measurement of the invariant mass
+are shown in Figure \ref{fig:muon:std-dimuon} using both uncertainties
+along with the unit normal distribution. The pull distribution using the
+corrected uncertainties is closer to the unit normal than the distribution
+using uncorrected uncertainties.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/muons/vader-std-dimuon}
+  \caption[VADER4$\mu$ uncertainty correction on the dimuon dataset]
+  {Pull distribution for the measurement of the dimuon invariant mass
+  on simulated $\zmumu$ events and their values divided by the unit normal
+  distribution. Pulls using the (un)corrected uncertainties are shown in 
+  the top panel as (black) red lines, while the unit normal is shown as a
+  dashed black line. Bottom panel shows their values divided by the
+  unit normal distribution. Means and standard deviations are shown for
+  both distributions on the left, while the hyperparameters are shown on
+  the right.
+  }
+  \label{fig:muon:std-dimuon}
+\end{figure}
+
+Hyperparameter search is performed 
 
 
 
