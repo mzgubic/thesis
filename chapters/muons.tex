@@ -640,9 +640,9 @@ in bold text. Other parameters are set to default values.}
 \toprule
 Variable & Set of values \\
 \midrule
-n\_estimators & \{100, 200, 400, \textbf{800}\} \\
-max\_depth & \{3, 4, 5, \textbf{6}\} \\
-learning\_rate& \{0.001, 0.003, 0.01, \textbf{0.03}, 0.1\} \\
+\texttt{n\_estimators} & \{100, 200, 400, \textbf{800}\} \\
+\texttt{max\_depth} & \{3, 4, 5, \textbf{6}\} \\
+\texttt{learning\_rate} & \{0.001, 0.003, 0.01, \textbf{0.03}, 0.1\} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -773,7 +773,6 @@ the differences between the empirical and reference distributions, clearly
 showing that the corrected uncertainty values result in a smaller 
 value of the KS statistic, meaning that the pull distribution is closer
 to the unit normal distribution.
-
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/muons/vader-std-ks}
@@ -789,12 +788,29 @@ to the unit normal distribution.
   \label{fig:muon:std-ks}
 \end{figure}
 
-
+The $\pt$ uncertainty corrections with the chosen hyperparameters,
+shown on the left of Figure \ref{fig:muon:std-dimuon}, are then applied
+to events passing $\hmumu$ selection described in Ref.
+\cite{ATLAS-CONF-2018-026}. For each event the corrected uncertainty
+on the invariant mass measurement is computed and the distribution
+shown in Figure \ref{fig:muon:hmumu} for each of the cut-based categories
+described in detail in Ref. \cite{ATLAS-CONF-2018-026}. In particular for
+the non-central categories, in which at least one muon satisfies
+$|\eta| > 1.0$, a large spread in uncertainties can be seen. This means
+that the categories contain events with different resolutions. A split in
+the subcategories based on the predicted resolution is expected to
+improve the sensitivity of the analysis. Unfortunately the sensitivity
+improvement was found to be limited under 2\%, which was decided
+to be too small to justify the increase in the complexity of the analysis.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/muons/vader-hmumu}
-  \caption[VADER4$\mu$]
-  {Pull
+  \caption[Distribution of predicted resolutions in $\hmumu$ categories]
+  {Distribution of predicted resolutions in $\hmumu$ categories for
+  \ggf~$\hmumu$ events passing selection described in Ref.
+  \cite{ATLAS-CONF-2018-026}. The distributions have been normalised
+  to unit area, their relative sizes are shown in the brackets in
+  the legend.
   }
   \label{fig:muon:hmumu}
 \end{figure}
