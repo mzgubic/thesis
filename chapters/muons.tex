@@ -671,7 +671,7 @@ the muon reconstruction algorithms their effect on performance is minimal.
 To test the first two ideas a model for the prediction of the uncertainty
 on the $\pt$ measurement is constructed. An estimate of the uncertainty
 of the sagitta measurement (equivalent to $q/p$ measurement) exists in the
-ATLAS event model, but they are poorly modelled. More precisely, the
+ATLAS event model, but it is poorly modelled. More precisely, the
 pull distribution approximately follows the normal distribution with
 zero mean and width $\alpha$:
 \begin{equation}
@@ -685,16 +685,23 @@ where $q$ is the charge, $p$ is the momentum, and
 $\sigma_{\left(\frac{q}{p}\right)}$ is the provided estimate of the
 uncertainty. If the provided estimate was accurate the value of $\alpha$
 would be 1. However, the uncertainties are generally too optimistic (too
-small), making $\alpha$ larger than 1. The goal, therefore, is to estimate
-$\alpha$ on muon-by-muon basis and provide a correction to the estimate
+small), making $\alpha$ larger than 1. Moreover, the optimism varies with
+the kinematics of the muon so a simple scaling is insufficient.
+The goal, therefore, is to estimate
+the pull on muon-by-muon basis and provide a correction to the estimate
 of the uncertainty. This is done using a gradient boosting regression model
 using the same datasets as for the first model described in the text above.
 
 However, the input variables and the loss function are different. In order
-to estimate $\alpha$, the 84$^\text{th}$ (68\% + one tail) quantile of the
-distribution in Eq. \ref{eq:muon:pull} is estimated. A quantile loss
-function, a generalisation of the least absolute deviation, is used
-\cite{qreg}. The input variables are restricted to $\pt^\text{CB}$, $\eta$
+to estimate $\alpha$, the 84$^\text{th}$ (68\% + left tail) quantile of the
+distribution in Eq. \ref{eq:muon:pull} is estimated. The quantile loss
+function, the generalisation of the least absolute deviation, is used \cite{qreg}
+\begin{equation}
+\mathcal{L} = \sum_{i}\max \left[ q (\hat{y}_i - y_i), (q-1)(\hat{y}_i - y_i)\right],
+\end{equation}
+where the sum is over the training set examples, $q$ is the predicted quantile,
+$y_i$ is the target value of example $i$, and $\hat{y}_i$ is the prediction
+for example $i$. The input variables are restricted to $\pt^\text{CB}$, $\eta$
 $\phi$, and reduced $\chi^2$.
 
 
