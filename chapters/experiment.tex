@@ -354,6 +354,41 @@ proportional chambers, are used instead \cite{Nagai:1996mf}.
 
 \section{ATLAS data and Monte Carlo simulation}
 
-MC simulation
+ATLAS records events under varying conditions to work towards a number of
+scientific and technical goals. For this thesis the most important dataset
+is the one collected at 13 \TeV~centre-of-mass energy between years 2015
+and 2018.
+
+Monte Carlo (MC) simulations are a critical part of the ATLAS experiment,
+and are needed for the design, implementation, and validation of
+reconstruction and identification algorithms, and for the evaluation
+of their performance. Additionally the MC simulations are needed to
+carry out physics analyses and optimise their sensitivity.
+
+ATLAS MC simulation chain begins with the calculation of matrix element 
+amplitudes and the generation of the hard scatter process using
+software such as \textsc{Powheg} \cite{powheg, Frixione_2007, Alioli_2010}
+or \textsc{Sherpa} \cite{sherpa1, sherpa2}. Parton showering, hadronisation,
+and the simulation of the underlying event are processed by
+\textsc{Pythia8} \cite{Sj_strand_2008}. The simulation of the
+interactions with the ATLAS detector, as well as its response, is
+implemented in the Athena framework \cite{Duckeck:2005rb} and uses the
+\textsc{Geant4} \cite{Agostinelli:2002hh, 1610988, ALLISON2016186}
+simulation toolkit. Finally, the response is digitised
+and packaged in the same event data model \cite{Buckley_2015} as the
+data.
+
+The generation of MC simulation is a computationally intensive task
+and it usually takes weeks or months to generate a sufficient number
+of simulated events even on the dedicated computing grid. For this
+reason, the generation of simulated events begins before the data-taking
+takes place and the \pileup~profile is known. To reconcile the
+differences in the recorded and simulated \pileup~profile, simulated
+events are re-weighted to match the recorded \pileup~distribution.
+
+
+
+
+
 
 
