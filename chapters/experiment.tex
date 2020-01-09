@@ -300,28 +300,27 @@ artamonov2008atlas, Aad:2008zzm}.
 
 \section{Muon spectrometry}
 
-Muon spectrometer is the outermost part of ATLAS and was designed to
+Muon spectrometer is the outermost part of the ATLAS detector and was designed to
 trigger on muons up to $|\eta| < 2.4$ and measure their transverse momentum up
 to $|\eta| < 2.7$. It works by measuring the sagitta of the tracks
 in a magnetic field, similarly to the tracker. However, the field
 bends muon tracks in the $y-z$ plane, and is provided by three sets of
 toroidal magnets, one in the barrel, and one in each of the endcaps,
 as shown in Figure \ref{fig:exp:atlas}. 
-
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/experiment/muonspectrometer}
   \caption[The ATLAS muon spectrometer.]{Schematic of the ATLAS muon
   spectrometer geometry in the $x-y$ plane in the barrel region. MDT
   chambers, shown in cyan, provide the precision $\pt$ measurement
-  capabilities, while the RPC chambers allow triggering. ATLAS support
-  structures are shown in yellow.
+  capabilities, while the RPC chambers, shown in red, provide triggering
+  capabilities. ATLAS support structures are shown in yellow.
   From Ref. \cite{Aad:2010ag}}
    \label{fig:exp:ms}
 \end{figure}
 
 Monitored drift tube (MDT) chambers provide precision tracking up to
-$|\eta| < 2.7$ with the goal of measuring a $\pt = 1$ TeV muon
+$|\eta| < 2.7$ with the goal of measuring muons with $\pt = 1$ TeV
 to 10\% accuracy. The sagitta at this $\pt$ is about 500 $\um$,
 meaning that the required accuracy is better than 50 $\um$.
 In the barrel, the chambers are arranged in three concentric
@@ -355,14 +354,14 @@ proportional chambers, are used instead \cite{Nagai:1996mf}.
 
 \section{ATLAS data and Monte Carlo simulation}
 
-ATLAS records events under varying conditions to work towards a number of
-scientific and technical goals. For this thesis the most important dataset
-is the one collected at 13 \TeV~centre-of-mass energy between years 2015
+ATLAS records events under a variety of conditions to work towards a number of
+scientific and technical goals. The most important dataset for this thesis
+was collected at 13 \TeV~centre-of-mass energy between years 2015
 and 2018.
 
 Monte Carlo (MC) simulations are a critical part of the ATLAS experiment,
 and are needed for the design, implementation, and validation of
-reconstruction and identification algorithms, and for the evaluation
+reconstruction and identification algorithms, as well as for the evaluation
 of their performance. Additionally the MC simulations are needed to
 carry out physics analyses and optimise their sensitivity.
 
@@ -370,7 +369,7 @@ ATLAS MC simulation chain begins with the calculation of matrix element
 amplitudes and the generation of the hard scatter process using
 software such as \textsc{Powheg} \cite{powheg, Frixione_2007, Alioli_2010}
 or \textsc{Sherpa} \cite{sherpa1, sherpa2}. Parton showering, hadronisation,
-and the simulation of the underlying event are processed by
+and the simulation of the underlying event are simulated by
 \textsc{Pythia8} \cite{Sj_strand_2008}. The simulation of the
 interactions with the ATLAS detector, as well as its response, is
 implemented in the Athena framework \cite{Duckeck:2005rb} and uses the
@@ -383,7 +382,7 @@ The generation of MC simulation is a computationally intensive task
 and it usually takes weeks or months to generate a sufficient number
 of simulated events even on the dedicated computing grid. For this
 reason, the generation of simulated events begins before the data-taking
-takes place and the \pileup~profile is known. To reconcile the
+takes place and before the \pileup~profile is known. To reconcile the
 differences in the recorded and simulated \pileup~profile, simulated
 events are re-weighted to match the recorded \pileup~distribution.
 
