@@ -125,23 +125,39 @@ high-statistics MC simulation of Drell-Yan events.
 
 The leading irreducible background for the analysis is the
 Drell-Yan (DY) production of muon pairs. It is simulated using
-\texttt{Sherpa}2.2.1 with the NNPDF3.0 set of parton
-distribution functions \cite{Ball:2014uwa} in slices of
+\textsc{Sherpa} 2.2.1 with the NNPDF3.0 set of parton
+distribution functions (PDF) \cite{Ball:2014uwa} in slices of
 $\HT$ and with $c$- and $b$-quark filters, simulating 0--2
 jet events at next-to-leading order (NLO) and at leading order
 (LO) for 3 and 4 jets. In order to populate the tails of the
 DY invariant mass distribution relevant for the analysis an
 additional high-statistics sample is generated with identical
 setup an an additional cut of $\mmumu > 100$ \GeV. Finally, 
-\texttt{Sherpa} is also used to model the electroweak $Z$+jets
+\textsc{Sherpa} is also used to model the electroweak $Z$+jets
 process with up to two additional jets at LO accuracy beyond
 the first two jets.
 
+With the mass of the top-quark set to $m_t = 172.5$ \GeV, the
+$\ttbar$ and single-top samples are generated using
+\textsc{Powheg-Box v2} \cite{powheg, Frixione_2007, Alioli_2010}
+with NNPDF3.0 PDF set and parton showering and hadronisation
+done in \textsc{Pythia} 8.186 using the A14 parameter set
+\cite{ATL-PHYS-PUB-2014-021}. $\ttbar$ cross-section is
+computed to NNLO in QCD with next-to-next-to-leading logarithmic
+(NNLL) soft gluon terms taken into account. The cross-section
+of the single-top is computed with prescriptions from
+\cite{Kidonakis:2011wy, Kidonakis:2010ux}, and all the processes
+($t$-channel, $s$-channel, and $Wt$-channel) are generated
+separately.
 
+Diboson processes, $WZ$ and $ZZ$, are generated using
+\textsc{Sherpa} 2.2.1 with the NNPDF3.0 PDF set, and are normalised
+directly to the \textsc{Sherpa} prediction. Only semi-leptonic
+and fully-leptonic decays are simulated.
 
 \subsection{Signal samples}
 
-\subsection{Custom Drell-Yan samples}
+\subsection{Custom Drell-Yan sample}
 
 
 \section{Physics objects}
