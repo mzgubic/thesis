@@ -123,6 +123,22 @@ high-statistics MC simulation of Drell-Yan events.
 
 \subsection{Background samples}
 
+The leading irreducible background for the analysis is the
+Drell-Yan (DY) production of muon pairs. It is simulated using
+\texttt{Sherpa}2.2.1 with the NNPDF3.0 set of parton
+distribution functions \cite{Ball:2014uwa} in slices of
+$\HT$ and with $c$- and $b$-quark filters, simulating 0--2
+jet events at next-to-leading order (NLO) and at leading order
+(LO) for 3 and 4 jets. In order to populate the tails of the
+DY invariant mass distribution relevant for the analysis an
+additional high-statistics sample is generated with identical
+setup an an additional cut of $\mmumu > 100$ \GeV. Finally, 
+\texttt{Sherpa} is also used to model the electroweak $Z$+jets
+process with up to two additional jets at LO accuracy beyond
+the first two jets.
+
+
+
 \subsection{Signal samples}
 
 \subsection{Custom Drell-Yan samples}
