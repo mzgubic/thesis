@@ -143,7 +143,8 @@ $\ttbar$ and single-top samples are generated using
 with NNPDF3.0 PDF set and parton showering and hadronisation
 done in \textsc{Pythia} 8.186 using the A14 parameter set
 \cite{ATL-PHYS-PUB-2014-021}. $\ttbar$ cross-section is
-computed to NNLO in QCD with next-to-next-to-leading logarithmic
+computed to next-to-next-to-leading order (NNLO) in
+QCD with next-to-next-to-leading logarithmic
 (NNLL) soft gluon terms taken into account. The cross-section
 of the single-top is computed with prescriptions from
 \cite{Kidonakis:2011wy, Kidonakis:2010ux}, and all the processes
@@ -156,6 +157,42 @@ directly to the \textsc{Sherpa} prediction. Only semi-leptonic
 and fully-leptonic decays are simulated.
 
 \subsection{Signal samples}
+
+Signal samples are generated for all four main production modes.
+The main contribution comes from the $\ggf$ signal sample,
+generated with \textsc{Powheg-Box v2} with PDF4LHC15 PDF set and
+using next-to-next-to-leading order with parton shower matching
+(NNLOPS) \cite{Hamilton:2013fea}, achieving NNLO in QCD after
+the re-weighting in rapidity of the Higgs boson. \vbf and
+$q\bar{q}/qg \rightarrow \vh$ production modes are generated to NLO
+accuracy in QCD using \textsc{Powheg-Box v2} with NNPDF3.0 PDF set.
+$gg \rightarrow ZH$ is generated using \textsc{Powheg-Box} at LO
+accuracy. $\tth$ production mode is generated using MadGraph5\_aMC@NLO
+at NLO accuracy using NNPDF3.0NLO PDF set and the A14 tune.
+Parton shower and hadronisation is done using \textsc{Pythia}
+8 for all samples, using \textsc{EvtGen} v1.2.0 \cite{LANGE2001152}
+for $c$- and $b$-hadron decays. \textsc{Pythia} is also used to
+overlay minimum bias events to model the effects of \pileup~for all
+simulated events.
+
+The Higgs boson production cross-sections and the branching ratio
+to the muon pairs are taken from the CERN Yellow Report 4
+\cite{deFlorian:2016spz} at the mass of 125 \GeV. The cross-section
+for the \ggf production mode are computed to
+next-to-next-to-next-to-leading order (N3LO) \cite{Anastasiou:2016cez}
+in QCD with NLO electroweak corrections applied
+\cite{Aglietti:2004nj, Actis:2008ug} under the assumptions that
+they factorise. VBF cross-section is computed with full NLO QCD
+and electroweak corrections \cite{Ciccolini:2007jr, Ciccolini:2007ec,
+Arnold:2008rz}, and approximate but highly accurate NNLO QCD
+corrections \cite{Bolzoni:2010xr}. \vh~cross-section is computed at
+NNLO in QCD \cite{Brein:2003wg} with NLO eletroweak
+corrections \cite{Ciccolini:2003jy}.
+
+All signal and background samples are passed through the full ATLAS
+detector simulation. Pile-up re-weighting, object momentum
+smearing, and efficiency scale factors are applied to the MC
+simulation samples in order to make them mimic the collected data.
 
 \subsection{Custom Drell-Yan sample}
 
