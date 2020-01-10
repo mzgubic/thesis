@@ -196,6 +196,28 @@ simulation samples in order to make them mimic the collected data.
 
 \subsection{Custom Drell-Yan sample}
 
+describe what spurious signal is
+
+say we evaluate it using a high stat MC and that the ATLAS sim is not enough
+
+describe roughly how the samples are produced, along with the additional improvements and how much of them we have
+
+how are the generator level samples produced:
+- POWHEG at generator level, describe the two mass ranges used and stats in each
+- alpgen sample for the VBF
+- no parton showering (use fast smearing)
+- fsr radiation using photos, minor impact on the mass spectrum
+
+corrections applied:
+- muons: momentum, efficiencies as weights, trigger from data
+- FSR: resolution using egamma group parameters, drop photons randomly to account for efficiency
+- jet smearing jet/met group parametrisation for data
+- pileup jets are overlaid from library consisting of ATLAS full simulation jets on Zmumu that fail hard scatter
+  matching
+- met smearing from resolution functions derived on Run 2 data
+
+only DY is used here, no ttbar or diboson though they are included in the full sim.
+systematic variations are used as a cross check to assess the changes in the shape. effect is minimal.
 
 \section{Physics objects}
 
