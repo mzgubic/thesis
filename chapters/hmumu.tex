@@ -131,7 +131,12 @@ Drell-Yan (DY) production of muon pairs. It is simulated using
 distribution functions (PDF) \cite{Ball:2014uwa} in slices of
 $\HT$ and with $c$- and $b$-quark filters, simulating 0--2
 jet events at next-to-leading order (NLO) and at leading order
-(LO) for 3 and 4 jets. In order to populate the tails of the
+(LO) for 3 and 4 jets using \textsc{Comix} \cite{Gleisberg:2008fv}
+and \textsc{OpenLoops} \cite{Cascioli:2011va, Denner:2016kdg}
+libraries. Matching with the \textsc{Sherpa} parton showering
+\cite{Schumann:2007mg} is done using the MEPS@NLO prescription
+\cite{Catani:2001cc, Hoeche:2012yf, Hoeche:2011fd}.
+In order to populate the tails of the
 DY invariant mass distribution relevant for the analysis an
 additional high-statistics sample is generated with identical
 setup an an additional cut of $\mmumu > 100$ \GeV. Finally, 
@@ -189,7 +194,7 @@ accuracy in QCD \cite{Ciccolini:2003jy, Brein:2003wg, Brein:2011vx,
 Altenkamp:2012sx, Denner:2014cla, Brein:2012ne, Harlander:2014wda,
 Harlander:2018yio}.
 
-$\tth$ production mode is generated using MadGraph5\_aMC@NLO
+$\tth$ production mode is generated using \textsc{MadGraph5\_aMC@NLO}
 \cite{Alwall:2014hca, Artoisenet:2012st} at NLO accuracy using
 NNPDF3.0NLO PDF set and the A14 tune. The cross-section is
 computed to NLO in QCD with NLO electroweak corrections
