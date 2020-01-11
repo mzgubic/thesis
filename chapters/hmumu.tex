@@ -141,7 +141,7 @@ the first two jets.
 
 With the mass of the top-quark set to $m_t = 172.5$ \GeV, the
 $\ttbar$ and single-top samples are generated using
-\textsc{Powheg-Box v2} \cite{powheg, Frixione_2007, Alioli_2010}
+\textsc{Powheg-Box} \cite{powheg, Frixione_2007, Alioli_2010}
 with NNPDF3.0 PDF set and parton showering and hadronisation
 done in \textsc{Pythia} 8.186 using the A14 parameter set
 \cite{ATL-PHYS-PUB-2014-021}. $\ttbar$ cross-section is
@@ -160,38 +160,46 @@ and fully-leptonic decays are simulated.
 
 \subsection{Signal samples}
 
-Signal samples are generated for all four main production modes.
-The main contribution comes from the $\ggf$ signal sample,
-generated with \textsc{Powheg-Box v2} with PDF4LHC15 PDF set and
-using next-to-next-to-leading order with parton shower matching
+The largest contribution comes from the $\ggf$ signal sample,
+generated with \textsc{Powheg-Box} with PDF4LHC15 PDF set
+to next-to-next-to-leading order accuracy with parton shower matching
 (NNLOPS) \cite{Hamilton:2013fea}, achieving NNLO in QCD after
-the re-weighting in rapidity of the Higgs boson. \vbf and
-$q\bar{q}/qg \rightarrow \vh$ production modes are generated to NLO
-accuracy in QCD using \textsc{Powheg-Box v2} with NNPDF3.0 PDF set.
-$gg \rightarrow ZH$ is generated using \textsc{Powheg-Box} at LO
-accuracy. $\tth$ production mode is generated using MadGraph5\_aMC@NLO
-at NLO accuracy using NNPDF3.0NLO PDF set and the A14 tune.
-Parton shower and hadronisation is done using \textsc{Pythia}
-8 for all samples, using \textsc{EvtGen} v1.2.0 \cite{LANGE2001152}
-for $c$- and $b$-hadron decays. \textsc{Pythia} is also used to
-overlay minimum bias events to model the effects of \pileup~for all
-simulated events.
-
-The Higgs boson production cross-sections and the branching ratio
-to the muon pairs are taken from the CERN Yellow Report 4
-\cite{deFlorian:2016spz} at the mass of 125 \GeV. The cross-section
-for the \ggf production mode are computed to
+the re-weighting in rapidity of the Higgs boson. The cross-section
+for the $\ggf$ production mode are computed to
 next-to-next-to-next-to-leading order (N3LO) \cite{Anastasiou:2016cez}
 in QCD with NLO electroweak corrections applied
-\cite{Aglietti:2004nj, Actis:2008ug} under the assumptions that
-they factorise. VBF cross-section is computed with full NLO QCD
+\cite{Aglietti:2004nj, Actis:2008ug} under the assumption that
+they factorise. \textsc{Pythia} 8 with the AZNLO parameters
+\cite{Aad:2014xaa} is used to simulate the decay
+of the Higgs boson, final state photon radiation, parton
+showering, and hadronisation. 
+
+$\vbf$ and $q\bar{q}/qg \rightarrow \vh$ production modes are
+generated to NLO accuracy in QCD using \textsc{Powheg-Box},
+while the $gg \rightarrow ZH$ is generated to LO accuracy. Same
+PDF set and \textsc{Pythia} tunes are used as in the $\ggf$
+generation. VBF cross-section is computed with full NLO QCD
 and electroweak corrections \cite{Ciccolini:2007jr, Ciccolini:2007ec,
 Arnold:2008rz}, and approximate but highly accurate NNLO QCD
-corrections \cite{Bolzoni:2010xr}. \vh~cross-section is computed at
+corrections \cite{Bolzoni:2010xr}. VH cross-section is computed at
 NNLO in QCD \cite{Brein:2003wg} with NLO eletroweak
-corrections \cite{Ciccolini:2003jy}.
+corrections \cite{Ciccolini:2003jy}, apart from the
+$gg \rightarrow ZH$ which is computed to NLO and next-to-leading-logarithm
+accuracy in QCD \cite{Ciccolini:2003jy, Brein:2003wg, Brein:2011vx,
+Altenkamp:2012sx, Denner:2014cla, Brein:2012ne, Harlander:2014wda,
+Harlander:2018yio}.
 
-All signal and background samples are passed through the full ATLAS
+$\tth$ production mode is generated using MadGraph5\_aMC@NLO
+\cite{Alwall:2014hca, Artoisenet:2012st} at NLO accuracy using
+NNPDF3.0NLO PDF set and the A14 tune. The cross-section is
+computed to NLO in QCD with NLO electroweak corrections
+\cite{Yu:2014cka, Beenakker:2002nc}.
+
+\textsc{Pythia} is also used to
+overlay minimum bias events to model the effects of \pileup~for all
+simulated events using the NNPDF2.3LO PDF set \cite{Ball:2012cx}
+with the A3 parameters \cite{ATL-PHYS-PUB-2016-017}. All signal
+and background samples are passed through the full ATLAS
 detector simulation. Pile-up re-weighting, object momentum
 smearing, and efficiency scale factors are applied to the MC
 simulation samples in order to make them mimic the collected data.
