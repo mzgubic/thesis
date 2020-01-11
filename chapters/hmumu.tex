@@ -123,6 +123,8 @@ high-statistics MC simulation of Drell-Yan events.
 
 \subsection{Background samples}
 
+\label{sec:bkg-mc}
+
 The leading irreducible background for the analysis is the
 Drell-Yan (DY) production of muon pairs. It is simulated using
 \textsc{Sherpa} 2.2.1 with the NNPDF3.0 set of parton
@@ -196,28 +198,77 @@ simulation samples in order to make them mimic the collected data.
 
 \subsection{Custom Drell-Yan sample}
 
-describe what spurious signal is
+Extract the signal strength paramater relies on a
+maximum likelihood fit to the invariant mass spectrum in data,
+using parametrised models of both signal and background. The choice
+of the functional form describing the background is crucial because
+a mismodelling of the background results in a bias on the extracted
+signal strength. This is particularly significant when the
+signal-to-background ratio is very small, because the impact can be
+large.
 
-say we evaluate it using a high stat MC and that the ATLAS sim is not enough
+In order to select the functional form and evaluate the resulting
+bias, referred to as the ``spurious signal", a fit to the
+background-only spectrum is performed. Ideally, this would be done
+on the background MC simulation described in Section \ref{sec:bkg-mc},
+but because of the high computational cost associated with the 
+simulation of the detector response the statistics of the sample
+are on the same order of magnitude as the data. As a result, the
+the extracted spurious signal value is unreliable and dominated by
+the statistical fluctuations. A custom high-statistics sample of DY
+events is generated to overcome this challenge.
 
-describe roughly how the samples are produced, along with the additional improvements and how much of them we have
+The custom DY sample needs to have significantly larger statistics
+than the data, requiring a much faster generation. To facilitate
+this, the sample is produced at a generator-level only, skipping
+the simulation of showering, hadronisation, and detector response,
+replacing them by parametrised smearing functions. The effect on
+the dimuon invariant mass spectrum is minimal, and because of the
+parametrised smearing the jet mismodelling is a second order effect.
+On the other hand, final state radiation (FSR) does have an effect on
+the invariant mass spectrum and is simulated by \textsc{Photos++}
+\cite{Golonka:2006tw}. This setup was fast enough to generate 20
+billion events corresponding to approximately 100 $\iab$ in the 
+regions of parameter space relevant for the analysis. A drawback of
+the sample is that it only models the dominant DY part of the
+invariant mass spectrum.
 
-how are the generator level samples produced:
-- POWHEG at generator level, describe the two mass ranges used and stats in each
-- alpgen sample for the VBF
-- no parton showering (use fast smearing)
-- fsr radiation using photos, minor impact on the mass spectrum
-
-corrections applied:
-- muons: momentum, efficiencies as weights, trigger from data
-- FSR: resolution using egamma group parameters, drop photons randomly to account for efficiency
-- jet smearing jet/met group parametrisation for data
-- pileup jets are overlaid from library consisting of ATLAS full simulation jets on Zmumu that fail hard scatter
-  matching
-- met smearing from resolution functions derived on Run 2 data
-
-only DY is used here, no ttbar or diboson though they are included in the full sim.
-systematic variations are used as a cross check to assess the changes in the shape. effect is minimal.
+At generator level, the samples are produced separately for zero
+or one parton and two partons in addition to the muon pair:
+\begin{itemize}
+\item \textsc{Powheg} is used to generate an inclusive NLO $\zmumu$
+sample, modelling zero and one parton in addition to the muon pair.
+For efficiency reasons two sub-samples are generated, one with
+$60 < \mmumu < 95$ \GeV~($2.5\times10^{9}$ events), and the other
+with $\mmumu > 95$ \GeV~($10\times10^{9}$ events) requirement. Even
+after detector smearing the latter sample dominates the fit region.
+\item \textsc{Alpgen} \cite{Mangano:2002ea} is used to generate
+events with two partons in addition to the muon pair at LO. The 
+computation uses only the matrix element with two additional
+partons and requires both of them to have $\pt > 25$ \GeV~as well
+as $\Delta R(j,j) > 0.4$ to minimise the overlap with the
+\textsc{Powheg} sample. Similarly to the \textsc{Powheg} sample,
+events are generated with $60 < \mmumu < 95$ \GeV~($1.75\times10^{9}$
+events) and $\mmumu > 95$ \GeV~($2.5\times10^{9}$ events)
+requirements. These events are crucial to populate the analysis
+categories with a large fraction of the signal events coming from
+the VBF production mode.
+\end{itemize}
+Both samples are corrected in the same way to model the effects of
+the detector. Muon momentum smearing is done using parametrised functions
+derived from MC simulation described in Section \ref{sec:bkg-mc}.
+Effects from identification, reconstruction, isolation, and impact
+parameter efficiencies are also derived from MC simulation and 
+applied as weights, while trigger efficiency weights are derived
+from data. FSR momentum is smeared using parametrised prescription
+from the ATLAS subgroup specialising in electrons and photons.
+Photons are dropped randomly to emulate the reconstruction
+efficiency. Smearing of jet momenta is performed using the parametrisation
+from the ATLAS subgroup specialising in jets and missing energy.
+The effect of \pileup~jets is modelled by building a library of
+jets from minimum-bias events in MC simulation and overlaying a
+number of sampled jets from the library for each event. A dedicated
+missing transverse momentum smearing is derived from the Run 2 data.
 
 \section{Physics objects}
 
