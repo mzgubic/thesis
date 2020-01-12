@@ -305,17 +305,18 @@ detail in Chapter \ref{sec:muons}. Table \ref{tab:hmumu:muons}
 summarises the selection used for the $\hmumu$ analysis.
 \begin{table}[h]
 \centering
-\caption{Summary of muon selection requirements.}
+\caption{Summary of the muon selection requirements.}
 \label{tab:hmumu:muons}
 \begin{tabular}{c c}
 \toprule
-Requirement & Selection \\
+Requirement & Choice \\
 \midrule
 ID selection & Loose \\
 Isolation selection & FixedCutPflowLoose \\ 
 $\pt$  & $\pt > 15$ \GeV \\
 $\eta$ & $|\eta| < 2.7$ \\
-Impact parameters & $|d_0 / \sigma_{d_0}| < 3.0$ \\
+\multirow{2}{*}{Impact parameters} & $|d_0 / \sigma_{d_0}| < 3.0$ \\
+                                   & $|z_0 \cdot \sin{\theta}| < 0.5$ mm\\
 \bottomrule
 \end{tabular}
 \end{table}
