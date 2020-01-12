@@ -331,8 +331,38 @@ the tracker, while the ME muons are used in the forward
 regions to reconstruct muons outside of the tracker
 coverage, where $2.5 < |\eta| < 2.7$.
 
-TODO: add the study figures.
+CB muons benefit from a combination of two $\pt$ measurements,
+the one in the tracker, and the one in the muon spectrometer.
+Figure \ref{fig:hmumu:reso} verifies that the resulting dimuon
+invariant mass resolution is only marginally worse for muon
+pairs containing one non-CB muon (dotted green line) compared
+to pairs where both muons are CB (dashed blue line). Since
+most muons are CB, the inclusive distribution (solid orange
+line) and the distribution of purely CB muons (dashed blue line)
+are nearly identical.
 
+The reason for such a small degradation is that the resolution of the combined
+$\pt$ measurement is dominated by the tracker $\pt$ measurement
+in the barrel region, and by the muon spectrometer measurement
+in the forward regions. ST and CT muons, used in the $|\eta| <
+0.1$ region, combine a track in the ID with a segment in the
+muon spectrometer or with a calorimeter deposit, and thus 
+benefit from having the high-quality tracker $\pt$ measurement.
+Conversely, ME muons, used in the $2.5 < |\eta| < 2.7$ region,
+use the track from the muon spectrometer, the higher quality
+measurement in the forward region.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/hmumu/resolution}
+  \caption[Muon resolution for different muon types]{Resolution
+  of the dimuon invariant mass measurement for the $\ggf$ signal
+  sample in the $\hmumu$ analysis signal region. Events in which
+  both muons are CB type are shown in dashed blue line, while
+  events in which one of the muons is not CB are shown in dotted
+  green line. Inclusive distribution is shown in the solid orange
+  line.}
+  \label{fig:hmumu:reso}
+\end{figure}
 The FixedCutPflowLoose isolation selection is used because
 of a combination of its high efficiency, robustness to high
 \pileup~conditions, and an improved rejection of heavy-flavour
