@@ -373,6 +373,14 @@ standard requirements on the impact parameters.
 
 \subsection{Photons and FSR}
 
+Photons are reconstructed in ATLAS via its energy deposits
+in the eletromagnetic calorimeter. Unlike electrons, photons
+are electrically neutral and do not leave tracks in the
+tracker, unless they are converted to electron-positron
+pairs before reaching the calorimeter. The details on the
+reconstruction algorithm and its performance are described
+in Ref. \cite{Aaboud:2018yqu}.
+
 Muons may radiate a photon and thus lose energy, meaning that
 the invariant mass of the muon pair is no longer equal to the
 mass of the mediator. In order to mitigate this effect up to
@@ -385,7 +393,8 @@ larger than a linearly increasing threshold, from
 $\pt^\gamma > 3$ \GeV~at $\Delta R(\gamma, \mu) = 0$ to
 $\pt^\gamma > 8$ \GeV~at $\Delta R(\gamma, \mu) = 0.2$.
 Non-collinear photons ($\Delta R(\gamma, \mu) > 0.20$)
-are required to have $\pt^\gamma > 8$ \GeV~. When multiple
+are required to have $\pt^\gamma > 8$ \GeV~and tight \cite{Aaboud:2018yqu}
+identification requirement for photons. When multiple
 photon candidates are found only the one with the highest $\pt$
 is included in the invariant mass calculation, with priority
 to the collinear photons over non-collinear ones.
@@ -402,7 +411,6 @@ FSR candidates coming from pileup. The improvement in the
 invariant mass resolution is approximately 3\% inclusively.
 A drawback of the recovery is a small ($< 1\%$) increase in
 the number of background events in the tails.
-
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/hmumu/FSR_fsr}
