@@ -285,6 +285,66 @@ missing transverse momentum smearing is derived from the Run 2 data.
 
 \section{Physics objects}
 
+The search for a narrow resonance on top of a smoothly falling
+background appears at first sight to require not much more than an
+excellent understanding of muons in ATLAS. While the intirety of Chapter
+\ref{sec:muons} is dedicated to their performance, the sophistication
+of the analysis requires understanding of other objects as well.
+Photons are used to recover the final state radiation in order to improve
+the resolution of the invariant mass spectrum. Jets are used
+as a handle to select events produced in the VBF production mode
+and to improve separation from the other backgrounds. Even electrons
+are reconstructed, albeit solely in order to reject fake jets. Finally,
+missing transverse momentum ($\met$), is used to supress top and diboson
+backgrounds.
+
+\subsection{Muons}
+
+Muon reconstruction, identification, and isolation are described in
+detail in Chapter \ref{sec:muons}. Table \ref{tab:hmumu:muons}
+summarises the selection used for the $\hmumu$ analysis.
+\begin{table}[h]
+\centering
+\caption{Summary of muon selection requirements.}
+\label{tab:hmumu:muons}
+\begin{tabular}{c c}
+\toprule
+Requirement & Selection \\
+\midrule
+ID selection & Loose \\
+Isolation selection & FixedCutPflowLoose \\ 
+$\pt$  & $\pt > 15$ \GeV \\
+$\eta$ & $|\eta| < 2.7$ \\
+Impact parameters & $|d_0 / \sigma_{d_0}| < 3.0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+The majority of reconstructed muons in the Loose selection are
+the CB type, combining the information from the tracker and
+muon spectrometer systems. However, in order to maximise the
+acceptance of signal events other muons types are also used
+to improve the reconstruction efficiency in the challenging
+parts of the detector. ST and CT improve the reconstruction
+efficiency in the $|\eta| < 0.1$ region where the muon
+spectrometer has a gap to allow for cabling and services to
+the tracker, while the ME muons are used in the forward
+regions to reconstruct muons outside of the tracker
+coverage, where $2.5 < |\eta| < 2.7$.
+
+TODO: add the study figures.
+
+The FixedCutPflowLoose isolation selection is used because
+of a combination of its high efficiency, robustness to high
+\pileup~conditions, and an improved rejection of heavy-flavour
+jets. The cut on the $\pt$ rejects muons from the decay of
+heavy-flavour quarks, while cosmic rays are rejected by the
+standard requirements on the impact parameters.
+
+\subsection{Photons, electrons, and FSR}
+
+\subsection{Jets and $\met$}
+
+
 \section{Event selection}
 
 \section{Event categorisation}
