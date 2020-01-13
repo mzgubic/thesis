@@ -487,8 +487,50 @@ b-tag                  & MV2c10 60 WP for $|\eta| < 2.5$ and $\pt>20$ \GeV \\
 \bottomrule
 \end{tabular}
 \end{table}
+Electrons are reconstructed by matching a track in the ID with a
+calorimeter deposit in the ECAL, as described in Ref. \cite{Aad:2014fxa}.
+Unlike the topological cluster used for jets, the calorimeter deposits
+are clustered using a sliding-window algorithm \cite{Lampl:1099735}
+which can be more accurately calibrated due to the fixed size cells.
 
-what are electrons, what is MET, how are they reconstructed
+Electrons are used in the analysis only in the overlap removal
+procedure to remove fake jets. The electron selection requirements
+are summarised in Table \ref{tab:hmumu:electrons}. Electron candidates
+are required to pass the Medium likelihood identification selection
+and FCLoose isolation selection \cite{Aad:2014fxa} to
+reject electrons from hadronic decays or \pileup. The electron $\pt$
+is required to be larger than 7 \GeV, while pseudorapidity has to 
+satisfy $|\eta| < 2.47$ with the exception of the crack region
+$1.37 < |\eta| < 1.52$. A quality
+requirement is used to reject electrons in which a cell is dead 
+or faulty, and requirements on the impact parameters are used to
+reject electrons coming from heavy flavour decays or other
+proton-proton interactions.
+\begin{table}[h]
+\centering
+\caption{Summary of the electron selection requirements.}
+\label{tab:hmumu:electrons}
+\begin{tabular}{c c}
+\toprule
+\midrule
+Identification & Medium LH \\
+\midrule
+Isolation      & FCLoose \\
+\midrule
+$\pt$          & $\pt > 7$ \GeV \\
+\midrule
+$\eta$         & $|\eta| < 2.47$ excluding $1.37 < |\eta| < 1.52$ \\
+\midrule
+Quality        & Not "BADCLUSELECTRON" \\
+\midrule
+\multirow{2}{*}{Impact parameters} & $|d_0/\sigma_{d_0}| < 5$ \\
+                                   & $|z_0 \cdot\sin{\theta}| < 0.5$ mm\\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+
+what is MET
 
 overlap removal description
 
