@@ -558,6 +558,33 @@ electrons.
 
 \section{Event selection}
 
+A very loose event selection based on oppositely charged muon pairs
+is used for the analysis to maximise the number of signal events.
+DY background is irreducible, but the $\ttbar$ contributions can be
+reduced by a veto on events with a $b$-tagged jets.
+The selection, summarised in Table \ref{tab:hmumu:events}, results
+in approximately 59\% acceptance for the $\ggf$ and VBF signal events. 
+\begin{table}[h]
+\centering
+\caption{Summary of the event selection requirements.}
+\label{tab:hmumu:events}
+\begin{tabular}{c c}
+\toprule
+\midrule
+\multirow{3}{*}{Cleaning} &  Pass GRL \\
+                          &  Pass single muon trigger \\
+                          &  Primary vertex ($> 2$ tracks with $\pt > 0.5$ \GeV)\\
+\midrule
+\multirow{3}{*}{Muons} & Two oppositely charged muons \\
+                       & $\pt^\text{lead} > 27$ \GeV\\
+                       & $\pt^\text{sublead} > 15$ \GeV\\
+\midrule
+Jets                   & Zero $b$-tagged jets \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+
 The ATLAS detector is a complex machine composed of many independent
 subcomponents that are being pushed to the limits of their performance
 in an environment with high doses of radiation damage. Failure of 
@@ -574,10 +601,80 @@ muon triggers, being \texttt{HLT\_mu20\_iloose} or \texttt{HLT\_mu50}
 in the 2015 and \texttt{HLT\_mu26\_ivarmedium} or \texttt{HLT\_mu50}
 in 2016-2018 data-taking period. These triggers require at least one
 isolated muon with a $\pt$ larger than 20 or 26 \GeV~ respectively, or
-one non-isolated muon with at least 50 \GeV. The increase in trigger
+one non-isolated muon with at least 50 \GeV \cite{Aad:2014sca}. The increase in trigger
 thresholds was required to deal with higher rates of events at an
 increased instantaneous luminosity between 2016 and 2018.
 
+Events are required to have at least one reconstructed primary vertex
+candidate with at least two tracks with $\pt > 0.5$ \GeV in the inner
+detector. When multiple vertices are reconstructed the one with the 
+highest scalar sum of $\pt$ of the associated tracks is considered
+to be the hard scatter vertex.
+
+Events are required to have exactly two oppositely charged muons.
+The leading muon has a $\pt > 27$ \GeV~requirement in order to pass
+the trigger thresholds, while the sub-leading muon is required to
+have $\pt > 15$ \GeV, with both having a pseudorapidity requirement
+of $|\eta| < 2.7$. Additionally, events are required to have zero
+$b$-tagged jets to supress $\ttbar$ and diboson backgrounds.
+
+After the common selection the $Z$ control region, the Signal region,
+and the Sideband region are defined by requirements on the invariant
+mass, summarised in Table \ref{tab:hmumu:regions}.
+
+\begin{table}[h]
+\centering
+\caption{Summary of the analysis regions.}
+\label{tab:hmumu:regions}
+\begin{tabular}{c c}
+\toprule
+\midrule
+$Z$ control region     & $76 < \mmumu < 106$ \GeV \\
+\midrule
+Signal region          & $110 < \mmumu < 160$ \GeV \\
+\midrule
+\multirow{3}{*}{Sideband region} & $110 < \mmumu < 120$ \GeV \\
+                                 & or \\
+                                 & $130 < \mmumu < 160$ \GeV \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+
+The invariant mass spectrum after the recovery of the final
+state radiation is shown in Figure \ref{fig:hmumu:sel-mmumu} for data and
+MC simulation of signal and background samples for events
+passing the selection requirements. The spectrum is dominated by DY
+events, especially around the $Z$ mass peak at around 91 \GeV.
+The $Z$ peak is also present in the diboson backgrounds, while
+the top backgrounds have a smoothly falling spectrum.
+Signal events form a narrow peak at around 125 \GeV, with their yields
+multiplied by a factor of a hundred to make them visible. $\tth$
+signal events are too small to appear on the figure. The
+bottom panel shows the ratio between the data and MC simulation
+events along with a band representing the size of experimental
+uncertainties.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.0\textwidth]{figures/hmumu/sel-mmumu}
+  \caption[Dimuon invariant mass spectrum of selected events.]{
+  The invariant mass spectrum is shown after the correction for
+  final state radiation, for data corresponding to 139 $\ifb$ and
+  appropriately normalised MC simulation. Data is shown as black
+  markers, the MC simulation of backgrounds, is shown as a stacked
+  filled histogram, and is dominated by the DY events (light blue),
+  followed by diboson (blue) and top (dark blue) contributions.
+  Signal events coming from the $\ggf$, VBF, and VH production
+  modes are shown as solid red, orange, and yellow lines,
+  respectively, with the yields normalised to one hundred times the
+  SM prediction for visibility. There are too few $\tth$ events to appear
+  on the figure. The bottom panel shows the ratio between the data
+  and MC simulation of background events, while the blue band
+  represents the experimental systematic uncertainty. Statistical
+  uncertainty on both data and MC simulation is combined in the
+  error bars on data. From Ref. \cite{ATLAS-CONF-2019-028}}
+  \label{fig:hmumu:sel-mmumu}
+\end{figure}
 
 \section{Event categorisation}
 
