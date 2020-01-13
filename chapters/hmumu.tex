@@ -530,10 +530,29 @@ Quality        & Not "BADCLUSELECTRON" \\
 \end{tabular}
 \end{table}
 
-what is MET
+Missing transverse momentum is defined as the magnitude of the vectorial
+sum of $\pt$ of all calibrated muons, electrons, jets, and other tracks
+not used in the reconstruction of any objects, referred to as the ``soft
+term". The details on the reconstruction algorithm, in particular on the
+treatment of the soft term, are available in Ref. \cite{Aaboud:2018tkc},
+along with performance studies.
 
-overlap removal description
+$\met$ is used in the analysis to discriminate between the signal and
+$\ttbar$ processes, and is used as an input to the multivariate
+discriminant in the 2-jet channel.
 
+A single physical object can create deposits in the detector which are
+used by two different reconstruction algorithms to create more than
+one particle candidate. For example, an electron results in an ECAL
+deposit which is used in both the reconstruction of a jet and an
+electron. For this reason an object overlap removal procedure is used
+to remove potential duplicates.
+
+Muons are only removed if they are CT type and share a track with an
+electron, or they are close to a jet ($\Delta R {\mu, j} < 0.2$) with more
+than two tracks and where muon $\pt$ is less than 0.7 of all track $\pt$.
+Jets are removed if they are close ($\Delta R {e, j} < 0.2$) to
+electrons.
 
 \section{Event selection}
 
