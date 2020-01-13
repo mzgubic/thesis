@@ -601,7 +601,7 @@ muon triggers, being \texttt{HLT\_mu20\_iloose} or \texttt{HLT\_mu50}
 in the 2015 and \texttt{HLT\_mu26\_ivarmedium} or \texttt{HLT\_mu50}
 in 2016-2018 data-taking period. These triggers require at least one
 isolated muon with a $\pt$ larger than 20 or 26 \GeV~ respectively, or
-one non-isolated muon with at least 50 \GeV \cite{Aad:2014sca}. The increase in trigger
+one non-isolated muon with at least 50 \GeV~\cite{Aad:2014sca}. The increase in trigger
 thresholds was required to deal with higher rates of events at an
 increased instantaneous luminosity between 2016 and 2018.
 
@@ -618,10 +618,9 @@ have $\pt > 15$ \GeV, with both having a pseudorapidity requirement
 of $|\eta| < 2.7$. Additionally, events are required to have zero
 $b$-tagged jets to supress $\ttbar$ and diboson backgrounds.
 
-After the common selection the $Z$ control region, the Signal region,
-and the Sideband region are defined by requirements on the invariant
-mass, summarised in Table \ref{tab:hmumu:regions}.
-
+After the common selection the $Z$ control region, the signal region,
+and the central and sideband regions are defined by requirements
+on the invariant mass, summarised in Table \ref{tab:hmumu:regions}.
 \begin{table}[h]
 \centering
 \caption{Summary of the analysis regions.}
@@ -631,15 +630,28 @@ mass, summarised in Table \ref{tab:hmumu:regions}.
 \midrule
 $Z$ control region     & $76 < \mmumu < 106$ \GeV \\
 \midrule
-Signal region          & $110 < \mmumu < 160$ \GeV \\
+Fit region             & $110 < \mmumu < 160$ \GeV \\
 \midrule
-\multirow{3}{*}{Sideband region} & $110 < \mmumu < 120$ \GeV \\
+Central region         & $120 < \mmumu < 130$ \GeV \\
+\midrule
+\multirow{3}{*}{Sideband region} & $110 < \mmumu < 120$ \GeV\\
                                  & or \\
                                  & $130 < \mmumu < 160$ \GeV \\
 \midrule
 \bottomrule
 \end{tabular}
 \end{table}
+
+$Z$ control region contains almost one hundred million events
+in data and is used to validate detector performance, in
+particular to check the muon resolution in data and MC simulation.
+The sideband region contains approximately two million events
+in the data, which are used to train the multivariate classifier
+and to validate the background modelling. The central region
+contains appriximately 250,000 events in data, of which about
+860 are expected from the SM signal. The final maximum likelihood
+fit is performed in the fit region, which is the union of the
+central and sideband regions.
 
 The invariant mass spectrum after the recovery of the final
 state radiation is shown in Figure \ref{fig:hmumu:sel-mmumu} for data and
