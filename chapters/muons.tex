@@ -318,6 +318,7 @@ selection scale factors.}
 \label{tab:muon:systs}
 \begin{tabular}{c c}
 \toprule
+\midrule
 Description & Variation \\
 \midrule
 Background estimation         & $T=0.5, T=2.0$ \\
@@ -327,6 +328,7 @@ Probe muon quality            & Loose, Tight \\
 Tag muon isolation            & Every other isolation selection \\ 
 Probe muon to jet separation  & $\Delta R_{j, \mu} > 0.3, 0.5$ \\
 Probe to tag muon separation  & $\Delta R_{\mu, \mu} > 0.2, 0.5$ \\
+\midrule
 \bottomrule
 \end{tabular}
 \end{table}
@@ -425,6 +427,7 @@ for the isolation background subtraction fit.}
 \label{tab:muon:reg}
 \begin{tabular}{c c c c c}
 \toprule
+\midrule
 Region   & Charge & $\pt^\text{probe}$ range & $|d_0/\sigma_{d_0}|_\text{tag}$ & $|d_0/\sigma_{d_0}|_\text{probe}$ \\
 \midrule
 Region B & SC & full & $< 3.0$ & $ < 3.0$ \\
@@ -433,6 +436,7 @@ Region B & SC & full & $< 3.0$ & $ < 3.0$ \\
                           &                      & $ > 10~\GeV$ & $ > 5.0$ & $ > 5.0$ \\
 \midrule
 Region D & SC & full & $ > 3.0$ & $ > 2.0$ \\
+\midrule
 \bottomrule
 \end{tabular}
 \end{table}
@@ -639,11 +643,13 @@ in bold text. Other parameters are set to default values.}
 \label{tab:muon:grid}
 \begin{tabular}{c c c c }
 \toprule
+\midrule
 Variable & Set of values \\
 \midrule
 \texttt{n\_estimators} & \{100, 200, 400, \textbf{800}\} \\
 \texttt{max\_depth} & \{3, 4, 5, \textbf{6}\} \\
 \texttt{learning\_rate} & \{0.001, 0.003, 0.01, \textbf{0.03}, 0.1\} \\
+\midrule
 \bottomrule
 \end{tabular}
 \end{table}
