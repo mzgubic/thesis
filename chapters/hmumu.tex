@@ -558,6 +558,27 @@ electrons.
 
 \section{Event selection}
 
+The ATLAS detector is a complex machine composed of many independent
+subcomponents that are being pushed to the limits of their performance
+in an environment with high doses of radiation damage. Failure of 
+detector subcomponents is therefore a normal part of detector operations
+and is dealt with by detailed monitoring of performance and the
+release of so-called GoodRunList (GRL). The GRL contains a list of 
+runs further segmented to two-minute data-taking intervals, called
+luminosity blocks, in which the detector operates as intended.
+Data used in the analysis is required to be collected in one of those
+luminosity blocks in order to veto pathological events.
+
+Furthermore, data is required to pass the lowest unprescaled single
+muon triggers, being \texttt{HLT\_mu20\_iloose} or \texttt{HLT\_mu50}
+in the 2015 and \texttt{HLT\_mu26\_ivarmedium} or \texttt{HLT\_mu50}
+in 2016-2018 data-taking period. These triggers require at least one
+isolated muon with a $\pt$ larger than 20 or 26 \GeV~ respectively, or
+one non-isolated muon with at least 50 \GeV. The increase in trigger
+thresholds was required to deal with higher rates of events at an
+increased instantaneous luminosity between 2016 and 2018.
+
+
 \section{Event categorisation}
 
 Data/MC:
