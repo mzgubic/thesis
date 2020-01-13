@@ -537,9 +537,11 @@ term". The details on the reconstruction algorithm, in particular on the
 treatment of the soft term, are available in Ref. \cite{Aaboud:2018tkc},
 along with performance studies.
 
-$\met$ is used in the analysis to discriminate between the signal and
-$\ttbar$ processes, and is used as an input to the multivariate
-discriminant in the 2-jet channel.
+$\met$ can result from neutrinos, which escape the detector without leaving
+any deposits, or from experimental inaccuracies when measuring muons,
+electrons, or jets. In the analysis $\met$ is used to discriminate between
+the signal and $\ttbar$ processes. Instead of a cut is used as
+an input to the multivariate discriminant in the 2-jet channel.
 
 A single physical object can create deposits in the detector which are
 used by two different reconstruction algorithms to create more than
@@ -557,6 +559,11 @@ electrons.
 \section{Event selection}
 
 \section{Event categorisation}
+
+Data/MC:
+- invariant mass spectrum
+- resolution in each of the categories
+- BDT output
 
 \section{Signal modelling}
 
