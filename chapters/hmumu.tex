@@ -691,11 +691,37 @@ uncertainties.
 
 \section{Event categorisation}
 
+The goal of event categorisation is to improve the sensitivity of the
+analysis by splitting events in categories with different signal
+purities. In previous iterations of the analysis physics-based
+arguments were used to construct categories targeting the VBF 
+production mode and signal enriched regions using requirements on
+event kinematics. However, with increased statistics of the
+available dataset it became increasingly advantageous to exploit
+modern machine learning models and infer the classification scheme
+from the available data. With this approach care needs to be taken
+to prevent bias and sub-optimal performance due to overfitting.
 
 
-Data/MC:
-- resolution in each of the categories
-- BDT output
+
+split based on number of jets
+
+training set (signal, background, cuts, etc)
+2-jet case: VBF and higgs classifiers
+four fold method, hyperparameter optimisation in which hps
+ordering: quantile transform, add together
+variables used: maximise sensitivity, minimise systematics, no bias found
+BDT boundaries optimisation: number counting significance is the metric
+
+tables:
+- table of boundaries
+- table of variables
+
+figures:
+- distributions of variables
+- BDT output data/mc
+- resolution in each of the categories data/mc
+- categorisation summary
 
 \section{Signal modelling}
 
