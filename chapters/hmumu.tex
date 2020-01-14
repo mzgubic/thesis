@@ -897,10 +897,29 @@ optimisation rather than a requirement.
   \label{fig:hmumu:cat-summary}
 \end{figure}
 
+As explored in VADER4$\mu$ project, the momentum resolution of muons
+is a function of their kinematics. Furthermore, the categorisation of
+events in the analysis is based on a BDT classifier, which exploits
+the kinematic differences between the signal and background events.
+As a result, the analysis categories can have quite different
+invariant mass resolutions. While this is expected, it is critical
+that the modelling of dimuon mass resolution in MC simulation matches
+the resolution in data in each analysis category, otherwise the
+sensitivity would be over or under estimated. The validation of
+the momentum calibrations, described in Section \ref{sec:muons:calibration},
+is performed on the $Z$ mass peak, shown in Figure \ref{fig:hmumu:reso}.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/0jet_1}
+  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/1jet_1}
+  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/2jet_1}
+  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/2jet_4}
+  \caption[Mass resolution validation in analysis categories]{Resolution
+  }
+  \label{fig:hmumu:reso}
+\end{figure}
 
-figures:
-- BDT output data/mc
-- resolution in each of the categories data/mc
+
 
 \section{Signal modelling}
 
