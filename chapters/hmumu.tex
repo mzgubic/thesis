@@ -716,6 +716,35 @@ matches the number of data events.
 
 The variables used in the training in each of the jet channels are
 summarised in Table \ref{tab:hmumu:variables}.
+\begin{table}[h]
+\centering
+\caption{Summary of the training variables.}
+\label{tab:hmumu:variables}
+\begin{tabular}{c c c}
+\toprule
+\midrule
+\multirow{3}{*}{0-jet} & $\pt^{\mu\mu}$      & $\pt$ of the dimuon system \\
+                       & $Y^{\mu\mu}$        & Rapidity of the dimuon system\\
+                       & $|\cos{\theta*}|$   & Spin-related variable \\
+\midrule
+\multirow{4}{*}{1-jet} & 0-jet variables            &  \\
+                       & $\pt^{j_1}$                & $\pt$ of the lead jet \\
+                       & $\eta^{j_1}$               & $\eta$ of the lead jet \\
+                       & $\Delta \phi_{j_1,\mu\mu}$ & $\Delta \phi$ between the lead jet and dimuon system \\
+\midrule
+\multirow{9}{*}{2-jet} & 1-jet variables            &  \\
+                       & $\pt^{j_2}$                & $\pt$ of the sublead jet \\
+                       & $\eta^{j_2}$               & $\eta$ of the sublead jet \\
+                       & $\Delta \phi_{j_2,\mu\mu}$ & $\Delta \phi$ between the sublead jet and dimuon system \\
+                       & $\pt^{jj}$                 & $\pt$ of the dijet system \\
+                       & $Y^{j_2}$                  & Rapidity of the dijet system \\
+                       & $\Delta \phi_{jj,\mu\mu}$  & $\Delta \phi$ between the dijet system and dimuon system \\
+                       & $m_{jj}$                   & Invariant mass of the dijet system \\
+                       & $\met$                     & Missing transverse energy \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
 
 
 
