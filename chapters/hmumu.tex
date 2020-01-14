@@ -809,7 +809,6 @@ VBF                           & $O_\text{VBF} < 0.77$ &  $0.77 \leq O_\text{VBF}
 \end{tabular}
 \end{table}
 
-
 The values of category boundaries are determined by a simultaneous
 optimisation of all boundaries in a given jet channel using an exhaustive
 search over the cut value grid with 0.01 spacing. The metric used in the
@@ -819,18 +818,37 @@ Z = \sqrt{\sum_{c=1}^{12} 2 \left[ (s_c + b_c) \log \left( \frac{s_c+b_c}{b_c}\r
 \end{equation}
 where the sum runs over categories $c$, and $s_c$ and $b_c$ are the
 number of signal and background events in the central region in category
-$c$. Since the optimisation is performed blinded $b_c$ is computed
-from the number of data events in the sideband region, multiplied
+$c$. Since the optimisation is performed blinded, the value of $b_c$ is
+computed from the number of data events in the sideband region, multiplied
 by a transfer factor obtained from the inclusive MC distribution.
 
-tables:
-- table of boundaries
+The summary of analysis categories is shown in Figure \ref{fig:hmumu:cat-summary},
+highlighting the composition of signal and background events, as well
+as purity and sensitivity metrics, and the total number of background events
+across the categories.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.0\textwidth]{figures/hmumu/cat-summary}
+  \caption[Summary of $\hmumu$ analysis categories]{Summary of $\hmumu$
+  analysis categories. Top panel shows the total number of background events
+  in the central region, multiplied by $10^{-5}$ for visibility in blue,
+  while the signal purity, multiplied by 10, is shown in orange and the
+  significance proxy in green. The middle panel shows the signal
+  composition of the categories, dominated by VBF events, shown in orange,
+  in the VBF targetting categories, and by $\ggf$ events, shown in red,
+  in all the others. VH events are shown in yellow, and $\tth$ events
+  in lime. The background composition in shown in the bottom 
+  panel and is dominated by DY events, shown in light blue. Diboson events
+  are shown in blue, and top events in dark blue.
+  }
+  \label{fig:hmumu:cat-summary}
+\end{figure}
+
 
 figures:
-- distributions of variables
+- Jay's distributions of variables
 - BDT output data/mc
 - resolution in each of the categories data/mc
-- categorisation summary
 
 \section{Signal modelling}
 
