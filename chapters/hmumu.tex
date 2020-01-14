@@ -586,9 +586,8 @@ Jets                   & Zero $b$-tagged jets \\
 \end{table}
 
 The ATLAS detector is a complex machine composed of many independent
-subcomponents that are being pushed to the limits of their performance
-in an environment with high doses of radiation damage. Failure of 
-detector subcomponents is therefore a normal part of detector operations
+subcomponents that are being pushed to the limits of their performance.
+Failure of detector subcomponents is a normal part of detector operations
 and is dealt with by detailed monitoring of performance and the
 release of so-called GoodRunList (GRL). The GRL contains a list of 
 runs further segmented to two-minute data-taking intervals, called
@@ -636,7 +635,7 @@ Central region         & $120 < \mmumu < 130$ \GeV \\
 \midrule
 \multirow{3}{*}{Sideband region} & $110 < \mmumu < 120$ \GeV\\
                                  & or \\
-                                 & $130 < \mmumu < 160$ \GeV \\
+                                 & $130 < \mmumu < 180$ \GeV \\
 \midrule
 \bottomrule
 \end{tabular}
@@ -650,8 +649,7 @@ in the data, which are used to train the multivariate classifier
 and to validate the background modelling. The central region
 contains appriximately 250,000 events in data, of which about
 860 are expected from the SM signal. The final maximum likelihood
-fit is performed in the fit region, which is the union of the
-central and sideband regions.
+fit is performed in the fit region.
 
 The invariant mass spectrum after the recovery of the final
 state radiation is shown in Figure \ref{fig:hmumu:sel-mmumu} for data and
@@ -661,21 +659,16 @@ events, especially around the $Z$ mass peak at around 91 \GeV.
 The $Z$ peak is also present in the diboson backgrounds, while
 the top backgrounds have a smoothly falling spectrum.
 Signal events form a narrow peak at around 125 \GeV, with their yields
-multiplied by a factor of a hundred to make them visible. $\tth$
-signal events are too small to appear on the figure. The
-bottom panel shows the ratio between the data and MC simulation
-events along with a band representing the size of experimental
-uncertainties.
+multiplied by a factor of a hundred for visibility.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1.0\textwidth]{figures/hmumu/sel-mmumu}
+  \includegraphics[width=0.9\textwidth]{figures/hmumu/sel-mmumu}
   \caption[Dimuon invariant mass spectrum of selected events.]{
   The invariant mass spectrum after the correction for
   final state radiation, for data corresponding to 139 $\ifb$.
   MC simulation is normalised to the data for easier comparison.
-  Data is shown as black
-  markers, the MC simulation of backgrounds, is shown as a stacked
-  filled histogram, and is dominated by the DY events (light blue),
+  Data is shown as black markers, the MC simulation of backgrounds
+   is dominated by the DY events (light blue),
   followed by diboson (blue) and top (dark blue) contributions.
   Signal events coming from the $\ggf$, VBF, and VH production
   modes are shown as solid red, orange, and yellow lines,
@@ -702,12 +695,31 @@ modern machine learning models and infer the classification scheme
 from the available data. With this approach care needs to be taken
 to prevent bias and sub-optimal performance due to overfitting.
 
+The categorisation scheme begins by splitting events in categories
+based on jet multiplicity: 0-jet, 1-jet, and 2-jet channel, where
+the 2-jet channel includes events with more than two jets.
+%\footnote{ A categorisation approach without this initial split was tested and
+%results in a small ($\sim 1\%$) improvement, but the split was kept
+%to minimise systematics from the modelling of jet multiplicity.}
+Kinematic differences between signal and background events are
+exploited by training boosted decision tree (BDT) classifiers in
+each of the jet channels using the XGBoost \cite{Chen:2016:XST:2939672.2939785}
+package.
+
+In each of the categories a ``Higgs classifier" is trained to
+distinguish between MC simulation of $\ggf$ and VBF events, and the
+data events from the sideband region. In the 2-jet
+category an additional ``VBF classifier" is trained to distinguish
+between the MC simulation of VBF signal events, and the data sidebands.
+In both trainings the signal event weights are scaled so that their sum
+matches the number of data events. 
+
+The variables used in the training in each of the jet channels are
+summarised in Table \ref{tab:hmumu:variables}.
 
 
-split based on number of jets
 
-training set (signal, background, cuts, etc)
-2-jet case: VBF and higgs classifiers
+
 four fold method, hyperparameter optimisation in which hps
 ordering: quantile transform, add together
 variables used: maximise sensitivity, minimise systematics, no bias found
