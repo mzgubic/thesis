@@ -757,8 +757,58 @@ The variables were chosen to maximise the sensitivity while
 minimising systematic uncertainties. An additional concern was
 whether the variables would allow the classifier to learn the
 invariant mass and result in a shaped mass spectrum after selection.
-For this reason detailed kinematics of the individual muons
+For this reason the complete kinematics of the individual muons
 are not included.
+
+All the variables used in the 2-jet channel are shown in Figures
+\ref{fig:hmumu:variables01} and \ref{fig:hmumu:variables2} for
+events with two or more jets. It can be seen that the $\pt$ of
+the dimuon system, mass of the dijet system and azimuthal
+differences between the dimuon system and jets can provide
+separation between the signal and the background.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Z_PT_FSR}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Z_Y_FSR}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/CosThetaStar} \\ 
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Jets_PT_Lead}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Jets_Eta_Lead}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/DeltaPhi_mumuj1} \\ 
+  \caption[Classifier input variables]{
+  Distributions of classifier
+  input variables for events with two or more jets. Top row shows dimuon
+  system variables, bottom row shows leading jet variables. $\hmumu$ signal events
+  are shown in red, data from the sidebands are shown in black, and MC
+  simulation of background events is shown blue (sideband region) and
+  green (central region). MC simulation includes DY, diboson, and top events.
+  Error bars are statistical.
+  }
+  \label{fig:hmumu:variables01}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Jets_PT_Sub}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Jets_Eta_Sub}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/DeltaPhi_mumuj2} \\
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Jets_PT_jj}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Jets_Y_jj}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/DeltaPhi_mumujj} \\
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/Jets_Minv_jj}
+  \includegraphics[width=0.3\textwidth]{figures/hmumu/vars/metFinalTrk}
+  \caption[Classifier input variables]{
+  Distributions of classifier
+  input variables for events with two or more jets. Top row shows subleading
+  jet variables, middle row dijet system variables, bottom row shows the
+  dijet invariant mass and $\met$. $\hmumu$ signal events
+  are shown in red, data from the sidebands are shown in black, and MC
+  simulation of background events is shown blue (sideband region) and
+  green (central region). MC simulation includes DY, diboson, and top events.
+  Error bars are statistical.
+  }
+  \label{fig:hmumu:variables2}
+\end{figure}
 
 In each jet multiplicity channel a four-fold approach is used to
 prevent bias from overfitting to the training and validation sets.
@@ -849,7 +899,6 @@ optimisation rather than a requirement.
 
 
 figures:
-- Jay's distributions of variables
 - BDT output data/mc
 - resolution in each of the categories data/mc
 
