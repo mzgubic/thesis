@@ -715,7 +715,14 @@ In both trainings the signal event weights are scaled so that their sum
 matches the number of data events. 
 
 The variables used in the training in each of the jet channels are
-summarised in Table \ref{tab:hmumu:variables}.
+summarised in Table \ref{tab:hmumu:variables}. 0-jet channel uses
+only three variables, related to the kinematics of the dimuon system:
+$\pt$ and rapidity in addition to $|\cos{\theta*}|$, a variable
+sensitive to the spin of the mediator \cite{PhysRevD.16.2219,
+Sirunyan:2018swq}. In 1-jet channel the set of variables is 
+extended by adding the kinematics of the leading jet. In the 2-jet
+channel the kinematics of the subleading jet are added, along with
+$\met$ and a couple of variables related to the dijet system.
 \begin{table}[h]
 \centering
 \caption{Summary of the training variables.}
@@ -746,17 +753,81 @@ summarised in Table \ref{tab:hmumu:variables}.
 \end{tabular}
 \end{table}
 
+The variables were chosen to maximise the sensitivity while
+minimising systematic uncertainties. An additional concern was
+whether the variables would allow the classifier to learn the
+invariant mass and result in a shaped mass spectrum after selection.
+For this reason detailed kinematics of the individual muons
+are not included.
+
+In each jet multiplicity channel a four-fold approach is used to
+prevent bias from overfitting to the training and validation sets.
+In each fold, events are split in a training set (50\% of events),
+a validation set (25\% of events), and a test set (25\% of events).
+Training set is used in the training of the models. The validation
+set is used for early stopping of the training and to assess the
+performance of models using the area under the ROC
+\cite{journals/prl/Fawcett06} curve. This is used to guide the
+Bayesian optimisation \cite{gp} to tune the hyperparameters of the
+model in each fold. Finally, the model is evaluated on the test set,
+which is used for the categorisation of events.
+
+It should be noted that in the four-fold approach the model parameters
+are selected separately in each fold. This results in four models,
+each being applied to the test set not seen in training, early stopping,
+or hyperparameter tuning, ensuring that there is no bias from overfitting
+to either training or validation datasets.
+
+In order to ensure that the score distributions are the same in each
+fold, the scores are transformed to a uniform distribution in unweighted
+combined signal events in all fold separately using the QuantileTransformer
+algorithm from the \texttt{scikit-learn} \cite{scikit-learn} software package.
+
+The transformed scores are named $O_\text{VBF}$ for the VBF classifier,
+and $O_\ggf^(0-2)$ for the Higgs classifiers, where the superscript
+stands for the jet multiplicity. The category boundaries are defined
+as the cuts on these values, and are summarised in Table \ref{tab:hmumu:categories}.
+\begin{table}[h]
+%\small
+\centering
+\caption{Summary of the score boundaries defining the analysis categories.}
+\label{tab:hmumu:categories}
+\begin{tabular}{c c c c}
+\toprule
+\midrule
+%       &    0-jet                       &      1-jet                     & 2-jet ($O_\text{VBF} < 0.60$) & VBF \\
+%High   & $O^0_{\ggf} \geq 0.75$         & $O^1_{\ggf} \geq 0.78$         & $O^2_{\ggf} \geq 0.48$          & $O_\text{VBF} \geq 0.89$ \\
+%Medium & $0.35 \leq O^0_{\ggf} < 0.75$  & $0.38 \leq O^1_{\ggf} < 0.78$  & $0.22 \leq O^2_{\ggf} < 0.48$   & $0.77 \leq O_\text{VBF} < 0.89$ \\
+%Low    & $O^0_{\ggf} < 0.35$            & $O^1_{\ggf} < 0.38$            & $O^2_{\ggf} < 0.22$             & $O_\text{VBF} < 0.77$ \\
+
+                              &    High                   &  Medium                          & Low \\ 
+0-jet                         & $O^0_{\ggf} \geq 0.75$    &  $0.35 \leq O^0_{\ggf} < 0.75$   & $O^0_{\ggf} < 0.35$   \\
+1-jet                         & $O^1_{\ggf} \geq 0.78$    &  $0.38 \leq O^1_{\ggf} < 0.78$   & $O^1_{\ggf} < 0.38$   \\
+2-jet($O_\text{VBF} < 0.60$)  & $O^2_{\ggf} \geq 0.48$    &  $0.22 \leq O^2_{\ggf} < 0.48$   & $O^2_{\ggf} < 0.22$   \\
+VBF                           & $O_\text{VBF} \geq 0.89$  &  $0.77 \leq O_\text{VBF} < 0.89$ & $O_\text{VBF} < 0.77$ \\
 
 
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
 
-four fold method, hyperparameter optimisation in which hps
-ordering: quantile transform, add together
-variables used: maximise sensitivity, minimise systematics, no bias found
-BDT boundaries optimisation: number counting significance is the metric
+
+The values of category boundaries are determined by a simultaneous
+optimisation of all boundaries in a given jet channel using an exhaustive
+search over the cut value grid with 0.01 spacing. The metric used in the
+optimisation is the number counting significance, defined as
+\begin{equation}
+Z = \sqrt{\sum_{c=1}^{12} 2 \left[ (s_c + b_c) \log \left( \frac{s_c+b_c}{b_c}\right) - s_c \right]},
+\end{equation}
+where the sum runs over categories $c$, and $s_c$ and $b_c$ are the
+number of signal and background events in the central region in category
+$c$. Since the optimisation is performed blinded $b_c$ is computed
+from the number of data events in the sideband region, multiplied
+by a transfer factor obtained from the inclusive MC distribution.
 
 tables:
 - table of boundaries
-- table of variables
 
 figures:
 - distributions of variables
