@@ -210,6 +210,7 @@ smearing, and efficiency scale factors are applied to the MC
 simulation samples in order to make them mimic the collected data.
 
 \subsection{Custom Drell-Yan sample}
+\label{sec:hmumu:customDY}
 
 Extract the signal strength paramater relies on a
 maximum likelihood fit to the invariant mass spectrum in data,
@@ -1016,7 +1017,9 @@ The inclusive signal to background ratio is 0.2\% inclusively,
 though this improves in some analysis categories. This requires
 the control of the background shape to sub per mille level.
 
-Analytical functions have been tried in the past but they have
+Analytical functions, motivated by the composition of the
+background spectrum (dominated by DY, smaller contributions
+from diboson and top), have been tried in the past but they have
 struggled in particular to model the steeply falling spectrum
 towards the $Z$ mass peak. In this analysis, a combination
 of a rigid core and an empirical function is used instead.
@@ -1025,15 +1028,33 @@ The core function, common to all analysis categories and without
 free parameters, models the steep part of the spectrum. The
 empirical function models the differences in categories
 due to selection and resolution effects, and is selected
-using the custom DY dataset, described in Section \ref{}.
+using the custom DY dataset, described in Section \ref{sec:hmumu:customDY}.
 The value of the spurious signal uncertainty is extracted
 simultaneously.
 
 \subsection{Background parametrisation}
 
-core x empirical
+The background model is constructed in each analysis category
+separately, by multiplying a common core function with an
+empirical function specific to the category:
+\begin{equation}
+F(\mmumu) = F_\text{core}(\mmumu) \cdot F_{\text{empirical}}(\mmumu).
+\end{equation}
 
-explain each
+The core function describes the inclusive DY spectrum and
+is able to model the steeply falling part of the spectrum.
+It is constructed from the analytic LO Drell-Yan line-shape
+\cite{Aaboud:2017ffb}
+\begin{equation}
+F_\text{core}(\mmumu) = \sum_q \mathcal{L}_{q\bar q}(\mmumu) \cdot \sigma_{q\bar q}(\mmumu),
+\end{equation}
+where the sum over $q$ runs over the lightest three quarks,
+$q = u, s, d$, the parton luminosity component $\mathcal{L}_{q\bar q}$
+is derived using PDF4LHC15 PDF for the LO using APFEL
+\cite{Bertone:2013vaa} and LHAPDF \cite{Buckley:2014ana}.
+
+
+
 
 \subsection{Model selection}
 
