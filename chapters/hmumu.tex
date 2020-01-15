@@ -914,15 +914,17 @@ modelling is well within systematic uncertainties, similar results are
 seen on other categories.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/0jet_1}
-  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/1jet_1}
-  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/2jet_4}
-  \includegraphics[width=0.48\textwidth]{figures/hmumu/reso/2jet_1}
+  \includegraphics[width=0.49\textwidth]{figures/hmumu/reso/0jet_1}
+  \includegraphics[width=0.49\textwidth]{figures/hmumu/reso/1jet_1}
+  \includegraphics[width=0.49\textwidth]{figures/hmumu/reso/2jet_4}
+  \includegraphics[width=0.49\textwidth]{figures/hmumu/reso/2jet_1}
   \caption[Mass resolution validation in analysis categories]{
-  Invariant mass distribution after FSR correction at the $Z$ peak
-  for each of the analysis categories. Data is shown as blue markers,
-  DY as light blue, diboson as blue, and top MC simulated events as
-  dark blue histograms. Bottom panel shows the ratio between data and
+  Invariant mass distribution after the FSR correction at the $Z$ peak
+  for the 0-jet High, 1-jet High, 2-jet High, and VBF High
+  analysis categories. Data is shown as black markers,
+  Drell-Yan as light blue, diboson as blue, and top MC simulated events as
+  dark blue histograms. MC simulation has been normalised to data
+  for easier visual comparison. Bottom panel shows the ratio between data and
   MC simulation. Blue band represents experimental systematic
   uncertainties, while the black error bars represent combined
   statistical uncertainties on both data and MC simulation.
@@ -930,9 +932,77 @@ seen on other categories.
   \label{fig:hmumu:reso}
 \end{figure}
 
-
-
 \section{Signal modelling}
+
+The Higgs boson has a width of only 4.1 \MeV, negligible compared
+to the detector resolution of a few \GeV~in this momentum range.
+As a result, the signal shape is dominated by detector resolution
+effect and to some extent the quality of final state radiation
+recovery.
+
+It is modelled using a double-sided Crystal-Ball (DCSB) function
+\cite{Oreglia:1980cs}, which has a Gaussian core
+and tails on both sides, and is defined as \cite{Aaboud:2016tru}
+\begin{equation}
+\newcommand{\alow}{\alpha_\text{low}}
+\newcommand{\ahigh}{\alpha_\text{high}}
+\newcommand{\nlow}{n_\text{low}}
+\newcommand{\nhigh}{n_\text{high}}
+\newcommand{\for}{\text{for }}
+    \text{DCSB} = N \cdot
+    \begin{cases}
+      e^{-\frac{1}{2}t^2}              &  \for -\alow \leq t \leq \ahigh \\
+      e^{-\frac{1}{2}\alow^2} \left[ \frac{\alow}{\nlow} \left( \frac{\nlow}{\alow} -\alow - t \right) \right]^{-\nlow}  & \for t < -\alow \\
+      e^{-\frac{1}{2}\ahigh^2} \left[ \frac{\ahigh}{\nhigh} \left( \frac{\nhigh}{\ahigh} -\ahigh + t \right) \right]^{-\nhigh}  & \for t > \ahigh,
+    \end{cases}
+\end{equation}
+where $t = (\mmumu - \mu_\text{CB}) / \sigma_\text{CB}$, $N$ is the
+normalisation constant, $\mu_\text{CB}$ and $\sigma_\text{CB}$ are
+the mean and sigma of the central Gaussian distribution,
+$\alpha_\text{low}$ ($\alpha_\text{high}$) parametrises the
+invariant mass where the function transitions to the $n_\text{low}$
+($n_\text{high}$) power law on the low-mass (high-mass) side of
+the spectrum.
+
+An alternative functional form, a sum of
+a Gaussian and a one-sided Crystal-Ball has been tested with similar
+results. Double-sided Crystal-Ball was chosen because its
+parametrisation has a single mean and width and is more stable
+during the fit.
+
+The signal shape is obtained in each category separately by fitting
+the combined signal from all main production modes. An alternative
+approach, fitting production modes separately and combining them
+in the proportions predicted by the SM, yielded very similar results
+and was abandoned for simplicity.
+
+The detailed form of the signal shape is expected to have little
+impact on the result at the search stage. Nevertheless, injection
+tests were carried out, fitting the functional form to a MC simulated
+spectrum. The extracted signals matched the injection withing 0.5\%,
+equal to the statistical precision of the test.
+
+The fitted values of the $\mu_\text{CB}$ parameter were between
+124.5 and 124.8 \GeV, while the $\sigma_\text{CB}$ parameter varied
+between 2.5 and 3.0 \GeV~between the categories. Fitted DCSB models
+are shown in Figure \ref{fig:hmumu:sig-model} for the VBF High and
+0-jet High categories.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/hmumu/sig-model}
+  \caption[$\hmumu$ signal model]{
+  DCSB signal model fit to the MC simulation of all Higgs production
+  modes in the VBF High and 0-jet High analysis categories. VBF High
+  category fit is shown as a red solid line, while the MC simulation
+  is shown as empty red markers. The fit in the 0-jet High category
+  is shown as a blue line, while the MC simulation is shown as solid 
+  blue circles. The fitted values of $\mu_\text{CB}$ and
+  $\sigma_\text{CB}$ parameters are shown on the left (right) side 
+  for the VBF High (0-jet High) category.
+  }
+  \label{fig:hmumu:sig-model}
+\end{figure}
+
 
 \section{Background modelling}
 
