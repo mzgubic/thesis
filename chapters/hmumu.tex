@@ -1081,7 +1081,20 @@ The resolution function $\sigma(\mmumu)$ is derived from the
 MC simulation of Drell-Yan samples, simulated by Sherpa,
 by comparing the truth and reconstructed invariant mass.
 
+The empirical function is chosen among two families of functions,
+namely ``PowerN",
+\begin{equation}
+\text{PowerN}(\mmumu) = \mmumu^{(a_0 + a_1\mmumu + a_2 \mmumu^2 + ... + a_N\mmumu^N)},
+\end{equation}
+and ``EpolyN",
+\begin{equation}
+\text{EpolyN}(\mmumu) = e^{(a_1\mmumu + a_2 \mmumu^2 + ... + a_N\mmumu^N)},
+\end{equation}
+where $a_n$ are the free parameters, according to the selection
+procedure outlined in Section \ref{sec:hmumu:model-sel}.
+
 \subsection{Model selection}
+\label{sec:hmumu:model-sel}
 
 procedure
 
