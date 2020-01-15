@@ -1036,7 +1036,7 @@ simultaneously.
 
 The background model is constructed in each analysis category
 separately, by multiplying a common core function with an
-empirical function specific to the category
+empirical function specific to the category,
 \begin{equation}
 F(\mmumu) = F_\text{core}(\mmumu) \cdot F_{\text{empirical}}(\mmumu).
 \end{equation}
@@ -1044,9 +1044,12 @@ F(\mmumu) = F_\text{core}(\mmumu) \cdot F_{\text{empirical}}(\mmumu).
 The core function describes the inclusive DY spectrum and
 is able to model the steeply falling part of the spectrum.
 It is constructed from the analytic LO Drell-Yan line-shape
-\cite{Aaboud:2017ffb}
+\cite{Aaboud:2017ffb}, convolved by the normal distribution
+with width parametrised as a function of $\mmumu$ to model
+the effects of detector resolution,
 \begin{equation}
-F_\text{core}(\mmumu) = \sum_q \mathcal{L}_{q\bar q}(\mmumu) \cdot \sigma_{q\bar q}(\mmumu),
+F_\text{core}(\mmumu) =
+\left( \sum_q \mathcal{L}_{q\bar q}(\mmumu) \cdot \sigma_{q\bar q}(\mmumu) \right) * \mathcal{N}(0, \sigma(\mmumu)),
 \end{equation}
 where the sum over $q$ runs over the lightest three quarks,
 $q = u, s, d$, the parton luminosity component $\mathcal{L}_{q\bar q}$
@@ -1074,7 +1077,9 @@ $\alpha$, $G_F$ are the electroweak couplings,
 $m_Z$ and $\Gamma_Z$ are the mass and the width of the $Z$ boson \cite{Patrignani:2016xqp},
 and $N_c = 3$ is the number of colour charges.
 
-
+The resolution function $\sigma(\mmumu)$ is derived from the
+MC simulation of Drell-Yan samples, simulated by Sherpa,
+by comparing the truth and reconstructed invariant mass.
 
 \subsection{Model selection}
 
