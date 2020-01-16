@@ -937,6 +937,10 @@ seen on other categories.
 
 \section{Signal modelling}
 
+TODO
+
+\subsection{Signal parametrisation}
+
 The Higgs boson has a width of only 4.1 \MeV, negligible compared
 to the detector resolution of a few \GeV~in this momentum range.
 As a result, the signal shape is dominated by detector resolution
@@ -1005,6 +1009,21 @@ are shown in Figure \ref{fig:hmumu:sig-model} for the VBF High and
   }
   \label{fig:hmumu:sig-model}
 \end{figure}
+
+\subsection{Systematic uncertainties}
+
+TODO
+
+In addition to the systematic uncertainty on the background modelling,
+the spurious signal uncertainty described in the previous section,
+there are systematic uncertainties which affect the signal normalisation
+and its distribution between the categories. The systematic uncertaintes
+come from both the theoretical and experimental uncertainties, both of
+which can affect the normalisation and the migration between the categories.
+
+It should be noted, however, that at present the analysis is limited by
+statistical uncertainties.
+
 
 
 \section{Background modelling}
@@ -1158,8 +1177,7 @@ dataset.
   \end{tabular}
 \end{table}
 
-
-\subsection{Spurious signal test}
+\subsection{Spurious signal uncertainty}
 \label{sec:hmumu:sstest}
 
 The spurious signal value is determined by a combined signal
@@ -1187,12 +1205,17 @@ variations of muon momentum scale and resolution in the ID and
 MS detectors were used. The obtained SS values from the
 systematic variations were not significantly different from
 those obtained from the nominal template.
+
+It should be noted that the custom DY samples are only used in
+selecting the empirical part of the function and the evaluation
+of the spurious signal systematic uncertainty. They are not used
+at all when fitting the invariant mass spectum in data.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.49\textwidth]{figures/hmumu/SS/BDT10}
-  \includegraphics[width=0.49\textwidth]{figures/hmumu/SS/BDT7}
-  \includegraphics[width=0.49\textwidth]{figures/hmumu/SS/BDT4}
-  \includegraphics[width=0.49\textwidth]{figures/hmumu/SS/BDT1}
+  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT10}
+  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT7}
+  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT4}
+  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT1}
   \caption[Spurious signal fit to custom DY mass spectrum]{
   Combined signal and background fit to the custom DY invariant
   mass spectrum in 0-jet High, 1-jet High, 2-jet High, and VBF-high
@@ -1212,16 +1235,6 @@ those obtained from the nominal template.
   }
   \label{fig:hmumu:reso}
 \end{figure}
-
-
-
-
-
-\section{Systematic uncertainties}
-
-\subsection{Signal}
-
-\subsection{Background}
 
 \section{Results}
 
