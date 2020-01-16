@@ -1160,7 +1160,32 @@ dataset.
 \subsection{Spurious signal test}
 \label{sec:hmumu:sstest}
 
-table of selected functions and related spurious signal values
+The spurious signal value is determined by a combined signal
+and background model fit to the invariant mass spectrum
+in the fit region of the custom DY sample. Prior to the fit,
+the DY sample is re-weighted to the data sidebands using a first
+order polynomial in the VBF categories, and a second order
+polynomial in the other categories. The re-weighting mitigates
+the potential mismodelling of the invariant mass shape by the
+MC simulation.
+
+A number of scans is performed, varying the signal mass parameter
+between 120 and 130 \GeV~in 1 \GeV~steps, while the other parameters
+of the signal model are kept to the values obtained in the fit.
+The maximum value of the fitted signal across this range is taken
+as the total spurious signal SS.
+
+The sensitivity of the SS value to the shape of the custom DY
+spectrum was evaluated by fitting the combined signal and
+background model to the systematic variations of custom DY
+spectrum. For theoretical systematic uncertainties, the variations
+of the QCD renormalisation scale and using alternative PDF sets
+were considered. From the experimental side, the systematic
+variations of muon momentum scale and resolution in the ID and
+MS detectors were used. The obtained SS values from the
+systematic variations were not significantly different from
+those obtained from the nominal template.
+
 
 \section{Systematic uncertainties}
 
