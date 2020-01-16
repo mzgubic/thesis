@@ -1074,7 +1074,8 @@ where
 and $\hat s = \mmumu^2$, $Q_q$ is the electric charges of the quarks,
 $V_f$ and $A_f$ are the vector and axial vector couplings of the fermions,
 $\alpha$, $G_F$ are the electroweak couplings,
-$m_Z$ and $\Gamma_Z$ are the mass and the width of the $Z$ boson \cite{Patrignani:2016xqp},
+$m_Z$ and $\Gamma_Z$ are the mass and the width of the $Z$ boson with values
+taken from Ref. \cite{Patrignani:2016xqp},
 and $N_c = 3$ is the number of colour charges.
 
 The resolution function $\sigma(\mmumu)$ is derived from the
@@ -1096,9 +1097,70 @@ procedure outlined in Section \ref{sec:hmumu:model-sel}.
 \subsection{Model selection}
 \label{sec:hmumu:model-sel}
 
-procedure
+The empirical function is chosen separately in each analysis
+category, by first reducing the set of functions to those
+satisfying the following criteria:
+\begin{itemize}
+\item $\chi^2$ probability of the background-only fit must
+be larger than 1\% for:
+\begin{itemize}
+\item data in the fit region (excluding the $120-130$ \GeV),
+\item ATLAS MC simulation of DY, diboson, and top backgrounds in the fit region,
+\item custom DY sample, reweighted to the data sidebands using a second order polynomial.
+\end{itemize}
+\item Pass the spurious signal test, defined in Section \ref{sec:hmumu:sstest},
+i.e. require the $\text{SS} < 20\%~\delta$S, where SS is the fitted signal
+yield (the spurious signal), and $\delta$S is the statistical uncertainty
+on the signal strength obtained from the data corresponsing to 139 $\ifb$.
+\item If multiple functions pass the first two criteria,
+the function(s) with the fewest number of free parameters is (are)
+chosen.
+\item If more than one function remains, the function with the
+smallest value of SS is chosen.
+\end{itemize}
+The selected functions are shown in Table \ref{tab:hmumu:ss}
+for each of the analysis categories. The spurious signal uncertainty
+is considered as uncorrelated across the categories, since none
+of the values are more than two standard deviations away from zero,
+when considering the statistical uncertainty on the custom DY sample,
+corresponding to approximately 700 times the statistics of the
+dataset.
+\begin{table}[htb]
+  \centering
+  \caption{
+    Selected empirical function components of the background model
+    in each of the analysis categories. Also shown are the SS values,
+    defined as the maximum of the fitted signals in the 120--130
+    \GeV~mass range, normalised to the expected statistical error
+    on the fitted signal ($\delta$S and to the SM predictions
+    for signal yields in the analysis categories (S$_\text{SM}$).
+    Reproduced from Ref. \cite{ATLAS-CONF-2019-028}.}
+  \label{tab:hmumu:ss}
+  \begin{tabular}{cccc}
+    \toprule
+    Category & Empirical Function & max(SS/$\delta$S)[\%] & max(SS/S$_{SM}$)[\%] \\
+    \midrule
+    VBF High & Power0 & 10.6 & 14.7 \\
+    VBF Medium & Epoly2 & 0.51 & 1.3 \\
+    VBF Low & Power1 & 3.6 & 7.5 \\
+    2-jet High & Epoly2 & 8.7 & 16.3 \\
+    2-jet Medium & Epoly4 & 1.2 & 3.9 \\
+    2-jet Low & Epoly3 & -8.2 & -33.2 \\
+    1-jet High & Power1 & 6.1 & 12.1 \\
+    1-jet Medium & Epoly3 & -8.1 & -19.8 \\
+    1-jet Low & Epoly3 & -2.5 & -5.8 \\
+    0-jet High & Power1 & 14.6 & 26.5 \\
+    0-jet Medium & Epoly3 & -11.6 & -39.0 \\
+    0-jet Low & Epoly3 & -18.5 & -74.2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-selected functions and related spurious signal values
+
+\subsection{Spurious signal test}
+\label{sec:hmumu:sstest}
+
+table of selected functions and related spurious signal values
 
 \section{Systematic uncertainties}
 
