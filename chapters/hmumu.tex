@@ -1123,6 +1123,7 @@ The background model is constructed in each analysis category
 separately, by multiplying a common core function with an
 empirical function specific to the category,
 \begin{equation}
+\label{eq:hmumu:bkg}
 F(\mmumu) = F_\text{core}(\mmumu) \cdot F_{\text{empirical}}(\mmumu).
 \end{equation}
 
@@ -1133,7 +1134,6 @@ It is constructed from the analytic LO Drell-Yan line-shape
 with width parametrised as a function of $\mmumu$ to model
 the effects of detector resolution,
 \begin{equation}
-\label{eq:hmumu:bkg}
 F_\text{core}(\mmumu) =
 \left( \sum_q \mathcal{L}_{q\bar q}(\mmumu) \cdot \sigma_{q\bar q}(\mmumu) \right) * \mathcal{N}(0, \sigma(\mmumu)),
 \end{equation}
@@ -1384,6 +1384,16 @@ parameters of the background model described in Eq. \ref{eq:hmumu:bkg}.
   \includegraphics[width=0.49\textwidth]{figures/hmumu/fits/BDT4}
   \includegraphics[width=0.49\textwidth]{figures/hmumu/fits/BDT1}
   \caption[Combined signal and background fit to data for High categories]{
+  Combined signal and background fits to the invariant mass after FSR
+  corrections in data in the 0-jet High, 1-jet High, 2-jet High,
+  and VBF High categories. Top panel shows the data (black
+  markers), the full background model (dashed black line), the signal
+  model (solid red line) and the combined signal and background model
+  (solid blue line). Bottom panel shows the difference between the data
+  and the full background model as black markers, and the signal model
+  as a solid red line. Error bars represent statistical errors on
+  the data. The width of the bins is 2 \GeV, while the fit is
+  performed in bins of 0.1 \GeV.
   From Ref. \cite{ATLAS-CONF-2019-028}.
   }
   \label{fig:hmumu:fit-high}
@@ -1397,6 +1407,16 @@ parameters of the background model described in Eq. \ref{eq:hmumu:bkg}.
   \includegraphics[width=0.49\textwidth]{figures/hmumu/fits/BDT5}
   \includegraphics[width=0.49\textwidth]{figures/hmumu/fits/BDT2}
   \caption[Combined signal and background fit to data for Medium categories]{
+  Combined signal and background fits to the invariant mass after FSR
+  corrections in data in the 0-jet Medium, 1-jet Medium, 2-jet Medium,
+  and VBF Medium categories. Top panel shows the data (black
+  markers), the full background model (dashed black line), the signal
+  model (solid red line) and the combined signal and background model
+  (solid blue line). Bottom panel shows the difference between the data
+  and the full background model as black markers, and the signal model
+  as a solid red line. Error bars represent statistical errors on
+  the data. The width of the bins is 2 \GeV, while the fit is
+  performed in bins of 0.1 \GeV.
   From Ref. \cite{ATLAS-CONF-2019-028}.
   }
   \label{fig:hmumu:fit-medium}
@@ -1411,6 +1431,16 @@ parameters of the background model described in Eq. \ref{eq:hmumu:bkg}.
   \includegraphics[width=0.49\textwidth]{figures/hmumu/fits/BDT6}
   \includegraphics[width=0.49\textwidth]{figures/hmumu/fits/BDT3}
   \caption[Combined signal and background fit to data for Low categories]{
+  Combined signal and background fits to the invariant mass after FSR
+  corrections in data in the 0-jet Low, 1-jet Low, 2-jet Low,
+  and VBF Low categories. Top panel shows the data (black
+  markers), the full background model (dashed black line), the signal
+  model (solid red line) and the combined signal and background model
+  (solid blue line). Bottom panel shows the difference between the data
+  and the full background model as black markers, and the signal model
+  as a solid red line. Error bars represent statistical errors on
+  the data. The width of the bins is 2 \GeV, while the fit is
+  performed in bins of 0.1 \GeV.
   From Ref. \cite{ATLAS-CONF-2019-028}.
   }
   \label{fig:hmumu:fit-low}
@@ -1419,9 +1449,21 @@ parameters of the background model described in Eq. \ref{eq:hmumu:bkg}.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.7\textwidth]{figures/hmumu/fits/inclusive_w}
   \includegraphics[width=0.7\textwidth]{figures/hmumu/fits/inclusive}
+  \includegraphics[width=0.7\textwidth]{figures/hmumu/fits/inclusive_w}
   \caption[Combined signal and background fit to data]{
+  Combined signal and background fits to the invariant mass after FSR
+  corrections in data, combined in all analysis categories.
+  The unweighted combination is shown in the top figure, while the
+  bottom figure shows the events weighted by the $\log{1 + S/B}$
+  value of each category. Top panel shows the data (black
+  markers), the full background model (dashed black line), the signal
+  model (solid red line) and the combined signal and background model
+  (solid blue line). Bottom panel shows the difference between the data
+  and the full background model as black markers, and the signal model
+  as a solid red line. Error bars represent statistical errors on
+  the data. The width of the bins is 2 \GeV, while the fit is
+  performed in bins of 0.1 \GeV.
   From Ref. \cite{ATLAS-CONF-2019-028}.
   }
   \label{fig:hmumu:fit-combination}
