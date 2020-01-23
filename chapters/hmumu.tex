@@ -1382,22 +1382,18 @@ parameters of the background model described in Eq. \ref{eq:hmumu:bkg}.
 
 \subsection{Results}
 
-The maximum likelihood estimate of the signal strength, $\hat\mu$,
-is obtained by numerically minimising the value of $-\ln{\mathcal{L}}$.
-The values of nuisance parameters at this point are denoted as
-$\hat\theta$. The confidence intervals on the measured value of signal
-strength are determined by the profiling of the likelihood function,
-i.e. maximising the likelihood at a particular value of $\mu$, obtained
-by the nuisance parameters taking the values of $\hat{\hat\theta}(\mu)$.
-The measured signal strength is found to be
-\begin{equation}
-\mu = 0.5 \pm 0.7,
-\end {equation}
-where the uncertainty is dominated by the statistical uncertainty on the
-data. The impact of systematic uncertainties is $\pm^{0.2}_{0.1}$,
-dominated by the uncertainties on signal normalisation and shape
-from theoretical (0.08) and experimental (0.07) effects. The effect
-of spurious signal uncertainty is 0.06.
+The point estimate of the signal strength, $\hat\mu$, is obtained
+by numerically minimising the value of $-\ln{\mathcal{L}}(\mu, \theta | \mathcal{D})$,
+and is found to be 0.5. The values of nuisance parameters at this
+point are denoted as $\hat\theta$.
+
+The results of the maximum likelihood fit are shown in Figure
+\ref{fig:hmumu:fit-high} for the ``High" categories, Figure
+\ref{fig:hmumu:fit-medium} for the ``Medium" categories,
+and in Figure \ref{fig:hmumu:fit-low} for the ``Low" categories.
+Figure \ref{fig:hmumu:fit-combination} shows the combined fit in
+all analysis categories, both weighted by the importance of the
+categories, and unweighted.
 
 Table \ref{tab:hmumu:results} shows the number of observed data events
 in each of the analysis categories, along with the number of signal events
@@ -1437,38 +1433,54 @@ S/$\sqrt{\text{B}}$ and signal purity (S/B) are also shown.
   \end{tabular}
 \end{table}
 
-The results of the maximum likelihood fit are shown in Figures
-\ref{fig:hmumu:fit-high} for the ``High" categories,
-\ref{fig:hmumu:fit-medium}, for the ``Medium" categories, 
-and \ref{fig:hmumu:fit-low} for the ``Low" categories.
-Figure \ref{fig:hmumu:fit-combination} shows the combined fit in
-all analysis categories, both weighted by the importance of the
-categories, and unweighted. Figure \ref{fig:hmumu:fit-pulls}
-shows the expected and observed signal strengths in all
-twelve analysis categories.
-
-In order to assess the compatibility of the data with the 
-signal strength $\mu$ hypothesis, a test statistic needs to be computed
-for the data and compared to the distribution of the test statistic
-under that hypothesis. To this end the likelihood ratio is defined
-for each of the hypotheses, parametrised by $\mu$
+In order to construct confidence intervals on $\mu$ a hypothesis
+test is conducted at each value of $\mu$. This is done with the help
+of a test statistic, a mapping from the data to a real number.
+First, a profile likelihood ratio is defined as
 \begin{equation}
 \lambda(\mu) =
 \frac{\mathcal{L}(\mu, \hat{\hat\theta}(\mu))}
      {\mathcal{L}(\hat\mu, \hat\theta)},
 \end{equation}
-where $\hat\mu$ and $\hat\theta$ represent the maximum-likelihood
-estimates of $\mu$ and $\theta$, while $\hat{\hat\theta}(\mu)$
-are the nuisance parameters which maximise the likelihood with
-$\mu$ fixed.
+where $\hat{\hat\theta}(\mu)$ are the nuisance parameters which maximise
+the likelihood with $\mu$ fixed, called the conditional maximum
+likelihod estimates. Clearly, $0 \leq \lambda(\mu) \leq 1$, with $\lambda(\mu)$
+values near 1 signalling good agreement between the data and the
+hypothesised $\mu$.
 
+The test statistic $t_\mu$ is defined for each hypothesised value of
+$\mu$,
+\begin{equation}
+t_\mu = -2\ln\lambda(\mu),
+\end{equation}
+with higher values of $t_\mu$ corresponding to less compatibility
+between the data and the hypothesised $\mu$, either because
+$\hat\mu$ is greater or smaller than the hypothesis $\mu$.
+The level of disagreement between the hypothesis $\mu$ and the
+data is quantified using the $p$-value,
+\begin{equation}
+p_\mu = \int_{t_{\mu, \text{obs}}}^{\infty} f(t_\mu|\mu) dt_\mu,
+\end{equation}
+where $t_{\mu, \text{obs}}$ is the value of the test statistic
+obtained from the data, and $f(t_\mu|\mu)$ is the probability
+distribution of the test statistic $t_\mu$ under the
+assumption $\mu$. Instead of using the computationally expensive
+Monte Carlo simulated toy experiments to determine the distribution
+of the test statistic, a representative Asimov dataset \cite{Cowan:2010js} is
+used to determine the expected uncertainty on the signal strength.
 
-Confidence intervals are
-computed based on the profile-likelihood-ratio test statistic
-\cite{Cowan:2010js}, while the systematic uncertainties are
-implemented as the nuisance parameters constrained either by
-Gaussian or log-normal likelihood terms.
-
+Using the 68\% confidence interval, the
+measured signal strength is found to be
+\begin{equation}
+\mu = 0.5 \pm 0.7,
+\end {equation}
+where the uncertainty is dominated by the statistical uncertainty on the
+data. The impact of systematic uncertainties is $\pm^{0.2}_{0.1}$,
+dominated by the uncertainties on signal normalisation and shape
+from theoretical (0.08) and experimental (0.07) effects. The effect
+of spurious signal uncertainty is 0.06. The expected and observed signal
+strengths in all twelve analysis categories are shown in Figure
+\ref{fig:hmumu:fit-pulls}
 
 \begin{figure}[h!]
   \centering
@@ -1561,7 +1573,6 @@ Gaussian or log-normal likelihood terms.
   }
   \label{fig:hmumu:fit-combination}
 \end{figure}
-
 
 \begin{figure}[h!]
   \centering
