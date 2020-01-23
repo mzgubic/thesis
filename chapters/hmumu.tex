@@ -1224,7 +1224,7 @@ dataset.
   \label{tab:hmumu:ss}
   \begin{tabular}{cccc}
     \toprule
-    Category & Empirical Function & max(SS/$\delta$S)[\%] & max(SS/S$_{SM}$)[\%] \\
+    Category & Empirical Function & max(SS/$\delta$S)[\%] & max(SS/S$_\text{SM}$)[\%] \\
     \midrule
     VBF High & Power0 & 10.6 & 14.7 \\
     VBF Medium & Epoly2 & 0.51 & 1.3 \\
@@ -1375,6 +1375,70 @@ parameters of the background model described in Eq. \ref{eq:hmumu:bkg}.
 
 \subsection{Results}
 
+The maximum likelihood estimate of the signal strength, $\hat\mu$,
+is obtained by numerically minimising the value of $-\ln{\mathcal{L}}$.
+The values of nuisance parameters at this point are denoted as
+$\hat\theta$. The confidence intervals on the measured value of signal
+strength are determined by the profiling of the likelihood function,
+i.e. maximising the likelihood at a particular value of $\mu$, obtained
+by the nuisance parameters taking the values of $\hat{\hat\theta}(\mu)$.
+The measured signal strength is found to be
+\begin{equation}
+\mu = 0.5 \pm 0.7,
+\end {equation}
+where the uncertainty is dominated by the statistical uncertainty on the
+data. The impact of systematic uncertainties is $\pm^{0.2}_{0.1}$,
+dominated by the uncertainties on signal normalisation and shape
+from theoretical (0.08) and experimental (0.07) effects. The effect
+of spurious signal uncertainty is 0.06.
+
+Table \ref{tab:hmumu:results} shows the number of observed data events
+in each of the analysis categories, along with the number of signal events
+predicted by the Standard Model, and the values of signal and background
+events obtained from the maximum likelihood fit. Significance proxy
+S/$\sqrt{\text{B}}$ and signal purity (S/B) are also shown.
+
+\begin{table}[htb]
+  \centering
+  \caption{
+  Number of events in the central region in all the analysis categories,
+  as observed in data (Data), predicted for signal by the Standard Model
+  (S$_\text{SM}$), and events from signal (S) and background (B) derived
+  from the results of the maximum likelihood fit. Additionally the
+  number of observed signal events over the square root of the number of
+  observed background events (S/$\sqrt{\text{B}}$) and the signal purity
+  (S/B) are shown. From Ref. \cite{ATLAS-CONF-2019-028}.
+  }
+  \label{tab:hmumu:results}
+  \begin{tabular}{ c c c c c c c }
+    \toprule
+    Category        & Data     & S$_\text{SM}$  &   S     &    B     & S/$\sqrt{\text{B}}$ & S/B [\%] \\
+    \midrule
+    VBF High        & 40       &  4.5           &  2.3    & 34       &  0.39               &  6.6 \\
+    VBF Medium      & 109      &  5.5           &  2.8    & 100      &  0.28               &  2.8 \\
+    VBF Low         & 450      &  9.6           &  4.9    & 420      &  0.24               &  1.2 \\
+    2-jet High      & 3400     &    38          &  19     & 3440     &  0.33               &  0.6 \\
+    2-jet Medium    & 13938    &    70          &  35     & 13910    &  0.30               &  0.3 \\
+    2-jet Low       & 40747    &    75          &  38     & 40860    &  0.19               &  0.1 \\
+    1-jet High      & 2885     &    32          &  16     &  2830    &  0.31               &  0.6 \\
+    1-jet Medium    & 24919    &  107           &  54     & 24890    &  0.35               &  0.2 \\
+    1-jet Low       & 77482    &  134           &  68     & 77670    &  0.24               &  0.1 \\
+    0-jet High      & 24777    &  85            &  43     & 24740    &  0.27               &  0.2 \\
+    0-jet Medium    & 85281    &  155           &  79     & 85000    &  0.27               &  0.1 \\
+    0-jet Low       & 180478   &  144           &  73     & 180000   &  0.17               &  0.1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The results of the maximum likelihood fit are shown in Figures
+\ref{fig:hmumu:fit-high} for the ``High" categories,
+\ref{fig:hmumu:fit-medium}, for the ``Medium" categories, 
+and \ref{fig:hmumu:fit-low} for the ``Low" categories.
+Figure \ref{fig:hmumu:fit-combination} shows the combined fit in
+all analysis categories, both weighted by the importance of the
+categories, and unweighted. Figure \ref{fig:hmumu:fit-pulls}
+shows the expected and observed signal strengths in all
+twelve analysis categories.
 
 
 \begin{figure}[h!]
