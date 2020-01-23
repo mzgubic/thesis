@@ -1305,16 +1305,23 @@ at all when fitting the invariant mass spectum in data.
 
 \section{Statistical treatment}
 
-The results are obtained by a combined signal and background
-binned maximum-likelihood fit, performed simutlaneously in the
-twelve analysis categories. The fit is performed in the 120--130 \GeV~
-region, with the bin size of 0.1 \GeV. Confidence intervals are
-computed based on the profile-likelihood-ratio test statistic
-\cite{Cowan:2010js}, while the systematic uncertainties are
-implemented as the nuisance parameters constrained either by
-Gaussian or log-normal likelihood terms.
+The analysis of the data is based on a binned likelihood model
+for the observed number of events in the invariant mass spectrum
+of the analysis categories. The approach is mostly frequentist,
+though it deviates from the paradigm to reflect practical needs.
+Most notably, systematic uncertainties are treated using
+constraint terms, even though the underlying uncertainty may not
+be a result of limited statistical accuracy of an auxiliary
+measurement, as is the case with some theoretical parameters.
+Furthermore, when setting the upper limits on the signal
+strength, a modification of the usual approach is used in order
+to prevent exclusions of arbitrarily small signals as a result
+of downward fluctuations in the backgroun.
 
-TODO
+The results are obtained by a combined signal and background
+binned maximum-likelihood fit, performed simultaneously in the
+twelve analysis categories. The fit is performed in the 120--130
+\GeV~region, with the bin size of 0.1 \GeV.
 
 \subsection{Likelihood function}
 
@@ -1324,14 +1331,11 @@ normalised such that $\mu = 0$ means no observed signal events,
 and $\mu=1$ means the expected number of events from the Standard Model.
 The nuisance parameters are denoted by $\theta$, and include the 
 parameters of the background model as well as the systematic
-uncertainties with constraint terms. 
-
-The observed data, representing the observed events binned in
-the invariant mass, is denoted by
-$\mathcal{D} = \{n_{cb}\}$, where $n_{cb}$ is the number of
+uncertainties affecting the normalisation, shape, and distribution
+of signal events between the analysis categories. The observed data,
+representing the observed events binned in the invariant mass, is
+denoted by $\mathcal{D} = \{n_{cb}\}$, where $n_{cb}$ is the number of
 data events in bin $b$ of category $c$.
-%The total number of data events
-%in category $c$ is denoted by $n_c = \sum_{b \in \text{bins}} n_{cb}$.
 
 The full likelihood function is the product of likelihoods
 in each of the categories, multiplied by the constraint 
@@ -1347,11 +1351,12 @@ with taking on the value $a_p$, and parametrised by $\alpha_p$. For example, par
 $p$ can be the muon trigger efficiency scale factor, which takes on a
 value of $a_p$ and is constrained by a Gaussian term $f_p$ with
 $\alpha_s$ being the nominal value of the scale factor and its uncertainty,
-obtained from previous independent measurements \footnote{For practical reasons
-the treatment of theoretical parameters also uses constraint terms. However,
-in many cases the associated uncertainty does not reflect a previous measurement but
-rather the degree of our knowledge about a parameter, a manifestly Bayesian
-take on the matter.}.
+obtained from previous independent measurements
+%\footnote{For practical reasons
+%the treatment of theoretical parameters also uses constraint terms. However,
+%in many cases the associated uncertainty does not reflect a previous measurement but
+%rather the degree of our knowledge about a parameter, a manifestly Bayesian
+%take on the matter.}.
 
 The likelihood function in the category $c$ takes the form
 \begin{equation}
@@ -1439,6 +1444,29 @@ all analysis categories, both weighted by the importance of the
 categories, and unweighted. Figure \ref{fig:hmumu:fit-pulls}
 shows the expected and observed signal strengths in all
 twelve analysis categories.
+
+In order to assess the compatibility of the data with the 
+signal strength $\mu$ hypothesis, a test statistic needs to be computed
+for the data and compared to the distribution of the test statistic
+under that hypothesis. To this end the likelihood ratio is defined
+for each of the hypotheses, parametrised by $\mu$
+\begin{equation}
+\lambda(\mu) =
+\frac{\mathcal{L}(\mu, \hat{\hat\theta}(\mu))}
+     {\mathcal{L}(\hat\mu, \hat\theta)},
+\end{equation}
+where $\hat\mu$ and $\hat\theta$ represent the maximum-likelihood
+estimates of $\mu$ and $\theta$, while $\hat{\hat\theta}(\mu)$
+are the nuisance parameters which maximise the likelihood with
+$\mu$ fixed.
+
+
+Confidence intervals are
+computed based on the profile-likelihood-ratio test statistic
+\cite{Cowan:2010js}, while the systematic uncertainties are
+implemented as the nuisance parameters constrained either by
+Gaussian or log-normal likelihood terms.
+
 
 \begin{figure}[h!]
   \centering
