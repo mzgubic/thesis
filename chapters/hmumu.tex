@@ -960,7 +960,7 @@ As a result, the signal shape is dominated by detector resolution
 effect and to some extent the quality of final state radiation
 recovery.
 
-It is modelled using a double-sided Crystal-Ball (DCSB) function
+It is modelled using a double-sided Crystal-Ball (DSCB) function
 \cite{Oreglia:1980cs}, which has a Gaussian core
 and tails on both sides, and is defined as \cite{Aaboud:2016tru}
 \begin{equation}
@@ -970,7 +970,7 @@ and tails on both sides, and is defined as \cite{Aaboud:2016tru}
 \newcommand{\nlow}{n_\text{low}}
 \newcommand{\nhigh}{n_\text{high}}
 \newcommand{\for}{\text{for }}
-    \text{DCSB} = N \cdot
+    \text{DSCB} = N \cdot
     \begin{cases}
       e^{-\frac{1}{2}t^2}              &  \for -\alow \leq t \leq \ahigh \\
       e^{-\frac{1}{2}\alow^2} \left[ \frac{\alow}{\nlow} \left( \frac{\nlow}{\alow} -\alow - t \right) \right]^{-\nlow}  & \for t < -\alow \\
@@ -1005,14 +1005,14 @@ equal to the statistical precision of the test.
 
 The fitted values of the $\mu_\text{CB}$ parameter were between
 124.5 and 124.8 \GeV, while the $\sigma_\text{CB}$ parameter varied
-between 2.5 and 3.0 \GeV~between the categories. Fitted DCSB models
+between 2.5 and 3.0 \GeV~between the categories. Fitted DSCB models
 are shown in Figure \ref{fig:hmumu:sig-model} for the VBF High and
 0-jet High categories.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/hmumu/sig-model}
   \caption[$\hmumu$ signal model]{
-  DCSB signal model fit to the MC simulation of all Higgs production
+  DSCB signal model fit to the MC simulation of all Higgs production
   modes in the VBF High and 0-jet High analysis categories. VBF High
   category fit is shown as a red solid line, while the MC simulation
   is shown as empty red markers. The fit in the 0-jet High category
@@ -1303,7 +1303,7 @@ selecting the empirical part of the function and the evaluation
 of the spurious signal systematic uncertainty. They are not used
 at all when fitting the invariant mass spectum in data.
 
-\section{Statistical treatment}
+\section{Results}
 
 The analysis of the data is based on a binned likelihood model
 for the observed number of events in the invariant mass spectrum
@@ -1380,7 +1380,7 @@ number of background events in the bin $b$ of category $c$, and
 also depends on the nuisance parameters, most importantly on the
 parameters of the background model described in Eq. \ref{eq:hmumu:bkg}.
 
-\subsection{Results}
+\subsection{Statistical treatment}
 
 The point estimate of the signal strength, $\hat\mu$, is obtained
 by numerically minimising the value of $-\ln{\mathcal{L}}(\mu, \theta | \mathcal{D})$,
@@ -1481,6 +1481,57 @@ from theoretical (0.08) and experimental (0.07) effects. The effect
 of spurious signal uncertainty is 0.06. The expected and observed signal
 strengths in all twelve analysis categories are shown in Figure
 \ref{fig:hmumu:fit-pulls}
+
+In the measurement of the signal strength the parameter of interest
+was allowed to take either positive or negative values. It is also
+possible to restrict the signal strength to non-negative values, and
+perform a one-sided hypothesis test. However, the estimator $\hat\mu$
+is still allowed to take on negative values and the restriction on
+$\mu$ is implemented through a different test statistic.
+When the best fit value $\hat\mu < 0$, the best agreement between 
+the data and the physically allowed signal strength is at $\mu = 0$,
+defining $\tilde\lambda(\mu)$ as
+\begin{equation}
+\tilde\lambda(\mu) = 
+    \begin{cases}
+     \frac{\mathcal{L}(\mu, \hat{\hat\theta}(\mu))}{\mathcal{L}(\hat\mu, \hat\theta)} & \hat\mu \geq 0 \\
+     \frac{\mathcal{L}(\mu, \hat{\hat\theta}(\mu))}{\mathcal{L}(0, \hat{\hat\theta}(0))} & \hat\mu < 0,
+    \end{cases}
+\end{equation}
+where $\hat{\hat\theta}(0))$ are the values of nuisance parameters
+that maximise the likelihood conditioned on $\mu=0$. Using $\tilde\lambda(\mu)$,
+$\tilde{t}_\mu$ can be defined as $\tilde{t}_\mu = -2 \ln{\tilde\lambda(\mu)}$.
+The background-only hypothesis can then be tested by considering the
+special case of $\tilde{t}_\mu$ with $\mu=0$,
+\begin{equation}
+\tilde t_0 =
+    \begin{cases}
+     -2\ln{\tilde\lambda(0)} & \hat\mu \geq 0 \\
+     0                       & \hat\mu < 0.
+    \end{cases}
+\end{equation}
+It can be seen from the definition that large values of $\tilde t_0$
+correspond to poor agreement with data and are only achieved for
+$\hat\mu > 0$, as expected from a one-sided test. The $p$-value is
+then computed using
+\begin{equation}
+p_0 = \int_{\tilde t_{0, \text{obs}}}^{\infty} f(\tilde t_0 | 0) d \tilde t_0,
+\end{equation}
+where $t_{0, \text{obs}}$ is the test statistic obtained from the data,
+and $f(\tilde t_0 | 0)$ is the distribution of the test statistic 
+under the background-only hypothesis. The $p$-value is then converted
+to the quantile of the normal distribution, or number of ``sigma" ($Z$),
+using
+\begin{equation}
+Z = \Phi^{-1}(1-p_0),
+\end{equation}
+where $\Phi^{-1}$ is the inverse of the cumulative distribution for
+the normal distribution. The results of the test are
+\begin{equation}
+Z = 0.8~(1.5)~\sigma \text{ observed (expected)},
+\end{equation}
+where the expected value is obtained using the Asimov dataset.
+
 
 \begin{figure}[h!]
   \centering
