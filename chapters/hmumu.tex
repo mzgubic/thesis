@@ -1553,10 +1553,24 @@ where $t'_{\mu, \text{obs}}$ is the value of the test statistic observed
 in the data, and $f(t'_\mu | \mu)$ is the distribution of the test statistic
 under the assumption that the data comes from hypothesis $\mu$.
 
-The standard 1-p confidence level (CL) is obtained by solving for $\mu$
-which produces a $p$-value p. However, in the case of a downward fluctuation
-of the background this results in tight limits on the signal strength,
-which is undesirable. 
+The standard 95\% confidence level (CL) upper limit is obtained by solving
+for $\mu$ which results in $p_\mu = 0.05$. However, in the case of a downward
+fluctuation of the background this results in strong limits on the signal strength,
+which is undesirable. As a remedy, an alternative quantity $p'$ is defined as
+\begin{equation}
+p' = \frac{p_\mu}{p_b}
+\end{equation}
+where $p_b$ is the $p$-value under the background-only assumption,
+i.e.
+\begin{equation}
+p_b = \int_{t'_{\mu, \text{obs}}}^{\infty} f(t'_\mu | 0) d t'_\mu.
+\end{equation}
+The so-called CL$_s$ upper limits are obtained by solving for $\mu$ which
+results in $p' = 0.05$, and prevents the exclusion of small signals as
+a result of the background underfluctuation. However, the excluded signal
+strength region loses the confidence interval interpretation. While the
+coverage for large $\mu$ tends to 95\% as expected, for small $\mu$ the
+coverage approaches 100\%.
 
 The expected limits are also computed using the Asimov dataset
 corresponding to the $\mu=0$ and $\mu=1$ assumptions. Using the CL$_s$
