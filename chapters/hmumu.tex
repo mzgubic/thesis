@@ -1532,6 +1532,41 @@ Z = 0.8~(1.5)~\sigma \text{ observed (expected)},
 \end{equation}
 where the expected value is obtained using the Asimov dataset.
 
+It is also possible to reverse the situation and test a combined signal
+and background hypotheses, parametrised by the value of $\mu$, which is
+restricted to be positive. A test statistic $t'_\mu$ is defined as
+\begin{equation}
+t'_\mu =
+    \begin{cases}
+     -2\ln{\tilde\lambda(\mu)} & \hat\mu \leq \mu \\
+     0                         & \hat\mu > \mu,
+    \end{cases}
+\end{equation}
+reflecting the fact that the data with $\hat\mu > \mu$ do not constitute
+evidence against hypothesis $\mu$. It can be seen from the definition
+that large values of $t'_\mu$ correspond to data less compatible with the
+hypothesis. Therefore, the $p$-value is computed as
+\begin{equation}
+p_\mu = \int_{t'_{\mu, \text{obs}}}^{\infty} f(t'_\mu | \mu) d t'_\mu,
+\end{equation}
+where $t'_{\mu, \text{obs}}$ is the value of the test statistic observed
+in the data, and $f(t'_\mu | \mu)$ is the distribution of the test statistic
+under the assumption that the data comes from hypothesis $\mu$.
+
+CLS method!
+
+The expected limits are also computed using the Asimov dataset
+corresponding to the $\mu=0$ and $\mu=1$ assumptions. The 95\% confidence
+level limits were found to be
+\begin{equation}
+\text{95\% CL upper limits on $\mu$} =
+    \begin{cases}
+     1.7 & \text{observed } \\
+     1.3 & \text{expected } (\mu = 0) \\
+     2.2 & \text{expected } (\mu = 1)
+    \end{cases}
+\end{equation}
+
 
 \begin{figure}[h!]
   \centering
