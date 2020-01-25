@@ -47,8 +47,9 @@ roughly balanced by the improved performance of the ATLAS detector.
 Muon resolution is an exception to this rule because of the
 expected improvements in performance of the ATLAS Inner Tracker (ITk)
 upgrade. To model this improvement the signal widths are reduced 
-by 15--30\% \cite{Collaboration:2285585}, depending on the analysis
-category.
+by 30\% in the VBF and Central analysis categories and by 15\% in
+the Forward categories to emulate the expected improvements
+\cite{Collaboration:2285585}.
 
 Two scenarios are considered regarding the treatment of systematic
 uncertainties. Scenario 1 (S1) assumes the relative systematic
@@ -60,8 +61,38 @@ and S2, while the luminosity uncertainty is set at 1\%.
 
 Table \ref{tab:out:res} shows the comparison of expected uncertainty
 on the signal strength for the Run 2 analysis with 79.8 $\ifb$
-and the S1 and S2 scenarios at the HL-LHC.
+and the S1 and S2 scenarios at the HL-LHC. It can be seen that 
+even with the full HL-LHC dataset the analysis will be limited
+by the statistical uncertainty on data. On top of these results
+an additional 25\% improvement in sensitivity can be expected
+from the improved background modelling and categorisation
+presented in this thesis.
 
+\begin{table}[htb]
+  \renewcommand{\arraystretch}{1.4}
+  \centering
+  \caption{
+    Expected uncertainties on the signal strength measurement with
+    the Run 2, 79.8 $\ifb$ dataset and the S1 and S2 systematic
+    uncertainty scenarios for the HL-LHC dataset. Columns show
+    the total uncertainty, statistical uncertainty, experimental
+    systematic uncertainty, and the uncertainty on the signal
+    normalisation.
+    Reproduced from Ref. \cite{ATL-PHYS-PUB-2018-054}.}
+  \label{tab:out:res}
+  \begin{tabular}{ccccc}
+    \toprule
+    Scenario & $\Delta_\text{tot}/\sigma_\text{SM}$ 
+             & $\Delta_\text{stat}/\sigma_\text{SM}$ 
+             & $\Delta_\text{exp}/\sigma_\text{SM}$ 
+             & $\Delta_{\mu_\text{sig}}/\sigma_\text{SM}$ \\
+    \midrule
+    Run 2, 79.8 $\ifb$ & $^{+1.04}_{-1.06}$ & $^{+0.99}_{-1.03}$ & $^{+0.03}_{-0.03}$ & $^{+0.32}_{-0.27}$ \\
+    HL-LHC S1          & $^{+0.15}_{-0.14}$ & $^{+0.12}_{-0.13}$ & $^{+0.03}_{-0.03}$ & $^{+0.08}_{-0.05}$ \\
+    HL-LHC S2          & $^{+0.13}_{-0.13}$ & $^{+0.12}_{-0.13}$ & $^{+0.02}_{-0.02}$ & $^{+0.05}_{-0.04}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 
 
