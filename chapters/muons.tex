@@ -1,7 +1,7 @@
 \chapter{Muons in ATLAS}
 \label{sec:muons}
   
-\textit{If you can meet with Triumph and Disaster \\ And treat those two impostors just the same;}
+\textit{If you can meet with Triumph and Disaster \\ And treat those two impostors just the same}
 \vspace{5mm}
 \begin{flushright}
 --- Rudyard Kipling
@@ -20,11 +20,11 @@ by combining the information from the tracker and the muon spectrometer.
 In order to be able to do precision studies, the MC
 simulation of the detector response needs to be calibrated to match
 the response in the real detector. In particular, the transverse momentum of
-muons needs to be calibrated to the resolution obtained in the real
-detector. Similarly, the reconstruction, track-to-vertex-association (TTVA),
+muons needs to be calibrated to the scale and resolution obtained in the data.
+Similarly, the reconstruction, track-to-vertex-association (TTVA),
 and isolation efficiencies need to be calibrated to match those in 
 recorded data. These calibrations are obtained through measurements
-and carry associated uncertainties.
+using data and MC simulation and carry associated uncertainties.
 
 This chapter describes the first novel contributions from the author.
 The first is an improved method of background subtraction in the isolation
@@ -79,9 +79,9 @@ inside-out reconstruction is also used as the complementary approach
 \cite{Aad:2016jkr}.
 \item Segment-tagged (ST) muons are formed by combining the ID track
 with a single segment in the MDT or CSC chambers and were designed
-to recover muon reconstruction efficiency for low $\pt$ muons which
-only cross a single layer of the MS or cross the regions where
-MS has poor acceptance \cite{Aad:2016jkr}.
+to recover muon reconstruction efficiency for muons in the regions of
+MS with poor acceptance, and for low $\pt$ muons which
+only cross a single layer of the MS \cite{Aad:2016jkr}.
 \item Calorimeter-tagged (CT) muons match an ID track with a 
 calorimeter deposit consistent with a minimum-ionising particle.
 This type recovers the muon reconstruction efficiency in the regions
@@ -98,8 +98,8 @@ Finally, overlaps between different muons are resolved by order of
 precedence starting with CB muons, followed by ST muons, and
 finally the CT muons. ME ambiguities are resolved by analysing the
 track fit quality and the number of hits.
-The requirements on the number of hits and holes
-\footnote{A \textit{hole} is an active sensor traversed by the
+The requirements on the number of hits and holes\footnote{A
+\textit{hole} is an active sensor traversed by the
 track that contains no hits. It also falls between two hits assigned to the track.}
 in the ID and MS detectors are also used to guarantee a robust
 measurement of $\pt$ \cite{Aad:2016jkr}.
@@ -240,16 +240,18 @@ for example a jet punching through the hadron calorimeter in the muon
 spectrometer could be reconstructed as a muon. The key to identification
 of non-fake prompt muons is that they are produced in isolation from
 other particles, unlike fake or non-prompt muons which are usually
-surrounded by a jet of other particles. Two sets of variables, one based
+surrounded by other particles. Two sets of variables, one based
 on the tracker information and the other on calorimeter information, are
 used to identify prompt muons.
 
 Track-based isolation variable, $\pt^{\text{varcone}, R}$, is defined
 as the scalar sum of $\pt$ of non-muon tracks inside the cone of radius
 $\Delta R = \min(R, 10~\GeV/\pt^\mu)$, where $R = \sqrt{\Delta \eta^2 +
-\Delta \phi^2}$ and $\pt^\mu$ is the transverse momentum of the muon.
+\Delta \phi^2}$, $\Delta \eta$ and $\Delta \phi$ are the differences
+in pseudorapidity and azimuthal angle between the muon and the track, 
+and $\pt^\mu$ is the transverse momentum of the muon.
 The tracks used in the sum have $\pt > 1~\GeV$,
-$|\eta| < 2.5$, longitudinal impact parameter $< 3~\mm$, and satisfy a
+$|\eta| < 2.5$, longitudinal impact parameter smaller than $3~\mm$, and satisfy a
 Loose track quality. The cone size is chosen to vary with $\pt^\mu$
 to follow the collimation of tracks in highly boosted systems \cite{Aad:2016jkr}.
 
@@ -264,8 +266,9 @@ and the estimate of the energy coming from \pileup~related effects. The
 \pileup~contributions are estimated using jet area technique \cite{CACCIARI2008119}
 and are corrected on event-by-event basis \cite{Aad:2016jkr}.
 
-Isolation selections are defined as cuts on these variables. Various
-selections have been supported in the past few years, to target the needs
+Isolation selections are defined as cuts on these variables which
+may or may not depend on the muon kinematics. Various
+selections have been supported in the past few years to target the needs
 of different analyses and to adapt to higher \pileup~conditions. The 
 selections differ in signal efficiency and backgorund rejection
 throughout the $\pt$ regime. For each of the isolation selections a
@@ -275,25 +278,25 @@ of muon $\pt$. The measurement of the efficiencies is performed on
 $Z\rightarrow\mu\mu$ events in data and MC simulation using the
 tag-and-probe method \cite{Aad:2016jkr}.
 
-Tag-and-probe selects events with a pair of muons with invariant mass
+Tag-and-probe method selects events with a pair of muons with invariant mass
 within 10 GeV of the $Z$ boson mass, where the tag muon is required to
 have triggered the event, and the probe muon is used for the efficiency
 measurements. More precisely, the tag muon is required to satisfy
 $\pt > 24~\GeV$, pass Loose isolation selection, and must be trigger
 matched to the muon firing the trigger. Both tag and probe muons are
-required to be CB muons, passing the Medium quality requirements,
+required to be CB muons, pass the Medium quality requirements,
 and pass requirements on transverse and longitudinal impact parameters
 or their significances $d_0/\sigma_{d_0} < 3.0$, $|z_0| < 10~\mm$ and
 $|z_0 \sin{\theta}| < 0.5~\mm$. They are also required to be well
-separated $R_{\mu,\mu} > 0.3$ from each other, and the probe should
-be separated from jets $R_{j,\mu} > 0.4$.
+separated from each other ($R_{\mu,\mu} > 0.3$), and the probe should
+be separated from jets ($R_{j,\mu} > 0.4$).
 
 The MC simulation contains a pure sample of $Z\rightarrow\mu\mu$ events,
 but the recorded data consists of an unknown mixed stream of underlying
-processes, both the $Z\rightarrow\mu\mu$ decays as well events with fake
+processes, inclusing both the $Z\rightarrow\mu\mu$ decays as well events with fake
 or non-prompt muons, collectively referred to as background. In order
 to measure the efficiency of prompt muons, the background must be
-subtracted in the efficiency measurement in data. The old method of
+subtracted for the efficiency measurement in data. The old method of
 background subtraction relied on the assumption that the number of
 background events in data is the same in the same charge
 (SC) as in the opposite charge (OC) phase space:
@@ -309,7 +312,7 @@ the superscript. The leading systematic uncertainty at low muon $\pt$
 comes from the background subtraction, namely the assumption $T=1$.
 Additional systematic uncertainties on the scale factor
 measurement are computed by varying the selection requirements and
-adding individual unceratinties in quadrature, and adding a fixed
+adding individual uncertainties in quadrature, and adding a fixed
 uncertainty due to variation in $\eta$ as the scale factors are
 provided only as a function of $\pt$. The systematic variations are
 summarised in Table \ref{tab:muon:systs} below.
@@ -415,7 +418,7 @@ are recomputed in the adjusted range.
 The current method no longer assumes that the normalisation of background
 events is the same in SC and OC data. Instead, the assumption is reduced
 to the shape of the background to be the same, with normalisation 
-determined via the fit. In order to estimate the associated systematic
+determined via the maximum likelihood fit. In order to estimate the associated systematic
 uncertainty the scale factors are re-computed using different QCD templates.
 Recall, the nominal QCD template is taken from the SC data, where the number of
 genuine $\zmumu$ events is negligible. Similarly, two other QCD templates are
