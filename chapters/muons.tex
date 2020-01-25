@@ -548,11 +548,11 @@ robust in high \pileup~conditions \cite{Zgubic:2320874}.
 \section{VADER4$\mu$}
 
 Search for the decay of the Higgs boson to a pair of muons, described
-in detail in the next chapter, proceeds as a search for a peak on top
-of a smooth Drell-Yan background. According to the Standard Model,
+in detail in the next chapter, proceeds as a search for a peak in the invariant mass spectrum on top
+of the smooth Drell-Yan background. According to the Standard Model,
 the width of the Higgs boson is much narrower than the experimental
 resolution of the ATLAS detector. The sensitivity of the search is
-therefore limited by the experimental resolution, meaning that its
+therefore limited by experimental muon resolution, meaning that its
 understanding could potentially be exploited
 to improve the sensitivity of the search. This prompted the study to
 understand the \textbf{V}ariables \textbf{A}ffecting \textbf{DE}tector
@@ -574,9 +574,9 @@ the analysis may be improved. This can be done directly on the CB muons.
 
 \item Uncertainties on the $\pt$ of ID and MS tracks are known to be
 poorly modelled, which is the reason a combined re-fit is used instead of
-the statistical combination of the IS and MS tracks. If the uncertainties
-on ID and MS $\pt$ can be assessed more accurately, a statistical
-combination could improve the measurement of the CB momentum over the
+the statistical combination of the ID and MS tracks. If the uncertainties
+on the ID and MS $\pt$ can be estimated more accurately, a statistical
+combination could result in a better measurement of the CB momentum compared to the
 combined re-fit.
 
 \item Somewhat more speculatively, the muon reconstruction
@@ -591,10 +591,10 @@ tracks, along with their uncertainties, and combined statistically.
 \end{itemize}
 Two datasets are prepared to facilitate the study. The ``single muon"
 dataset consists of reconstructed prompt muons from the MC simulation
-of a variety of physics processes\footnote{no $\zmumu$ to avoid overlap
+of a variety of physics processes\footnote{$\zmumu$ is not included to avoid overlap
 with the dimuon dataset}, with truth-level $\pt$ information
-available. It is preprocessed by removing some of the muons, resulting
-in a $\pt$ distribution that is uniform for $\pt < 200~\GeV$. The ``dimuon"
+available. It is preprocessed by removing some of the muons such that the resulting
+$\pt$ distribution is uniform for $\pt < 200~\GeV$. The ``dimuon"
 dataset consists of data and MC simulation of the $\zmumu$ process
 and does not contain any truth-level information.
 
@@ -615,7 +615,7 @@ in track direction across the detector layers in order to detect
 in-flight decays.
 \end{itemize}
 L1 loss function is used as the L2 loss was found to give biased
-results due to asymetric residuals. The equivalent method is used
+results due to asymmetric residuals. The same method is used
 to predict a correction for the MS muons.
 
 A trained model is then used to provide corrections to the
@@ -701,7 +701,7 @@ where $q$ is the charge, $p$ is the momentum, and
 $\sigma_{\left(\frac{q}{p}\right)}$ is the provided estimate of the
 uncertainty. If the provided estimate was accurate the value of $\alpha$
 would be 1. However, the uncertainties are generally too optimistic (too
-small), making $\alpha$ larger than 1. Moreover, the optimism varies with
+small), making $\alpha$ larger than 1. Moreover, the amount of optimism varies with
 the kinematics of the muon so a simple scaling is insufficient.
 The goal, therefore, is to estimate
 the pull on muon-by-muon basis and provide a correction to the estimate
@@ -809,13 +809,13 @@ to events passing $\hmumu$ selection described in Ref.
 \cite{ATLAS-CONF-2018-026}. For each event the corrected uncertainty
 on the invariant mass measurement is computed and the distribution
 shown in Figure \ref{fig:muon:hmumu} for each of the cut-based categories
-described in detail in Ref. \cite{ATLAS-CONF-2018-026}. In particular for
-the non-central categories, in which at least one muon satisfies
-$|\eta| > 1.0$, a large spread in uncertainties can be seen. This means
+described in detail in Ref. \cite{ATLAS-CONF-2018-026}. The non-central
+categories, in which at least one muon satisfies
+$|\eta| > 1.0$, have a particularly large spread in uncertainties. This means
 that the categories contain events with different resolutions. A split in
 the subcategories based on the predicted resolution is expected to
 improve the sensitivity of the analysis. Unfortunately the sensitivity
-improvement was found to be limited under 2\%, which was decided
+improvement was found to be limited to under 2\%, which was decided
 to be too small to justify the increase in the complexity of the analysis.
 \begin{figure}[h!]
   \centering
