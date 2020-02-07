@@ -16,7 +16,8 @@ became the preferred way to study the properties of the Higgs boson.
 The mass \cite{Aad:2015zhl, Aaboud:2018wps, CMS-PAS-HIG-19-004},
 as well as inclusive and differential cross-sections
 \cite{Aad_2015, Chatrchyan_2014, Aaboud:2017oem, Sirunyan:2018sgc, Aaboud:2018ezd},
-have been measured and new production modes, $\tth$ \cite{Sirunyan:2018hoz, Aaboud:2018urx}
+have been measured and new production modes, VBF \cite{Khachatryan:2016vau, Aad:2019mbh},
+$\tth$ \cite{Sirunyan:2018hoz, Aaboud:2018urx}
 and $\vh$ \cite{Sirunyan:2018kst, Aaboud:2018zhk}, have been 
 observed. However, the interactions between the Higgs boson
 and the first or second generation of fermions have not been
@@ -50,7 +51,8 @@ decreased to 2.8 and 2.9 by ATLAS and CMS respectively
 \cite{Aaboud:2017ojs, CMS-PAS-HIG-17-019}, with ATLAS
 further updating its result to 2.1 using the data collected in 2017
 \cite{ATLAS-CONF-2018-026}. This corresponds to $0.9 \sigma$ expected
-significance, meaning that the channel is on the verge of evidence.
+significance, meaning that the analysis is near to seeing evidence
+for the decay.
 
 This chapter presents the search for the Higgs boson decay to muon
 pairs using full ATLAS Run 2 dataset collected between 2015 and 2018
@@ -68,13 +70,13 @@ individual categories using a multivariate discriminant, based
 on the differences in kinematics between the muon pairs coming
 from a Higgs boson produced in the main production modes, and the
 muon pairs coming from background events, which are dominated by
-the Drell-Yan spectrum. Signal events tend to be more central and
+the Drell-Yan process. Signal events tend to be more central and
 have higher transverse momentum, their jet multiplicity is higher,
 and the VBF production mode has a unique signature of two 
 back-to-back high-$\pt$ jets with little hadronic activity between
 them. Finally, a maximum likelihood fit to the dimuon invariant mass
 spectrum is performed in all categories simultaneously, extracting
-the signal strength parameter. The analysis is limited by
+the parameters of interest. The analysis is limited by
 statistical uncertainty arising from a limited size of the dataset.
 The systematic uncertainties are dominated by the uncertainty on
 the background modelling, assessed using a dedicated simulated sample.
@@ -139,7 +141,7 @@ libraries. Matching with the \textsc{Sherpa} parton showering
 In order to populate the tails of the
 DY invariant mass distribution relevant for the analysis an
 additional high-statistics sample is generated with identical
-setup an an additional cut of $\mmumu > 100$ \GeV. Finally, 
+setup an additional cut of $\mmumu > 100$ \GeV. Finally, 
 \textsc{Sherpa} is also used to model the electroweak $Z$+jets
 process with up to two additional jets at LO accuracy beyond
 the first two jets.
@@ -212,22 +214,22 @@ simulation samples in order to make them mimic the collected data.
 \subsection{Custom Drell-Yan sample}
 \label{sec:hmumu:customDY}
 
-Extract the signal strength paramater relies on a
+Extracting the signal strength paramater relies on a
 maximum likelihood fit to the invariant mass spectrum in data,
 using parametrised models of both signal and background. The choice
 of the functional form describing the background is crucial because
-a mismodelling of the background results in a bias on the extracted
+a mismodelling of the background may result in a bias on the extracted
 signal strength. This is particularly significant when the
 signal-to-background ratio is very small, because the impact can be
 large.
 
 In order to select the functional form and evaluate the resulting
-bias, referred to as the ``spurious signal", a fit to the
-background-only spectrum is performed. Ideally, this would be done
+bias, referred to as the ``spurious signal", the combined signal and background model is fit to the
+background-only spectrum. Ideally, this would be done
 on the background MC simulation described in Section \ref{sec:bkg-mc},
 but because of the high computational cost associated with the 
 simulation of the detector response the statistics of the sample
-are on the same order of magnitude as the data. As a result, the
+are on the same order of magnitude as the data. As a result,
 the extracted spurious signal value is unreliable and dominated by
 the statistical fluctuations. A custom high-statistics sample of DY
 events is generated to overcome this challenge.
@@ -337,10 +339,11 @@ the tracker, while the ME muons are used in the forward
 regions to reconstruct muons outside of the tracker
 coverage, where $2.5 < |\eta| < 2.7$.
 
-CB muons benefit from a combination of two $\pt$ measurements,
-the one in the tracker, and the one in the muon spectrometer.
+The $\pt$ measurement of the CB muons benefits from combining
+information from two subdetectors, namely the tracker and the
+muon spectrometer.
 Figure \ref{fig:hmumu:reso} verifies that the resulting dimuon
-invariant mass resolution is only marginally worse for muon
+invariant mass resolution is only marginally degraded for muon
 pairs containing one non-CB muon (dotted green line) compared
 to pairs where both muons are CB (dashed blue line). Since
 most muons are CB, the inclusive distribution (solid orange
@@ -448,7 +451,7 @@ clusters of calorimeter cells \cite{Aad:2016upy}, which are used as
 an input to the anti-k$_\text{T}$ clustering algorithm
 \cite{Cacciari:2008gp, Cacciari:2011ma} with the distance parameter
 $\Delta R = 0.4$. A requirement on the jet $\pt > 25$ \GeV~for the
-central jets ($|\eta| < 2.5$), and at $\pt > 25$ \GeV~for the forward
+central jets ($|\eta| < 2.5$), and at $\pt > 30$ \GeV~for the forward
 jets ($2.5 < |\eta| < 4.5$).
 
 The suppresion of jets coming from \pileup~ is achieved by using a
@@ -456,7 +459,7 @@ dedicated jet vertex tagging (JVT) discrimant \cite{ATLAS-CONF-2014-018},
 constructed using tracking information. In the forward region \pileup~
 jet suppression is achieved with the fJVT discriminant \cite{Aaboud:2017pou},
 using the information on jet shape and the topological correlations in
-\pileup interactions.
+\pileup~interactions.
 
 Jets containing a $b$-hadron are identified using a multivariate
 $b$-tagging algorithm \cite{Aaboud:2018xwy} if they are inside the
@@ -837,7 +840,7 @@ combined signal events in all fold separately using the QuantileTransformer
 algorithm from the \texttt{scikit-learn} \cite{scikit-learn} software package.
 
 The transformed scores are named $O_\text{VBF}$ for the VBF classifier,
-and $O_\ggf^(0-2)$ for the Higgs classifiers, where the superscript
+and $O_{\ggf}^{(0-2)}$ for the Higgs classifiers, where the superscript
 stands for the jet multiplicity. The category boundaries are defined
 as the cuts on these values, and are summarised in Table \ref{tab:hmumu:categories}.
 \begin{table}[h]
@@ -1003,7 +1006,7 @@ and was abandoned for simplicity.
 The detailed form of the signal shape is expected to have little
 impact on the result at the search stage. Nevertheless, injection
 tests were carried out, fitting the functional form to a MC simulated
-spectrum. The extracted signals matched the injection withing 0.5\%,
+spectrum. The extracted signals matched the injection within 0.5\%,
 equal to the statistical precision of the test.
 
 The fitted values of the $\mu_\text{CB}$ parameter were between
@@ -1102,7 +1105,7 @@ success of the analysis. Since the number of background events
 is much larger, a very small bias in the background model would
 greatly impact the extracted signal.
 
-The inclusive signal to background ratio is 0.2\% inclusively,
+The signal to background ratio in the Central region is 0.2\% inclusively,
 though this improves in some analysis categories. This requires
 the control of the background shape to sub per mille level.
 
@@ -1276,7 +1279,7 @@ MC simulation.
   normalised to the SM prediction, is shown as a red line.
   Reduced $\chi^2$ value of the fit and the corresponding
   $\chi^2$-probability are also shown. The middle panel shows
-  the the custom DY template, divided by the core function (black
+  the custom DY template, divided by the core function (black
   points) and the empirical function (blue solid line). The bottom
   panel shows the ratio between the custom DY template and
   full background model as black points. Signal shape, divided
@@ -1307,7 +1310,7 @@ those obtained from the nominal template.
 It should be noted that the custom DY samples are only used in
 selecting the empirical part of the function and the evaluation
 of the spurious signal systematic uncertainty. They are not used
-at all when fitting the invariant mass spectum in data.
+at all when fitting the invariant mass spectrum in data.
 
 \section{Results}
 
@@ -1398,8 +1401,9 @@ The results of the maximum likelihood fit are shown in Figure
 \ref{fig:hmumu:fit-medium} for the ``Medium" categories,
 and in Figure \ref{fig:hmumu:fit-low} for the ``Low" categories.
 Figure \ref{fig:hmumu:fit-combination} shows the combined fit in
-all analysis categories, both weighted by the importance of the
-categories, and unweighted.
+all analysis categories, both unweighted and weighted by
+$\log(1+S/B)$ per category, where S and B are the number of signal
+and background events in the Central region in the category.
 
 Table \ref{tab:hmumu:results} shows the number of observed data events
 in each of the analysis categories, along with the number of signal events
@@ -1573,7 +1577,7 @@ i.e.
 \begin{equation}
 p_b = \int_{t'_{\mu, \text{obs}}}^{\infty} f(t'_\mu | 0) d t'_\mu.
 \end{equation}
-The so-called CL$_s$ upper limits are obtained by solving for $\mu$ which
+The so-called CL$_s$ upper limits at 95\% CL are obtained by solving for $\mu$ which
 results in $p' = 0.05$ \cite{Cowan:2010js, 0954-3899-28-10-313} and
 prevents the exclusion of small signals as
 a result of the background underfluctuation. However, the excluded signal
