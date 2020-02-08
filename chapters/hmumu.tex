@@ -22,8 +22,8 @@ and $\vh$ \cite{Sirunyan:2018kst, Aaboud:2018zhk}, have been
 observed. However, the interactions between the Higgs boson
 and the first or second generation of fermions have not been
 observed yet due to experimental challenges. In the leptonic
-sector the main challenge is a very small branching fraction due
-to the small mass of electron and the muon compared to the tau.
+sector, the main challenge is a very small branching fraction due
+to the small mass of the electron and the muon compared to the tau.
 In the quark sector some branching ratios, for example to the charm
 quark pair, are larger than those in which the Higgs was discovered.
 However, detection is experimentally difficult in the LHC environment
@@ -81,16 +81,16 @@ statistical uncertainty arising from a limited size of the dataset.
 The systematic uncertainties are dominated by the uncertainty on
 the background modelling, assessed using a dedicated simulated sample.
 Additional systematic uncertainties arise from the normalisation 
-of signal sample and migration between the categories, such as
+of signal sample and the migration between the categories, such as
 the uncertainty on the production cross-section and branching ratio
 from the theoretical side, and luminosity, muon momentum resolution
 and detector calibration from the experimental side.
 
 A number of improvements were introduced with respect to the
-previous result. Selection was improved by including additional
+previous result. The selection was improved by including additional
 muons from the corners of detector acceptance, by improving
 the resolution of the invariant mass by recovering the final
-state radiation, and by better rejection of \pileup~ jets in the
+state radiation, and by the better rejection of \pileup~ jets in the
 forward region. The allocation of events in the categories was
 improved by employing a fully multivariate approach in lieu
 of a hybrid approach combining a multivariate discriminant and 
@@ -161,7 +161,7 @@ of the single-top is computed with prescriptions from
 separately.
 
 Diboson processes, $WZ$ and $ZZ$, are generated using
-\textsc{Sherpa} 2.2.1 with the NNPDF3.0 PDF set, and are normalised
+\textsc{Sherpa} 2.2.1 with the NNPDF3.0 PDF set and are normalised
 directly to the \textsc{Sherpa} prediction. Only semi-leptonic
 and fully-leptonic decays are simulated.
 
@@ -178,7 +178,7 @@ in QCD with NLO electroweak corrections applied
 \cite{Aglietti:2004nj, Actis:2008ug} under the assumption that
 they factorise. \textsc{Pythia} 8 with the AZNLO parameters
 \cite{Aad:2014xaa} is used to simulate the decay
-of the Higgs boson, final state photon radiation, parton
+of the Higgs boson, final-state photon radiation, parton
 showering, and hadronisation. 
 
 $\vbf$ and $q\bar{q}/qg \rightarrow \vh$ production modes are
@@ -189,7 +189,7 @@ generation. VBF cross-section is computed with full NLO QCD
 and electroweak corrections \cite{Ciccolini:2007jr, Ciccolini:2007ec,
 Arnold:2008rz}, and approximate but highly accurate NNLO QCD
 corrections \cite{Bolzoni:2010xr}. VH cross-section is computed at
-NNLO in QCD \cite{Brein:2003wg} with NLO eletroweak
+NNLO in QCD \cite{Brein:2003wg} with NLO electroweak
 corrections \cite{Ciccolini:2003jy}, apart from the
 $gg \rightarrow ZH$ which is computed to NLO and next-to-leading-logarithm
 accuracy in QCD \cite{Ciccolini:2003jy, Brein:2003wg, Brein:2011vx,
@@ -220,7 +220,7 @@ using parametrised models of both signal and background. The choice
 of the functional form describing the background is crucial because
 a mismodelling of the background may result in a bias on the extracted
 signal strength. This is particularly significant when the
-signal-to-background ratio is very small, because the impact can be
+signal-to-background ratio is very small because the impact can be
 large.
 
 In order to select the functional form and evaluate the resulting
@@ -241,7 +241,7 @@ the simulation of showering, hadronisation, and detector response,
 replacing them by parametrised smearing functions. The effect on
 the dimuon invariant mass spectrum is minimal, and because of the
 parametrised smearing the jet mismodelling is a second order effect.
-On the other hand, final state radiation (FSR) does have an effect on
+On the other hand, final-state radiation (FSR) does have an effect on
 the invariant mass spectrum and is simulated by \textsc{Photos++}
 \cite{Golonka:2006tw}. This setup was fast enough to generate 20
 billion events corresponding to approximately 100 $\iab$ in the 
@@ -271,15 +271,15 @@ categories with a large fraction of the signal events coming from
 the VBF production mode.
 \end{itemize}
 Both samples are corrected in the same way to model the effects of
-the detector. Muon momentum smearing is done using parametrised functions
+the detector. Muon momentum smearing is done using a parametrised functions
 derived from MC simulation described in Section \ref{sec:bkg-mc}.
 Effects from identification, reconstruction, isolation, and impact
 parameter efficiencies are also derived from MC simulation and 
 applied as weights, while trigger efficiency weights are derived
-from data. FSR momentum is smeared using parametrised prescription
+from data. FSR momentum is smeared using a parametrised prescription
 from the ATLAS subgroup specialising in electrons and photons.
-Photons are dropped randomly to emulate the reconstruction
-efficiency. Smearing of jet momenta is performed using the parametrisation
+Photons are dropped randomly to emulate reconstruction
+efficiency. The smearing of jet momenta is performed using the parametrisation
 from the ATLAS subgroup specialising in jets and missing energy.
 The effect of \pileup~jets is modelled by building a library of
 jets from minimum-bias events in MC simulation and overlaying a
@@ -290,15 +290,15 @@ missing transverse energy ($\met$) smearing is derived from the Run 2 data.
 
 The search for a narrow resonance on top of a smoothly falling
 background appears at first sight to require not much more than an
-excellent understanding of muons in ATLAS. While the intirety of Chapter
+excellent understanding of muons in ATLAS. While the entirety of Chapter
 \ref{sec:muons} is dedicated to their performance, the sophistication
-of the analysis requires understanding of other objects as well.
-Photons are used to recover the final state radiation in order to improve
+of the analysis requires an understanding of other objects as well.
+Photons are used to recover the final-state radiation in order to improve
 the resolution of the invariant mass spectrum. Jets are used
 as a handle to select events produced in the VBF production mode
 and to improve separation from the other backgrounds. Even electrons
 are reconstructed, albeit solely in order to reject fake jets. Finally,
-missing transverse energy is used to supress top and diboson
+missing transverse energy is used to suppress top and diboson
 backgrounds.
 
 \subsection{Muons}
@@ -355,7 +355,7 @@ $\pt$ measurement is dominated by the tracker $\pt$ measurement
 in the barrel region, and by the muon spectrometer measurement
 in the forward regions. ST and CT muons, used in the $|\eta| <
 0.1$ region, combine a track in the ID with a segment in the
-muon spectrometer or with a calorimeter deposit, and thus 
+muon spectrometer or with a calorimeter deposit and thus 
 benefit from having the high-quality tracker $\pt$ measurement.
 Conversely, ME muons, used in the $2.5 < |\eta| < 2.7$ region,
 use the track from the muon spectrometer, the higher quality
@@ -366,15 +366,15 @@ measurement in the forward region.
   \caption[Muon resolution for different muon types]{Resolution
   of the dimuon invariant mass measurement for the $\ggf$ signal
   sample in the $\hmumu$ analysis signal region. Events in which
-  both muons are CB type are shown in dashed blue line, while
-  events in which one of the muons is not CB are shown in dotted
-  green line. Inclusive distribution is shown in the solid orange
+  both muons are CB type are shown as a dashed blue line, while
+  events in which one of the muons is not CB are shown as a dotted
+  green line. Inclusive distribution is shown as a solid orange
   line.}
   \label{fig:hmumu:reso}
 \end{figure}
 The FixedCutPflowLoose isolation selection is used because
 of a combination of its high efficiency, robustness to high
-\pileup~conditions, and an improved rejection of heavy-flavour
+\pileup~conditions, and improved rejection of heavy-flavour
 jets. The cut on the $\pt$ rejects muons from the decay of
 heavy-flavour quarks, while cosmic rays are rejected by the
 standard requirements on the impact parameters.
@@ -412,10 +412,10 @@ of which approximately 90\% are the collinear photons.
 The distribution of invariant mass for the MC simulation of
 $\ggf$ signal events with at least one reconstructed FSR
 candidate is shown in Figure \ref{fig:hmumu:fsr}
-before and after the recovery of final state radiation.
+before and after the recovery of final-state radiation.
 It can be seen that the mass peak is shifted much closer to
 125 \GeV, with the slight overshoot resulting from the fake
-FSR candidates coming from pileup. The improvement in the
+FSR candidates coming from the \pileup. The improvement in the
 invariant mass resolution is approximately 3\% inclusively.
 A drawback of the FSR recovery is an $\sim 8\%$ increase in the
 number of background events in the signal region due to the
@@ -454,9 +454,9 @@ $\Delta R = 0.4$. A requirement on the jet $\pt > 25$ \GeV~for the
 central jets ($|\eta| < 2.5$), and at $\pt > 30$ \GeV~for the forward
 jets ($2.5 < |\eta| < 4.5$).
 
-The suppresion of jets coming from \pileup~ is achieved by using a
-dedicated jet vertex tagging (JVT) discrimant \cite{ATLAS-CONF-2014-018},
-constructed using tracking information. In the forward region \pileup~
+The suppression of jets coming from \pileup~ is achieved by using a
+dedicated jet vertex tagging (JVT) discriminant \cite{ATLAS-CONF-2014-018},
+constructed using tracking information. In the forward region, \pileup~
 jet suppression is achieved with the fJVT discriminant \cite{Aaboud:2017pou},
 using the information on jet shape and the topological correlations in
 \pileup~interactions.
@@ -495,7 +495,7 @@ Electrons are reconstructed by matching a track in the ID with a
 calorimeter deposit in the ECAL, as described in Ref. \cite{Aad:2014fxa}.
 Unlike the topological cluster used for jets, the calorimeter deposits
 are clustered using a sliding-window algorithm \cite{Lampl:1099735}
-which can be more accurately calibrated due to the fixed size cells.
+which can be more accurately calibrated due to the fixed-size cells.
 
 Electrons are used in the analysis only in the overlap removal
 procedure to remove fake jets. The electron selection requirements
@@ -508,7 +508,7 @@ satisfy $|\eta| < 2.47$ with the exception of the crack region
 $1.37 < |\eta| < 1.52$. A quality
 requirement is used to reject electrons in which a cell is dead 
 or faulty, and requirements on the impact parameters are used to
-reject electrons coming from heavy flavour decays or other
+reject electrons coming from heavy-flavour decays or other
 proton-proton interactions.
 \begin{table}[h]
 \centering
@@ -543,7 +543,7 @@ along with performance studies.
 
 $\met$ can result from neutrinos, which escape the detector without leaving
 any deposits, or from experimental inaccuracies when measuring muons,
-electrons, or jets. In the analysis $\met$ is used to discriminate between
+electrons, or jets. In the analysis, $\met$ is used to discriminate between
 the signal and $\ttbar$ processes. Instead of a cut is used as
 an input to the multivariate discriminant in the 2-jet channel.
 
@@ -551,7 +551,7 @@ A single physical object can create deposits in the detector which are
 used by two different reconstruction algorithms to create more than
 one particle candidate. For example, an electron results in an ECAL
 deposit which is used in both the reconstruction of a jet and an
-electron. For this reason an object overlap removal procedure is used
+electron. For this reason, an object overlap removal procedure is used
 to remove potential duplicates.
 
 Muons are only removed if they are CT type and share a track with an
@@ -565,7 +565,7 @@ electrons.
 A very loose event selection based on oppositely charged muon pairs
 is used for the analysis to maximise the number of signal events.
 DY background is irreducible, but the $\ttbar$ contributions can be
-reduced by a veto on events with a $b$-tagged jets.
+reduced by a veto on events with a $b$-tagged jet.
 The selection, summarised in Table \ref{tab:hmumu:events}, results
 in approximately 59\% acceptance for the $\ggf$ and VBF signal events. 
 \begin{table}[h]
@@ -610,7 +610,7 @@ increased instantaneous luminosity between 2016 and 2018.
 
 Events are required to have at least one reconstructed primary vertex
 candidate with at least two tracks with $\pt > 0.5$ \GeV in the inner
-detector. When multiple vertices are reconstructed the one with the 
+detector. When multiple vertices are reconstructed, the one with the 
 highest scalar sum of $\pt$ of the associated tracks is considered
 to be the hard scatter vertex.
 
@@ -619,7 +619,7 @@ The leading muon has a $\pt > 27$ \GeV~requirement in order to pass
 the trigger thresholds, while the sub-leading muon is required to
 have $\pt > 15$ \GeV, with both having a pseudorapidity requirement
 of $|\eta| < 2.7$. Additionally, events are required to have zero
-$b$-tagged jets to supress $\ttbar$ and diboson backgrounds.
+$b$-tagged jets to suppress $\ttbar$ and diboson backgrounds.
 
 After the common selection the $Z$ control region, the signal region,
 and the central and sideband regions are defined by requirements
@@ -651,7 +651,7 @@ particular to check the muon resolution in data and MC simulation.
 The sideband region contains approximately two million events
 in the data, which are used to train the multivariate classifier
 and to validate the background modelling. The central region
-contains appriximately 250,000 events in data, of which about
+contains approximately 250,000 events in data, of which about
 860 are expected from the SM signal. The final maximum likelihood
 fit is performed in the fit region.
 
@@ -669,7 +669,7 @@ multiplied by a factor of a hundred for visibility.
   \includegraphics[width=0.9\textwidth]{figures/hmumu/sel-mmumu}
   \caption[Dimuon invariant mass spectrum of selected events]{
   The invariant mass spectrum after the correction for
-  final state radiation, for data corresponding to 139 $\ifb$.
+  final-state radiation, for data corresponding to 139 $\ifb$.
   MC simulation is normalised to the data for easier comparison.
   Data is shown as black markers, the MC simulation of backgrounds
    is dominated by the DY events (light blue),
@@ -696,9 +696,9 @@ purities. In previous iterations of the analysis physics-based
 arguments were used to construct categories targeting the VBF 
 production mode and signal enriched regions using requirements on
 event kinematics. However, with increased statistics of the
-available dataset it became increasingly advantageous to exploit
+available dataset, it became increasingly advantageous to exploit
 modern machine learning models and infer the classification scheme
-from the available data. With this approach care needs to be taken
+from the available data. With this approach, care needs to be taken
 to prevent bias and sub-optimal performance due to overfitting.
 
 The categorisation scheme begins by splitting events in categories
@@ -716,7 +716,7 @@ In each of the categories a ``Higgs classifier" is trained to
 distinguish between MC simulation of $\ggf$ and VBF events, and the
 data events from the sideband region. In the 2-jet
 category an additional ``VBF classifier" is trained to distinguish
-between the MC simulation of VBF signal events, and the data sidebands.
+between the MC simulation of VBF signal events and the data sidebands.
 In both trainings the signal event weights are scaled so that their sum
 matches the number of data events. 
 
@@ -763,13 +763,13 @@ The variables were chosen to maximise the sensitivity while
 minimising systematic uncertainties. An additional concern was
 whether the variables would allow the classifier to learn the
 invariant mass and result in a shaped mass spectrum after selection.
-For this reason the complete kinematics of the individual muons
+For this reason, the complete kinematics of the individual muons
 are not included.
 
 All the variables used in the 2-jet channel are shown in Figures
 \ref{fig:hmumu:variables01} and \ref{fig:hmumu:variables2} for
 events with two or more jets. It can be seen that the $\pt$ of
-the dimuon system, mass of the dijet system and azimuthal
+the dimuon system, the mass of the dijet system and azimuthal
 differences between the dimuon system and jets can provide
 separation between the signal and the background.
 
@@ -816,11 +816,11 @@ separation between the signal and the background.
   \label{fig:hmumu:variables2}
 \end{figure}
 
-In each jet multiplicity channel a four-fold approach is used to
+In each jet multiplicity channel, a four-fold approach is used to
 prevent bias from overfitting to the training and validation sets.
 In each fold, events are split in a training set (50\% of events),
 a validation set (25\% of events), and a test set (25\% of events).
-Training set is used in the training of the models. The validation
+The training set is used in the training of the models. The validation
 set is used for early stopping of the training and to assess the
 performance of models using the area under the ROC
 \cite{journals/prl/Fawcett06} curve. This is used to guide the
@@ -839,7 +839,7 @@ fold, the scores are transformed to a uniform distribution in unweighted
 combined signal events in all fold separately using the QuantileTransformer
 algorithm from the \texttt{scikit-learn} \cite{scikit-learn} software package.
 
-The transformed scores are named $O_\text{VBF}$ for the VBF classifier,
+The transformed scores are named $O_\text{VBF}$ for the VBF classifier
 and $O_{\ggf}^{(0-2)}$ for the Higgs classifiers, where the superscript
 stands for the jet multiplicity. The category boundaries are defined
 as the cuts on these values, and are summarised in Table \ref{tab:hmumu:categories}.
@@ -898,7 +898,7 @@ optimisation rather than a requirement.
   composition of the categories, dominated by VBF events, shown in orange,
   in the VBF targetting categories, and by $\ggf$ events, shown in red,
   in all the others. VH events are shown in yellow, and $\tth$ events
-  in lime. The background composition in shown in the bottom 
+  in lime. The background composition is shown in the bottom 
   panel and is dominated by DY events, shown in light blue. Diboson events
   are shown in blue, and top events in dark blue.
   %Reproduced from Ref. \cite{ATLAS-CONF-2019-028}.
@@ -914,7 +914,7 @@ As a result, the analysis categories can have quite different
 invariant mass resolutions. While this is expected, it is critical
 that the modelling of dimuon mass resolution in MC simulation matches
 the resolution in data in each analysis category, otherwise the
-sensitivity would be over or under estimated. The validation of
+sensitivity would be over- or underestimated. The validation of
 the momentum calibrations, described in Section \ref{sec:muons:calibration},
 is performed on the $Z$ mass peak. The validation for 0-jet High,
 1-jet High, 2-jet High, and VBF High categories are shown in
@@ -934,7 +934,7 @@ seen on other categories.
   Drell-Yan as light blue, diboson as blue, and top MC simulated events as
   dark blue histograms. MC simulation has been normalised to data
   for easier visual comparison. Bottom panel shows the ratio between data and
-  MC simulation. Blue band represents experimental systematic
+  MC simulation. The blue band represents experimental systematic
   uncertainties, while the black error bars represent combined
   statistical uncertainties on both data and MC simulation.
   }
@@ -962,8 +962,8 @@ not just their total normalisation, need to be evaluated.
 
 The Higgs boson has a width of only 4.1 \MeV, negligible compared
 to the detector resolution of a few \GeV~in this momentum range.
-As a result, the signal shape is dominated by detector resolution
-effect and to some extent the quality of final state radiation
+As a result, the signal shape is dominated by the detector resolution
+effect and to some extent the quality of final-state radiation
 recovery.
 
 It is modelled using a double-sided Crystal-Ball (DSCB) function
@@ -1005,7 +1005,7 @@ and was abandoned for simplicity.
 
 The detailed form of the signal shape is expected to have little
 impact on the result at the search stage. Nevertheless, injection
-tests were carried out, fitting the functional form to a MC simulated
+tests were carried out, fitting the functional form to the MC simulated
 spectrum. The extracted signals matched the injection within 0.5\%,
 equal to the statistical precision of the test.
 
@@ -1038,7 +1038,7 @@ are affected by both the theoretical and experimental systematic
 uncertainties.
 
 Theoretical uncertainties affecting the signal normalisation come from
-the effect of missing higher order QCD corrections on the cross section
+the effect of missing higher-order QCD corrections on the cross section
 prediction, and the uncertainty on the branching ratio to muon pairs
 \cite{deFlorian:2016spz}.
 
@@ -1046,7 +1046,7 @@ Some theoretical uncertainties also have an impact on the migration
 of events between the categories, either because of the effect on the muon
 or jet kinematics. These include the QCD scale variations, uncertainties
 on the treatment of the underlying event and hadronisation, uncertainties
-on the $\pt$ of the Higgs boson, uncertainties on migrations between
+on the $\pt$ of the Higgs boson, uncertainties on the migrations between
 jet multiplicities and the treatment of top quark mass, following 
 the prescription in Ref. \cite{deFlorian:2016spz}. The uncertainties
 on the underlying event are evaluated by considering \textsc{Pythia} 8
@@ -1099,7 +1099,7 @@ luminosity of the dataset at the level of 1.7\% is considered
 
 \section{Background modelling}
 
-The very small signal to background ratio in the central region,
+The very small signal to background ratio in the central region
 means that the modelling of the background is critical to the
 success of the analysis. Since the number of background events
 is much larger, a very small bias in the background model would
@@ -1165,7 +1165,7 @@ where
  \kappa                 & = \frac{\sqrt{2}G_Fm_Z^2}{4\pi \alpha},
 \end{align}
 and $\hat s = \mmumu^2$, $Q_q$ is the electric charges of the quarks,
-$V_f$ and $A_f$ are the vector and axial vector couplings of the fermions,
+$V_f$ and $A_f$ are the vector and axial-vector couplings of the fermions,
 $\alpha$, $G_F$ are the electroweak couplings,
 $m_Z$ and $\Gamma_Z$ are the mass and the width of the $Z$ boson with values
 taken from Ref. \cite{Patrignani:2016xqp},
@@ -1204,7 +1204,7 @@ be larger than 1\% for:
 \item Pass the spurious signal test, defined in Section \ref{sec:hmumu:sstest},
 i.e. require the $\text{SS} < 20\%~\delta$S, where SS is the fitted signal
 yield (the spurious signal), and $\delta$S is the statistical uncertainty
-on the signal strength obtained from the data corresponsing to 139 $\ifb$.
+on the signal strength obtained from the data corresponding to 139 $\ifb$.
 \item If multiple functions pass the first two criteria,
 the function(s) with the fewest number of free parameters is (are)
 chosen.
@@ -1213,7 +1213,7 @@ smallest value of SS is chosen.
 \end{itemize}
 The selected functions are shown in Table \ref{tab:hmumu:ss}
 for each of the analysis categories. The spurious signal uncertainty
-is considered as uncorrelated across the categories, since none
+is considered as uncorrelated across the categories since none
 of the values are more than two standard deviations away from zero,
 when considering the statistical uncertainty on the custom DY sample,
 corresponding to approximately 700 times the statistics of the
@@ -1258,8 +1258,8 @@ The spurious signal value is determined by a combined signal
 and background model fit to the invariant mass spectrum
 in the fit region of the custom DY sample, shown in Figure
 \ref{fig:hmumu:ss}. Prior to the fit,
-the DY sample is re-weighted to the data sidebands using a first
-order polynomial in the VBF categories, and a second order
+the DY sample is re-weighted to the data sidebands using a first-order
+polynomial in the VBF categories, and a second-order
 polynomial in the other categories. The re-weighting mitigates
 the potential mismodelling of the invariant mass shape by the
 MC simulation.
@@ -1290,7 +1290,7 @@ MC simulation.
   \label{fig:hmumu:ss}
 \end{figure}
 
-A number of scans is performed, varying the signal mass parameter
+A number of scans are performed, varying the signal mass parameter
 between 120 and 130 \GeV~in 1 \GeV~steps, while the other parameters
 of the signal model are kept to the values obtained in the fit.
 The maximum value of the fitted signal across this range is taken
@@ -1375,7 +1375,7 @@ The likelihood function in the category $c$ takes the form
 \prod_{b \in \text{bins}} \text{Pois}(n_{cb} | \nu_{cb} (\mu, \theta)),
 \end{equation}
 where $\text{Pois}(n | \nu)$ is the Poisson probability distribution
-with observed number of events $n$, and the rate parameter $\nu$.
+with the observed number of events $n$, and the rate parameter $\nu$.
 The rate parameter $\nu_{cb}(\mu, \theta)$ takes the form
 \begin{equation}
 \nu_{cb}(\mu, \theta) = \mu S_{cb}(\theta) + B_{cb}(\theta),
@@ -1417,7 +1417,7 @@ S/$\sqrt{\text{B}}$ and signal purity (S/B) are also shown.
   Number of events in the central region in all the analysis categories,
   as observed in data (Data), predicted for signal by the Standard Model
   (S$_\text{SM}$), and events from signal (S) and background (B) derived
-  from the results of the maximum likelihood fit. Additionally the
+  from the results of the maximum likelihood fit. Additionally, the
   number of observed signal events over the square root of the number of
   observed background events (S/$\sqrt{\text{B}}$) and the signal purity
   (S/B) are shown. Reproduced from Ref. \cite{ATLAS-CONF-2019-028}.
@@ -1456,7 +1456,7 @@ First, a profile likelihood ratio is defined as
 \end{equation}
 where $\hat{\hat\theta}(\mu)$ are the nuisance parameters which maximise
 the likelihood with $\mu$ fixed, called the conditional maximum
-likelihod estimates. Clearly, $0 \leq \lambda(\mu) \leq 1$, with $\lambda(\mu)$
+likelihood estimates. Clearly, $0 \leq \lambda(\mu) \leq 1$, with $\lambda(\mu)$
 values near 1 signalling good agreement between the data and the
 hypothesised $\mu$.
 
@@ -1494,7 +1494,7 @@ of spurious signal uncertainty is 0.06. The expected and observed signal
 strengths in all twelve analysis categories are shown in Figure
 \ref{fig:hmumu:fit-pulls}
 
-In the measurement of the signal strength the parameter of interest
+In the measurement of the signal strength, the parameter of interest
 was allowed to take either positive or negative values. It is also
 possible to restrict the signal strength to non-negative values, and
 perform a one-sided hypothesis test. However, the estimator $\hat\mu$
