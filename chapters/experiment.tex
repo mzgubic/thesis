@@ -17,12 +17,12 @@ energies and collide them head-on. The protons are accelerated in the Large
 Hadron Collider (LHC) and collided at four interaction points
 around the LHC ring. The ATLAS detector is built around one of these
 interaction points with the purpose of detecting the debris of
-individual proton-proton collisions, known as events. It is designed as a general purpose detector
+individual proton-proton collisions, known as events. It is designed as a general-purpose detector
 and is capable of recording data for a wide range of particle physics
 searches and measurements.
 
 The ATLAS detector is built in layers around the interaction point with
-the abillity to measure all SM particles apart from neutrinos. The main
+the ability to measure all SM particles apart from neutrinos. The main
 components are the tracker, which reconstructs the tracks of charged 
 particles, the calorimeter system, which measures the energy of
 electrons, photons, and hadrons, and a muon spectrometer, which identifies
@@ -44,7 +44,7 @@ well as increases the probability of proton-proton interactions.
 
 The protons are obtained by stripping electrons from the hydrogen atoms,
 and then pre-accelerated by a sequence of linear and circular accelerators
-before entering the main ring. In the main ring the proton beams are
+before entering the main ring. In the main ring, the proton beams are
 accelerated to 6.5 TeV and are moving in the opposite directions next to each other
 in separate beam pipes. The ring is not perfectly circular but rather consists
 of alternating straight sections, which accelerate the protons by passing
@@ -69,12 +69,12 @@ of bunch crossings result in either zero or one hard scatter interactions.
 
 The ability of colliders to generate interactions is formalised by
 instantaneous luminosity $\mathcal{L}$, which relates the rate of a process $R_p$
-to the cross section of the process $\sigma_p$ as
+to the cross-section of the process $\sigma_p$ as
 \begin{equation}
 R_p = \mathcal{L} \sigma_p,
 \end{equation}
 and depends only on the properties of the colliding beams \cite{Thomson:2013zua}. Assuming a
-Gaussian profile for the beams and head on collisions, the
+Gaussian profile for the beams and head-on collisions, the
 instantaneous luminosity is given by
 \begin{equation}
 \mathcal{L} = f \frac{n_1 n_2 }{4 \pi \sigma_x \sigma_y}
@@ -87,7 +87,7 @@ instantaneous luminosity.
 
 Figure \ref{fig:exp:pileup} shows the ATLAS recorded luminosity as a
 function of the mean number of interactions per bunch crossing for
-the data-taking runs in 2015-2018 period.
+the data-taking runs in the 2015--2018 period.
 
 \begin{figure}[h]
   \centering
@@ -118,7 +118,7 @@ However, rapidity
 y = \frac{1}{2}\ln{\left( \frac{E+p_z}{E-p_z}\right)}
 \end{equation}
 is preferred over $\theta$ as the differences in rapidity are invariant
-under Lorentz transformations in the $z$ direction. In the relativistic
+under Lorentz transformations in the $z$-direction. In the relativistic
 limit pseudorapidity
 \begin{equation}
 \eta = - \ln{\left(\tan{\frac{\theta}{2}}\right)}
@@ -164,7 +164,7 @@ rates to a manageable level.
 
 The enormous collision rate and the associated data rate make it
 impossible for the readout system to record and store every event. A fast
-event filtering is performed by the ATLAS trigger, a two level system
+event filtering is performed by the ATLAS trigger, a two-level system
 designed to reduce event rates from 40 MHz to a more manageable 1 kHz.
 
 Level-1 trigger is implemented in hardware and reduces the rate of
@@ -228,13 +228,13 @@ channels. The strip pitch in the bending plane is 80 $\um$ to maintain
 precision in the $\pt$ measurement, while the reduction in the number of
 channels is achieved by longer sensors in $z$ direction \cite{CERN-LHCC-97-016, Aad:2008zzm}.
 \item TRT, the transition radiation tracker, is the outermost part of the
-tracker system. Unlike its silicon counterparts it does not come in layers
+tracker system. Unlike its silicon counterparts, it does not come in layers
 but rather a homogenous set of straw drift tubes, as illustrated in
 Figure \ref{fig:exp:tracker}. It measures the distance between the track
 and the central wire by measuring the time it takes for the ionisation
 created by the track to drift to the central wire. The tubes are 4 $\mm$
 in diameter, but their resolution in the bending plane for individual
-straws is about 130 $\um$, and combined with a large number (typically 36)
+straws is about 130 $\um$ and combined with a large number (typically 36)
 of hits per track the TRT provides a meaningful contribution to the
 $\pt$ measurement \cite{CERN-LHCC-97-016, Aad:2008zzm}.
 \end{itemize}
@@ -259,11 +259,11 @@ noisy measurement of the energy and allows the measurement of
 missing transverse momentum.
 
 The calorimeter system provides coverage
-up to $|\eta| < 4.9$ with granularity and number of layers varying
+up to $|\eta| < 4.9$ with granularity and the number of layers varying
 throughout the $\eta$ range to satisfy physics requirements. The
 components of the calorimeter are of sampling rather than homogeneous
 type, meaning that they use alternating layers of a dense material
-producing the shower and active layers which measure the energy. The
+producing the shower and active layers that measure the energy. The
 components also share another important characteristic, namely that
 the relative energy resolution improves with increasing $\pt$ of
 the traversing particle, in contrast to the performance of the
@@ -303,8 +303,8 @@ artamonov2008atlas, Aad:2008zzm}.
 Muon spectrometer is the outermost part of the ATLAS detector and was designed to
 trigger on muons up to $|\eta| < 2.4$ and measure their transverse momentum up
 to $|\eta| < 2.7$. It works by measuring the sagitta of the tracks
-in a magnetic field, similarly to the tracker. However, the field
-bends muon tracks in the $y-z$ plane, and is provided by three sets of
+in a magnetic field, similar to the tracker. However, the field
+bends muon tracks in the $y-z$ plane and is provided by three sets of
 toroidal magnets, one in the barrel, and one in each of the endcaps,
 as shown in Figure \ref{fig:exp:atlas}. 
 \begin{figure}[h!]
@@ -356,13 +356,13 @@ proportional chambers, are used instead \cite{Nagai:1996mf}.
 
 ATLAS records events under a variety of conditions to work towards a number of
 scientific and technical goals. The most important dataset for this thesis
-was collected at 13 \TeV~centre-of-mass energy between years 2015
+was collected at 13 \TeV~centre-of-mass energy between the years 2015
 and 2018.
 
-Monte Carlo (MC) simulations are a critical part of the ATLAS experiment,
+Monte Carlo (MC) simulations are a critical part of the ATLAS experiment
 and are needed for the design, implementation, and validation of
 reconstruction and identification algorithms, as well as for the evaluation
-of their performance. Additionally the MC simulations are needed to
+of their performance. Additionally, the MC simulations are needed to
 carry out physics analyses and optimise their sensitivity.
 
 ATLAS MC simulation chain begins with the calculation of matrix element 
