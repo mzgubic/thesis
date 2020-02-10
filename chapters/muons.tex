@@ -23,11 +23,11 @@ the response in the real detector. In particular, the transverse momentum of
 muons needs to be calibrated to the scale and resolution obtained in the data.
 Similarly, the reconstruction, track-to-vertex-association (TTVA),
 and isolation efficiencies need to be calibrated to match those in 
-recorded data. These calibrations are obtained through measurements
-using data and MC simulation and carry associated uncertainties.
+the recorded data. These calibrations are obtained through measurements
+using the data and MC simulation and carry associated uncertainties.
 
 This chapter describes the first novel contributions from the author.
-The first is an improved method of background subtraction in the isolation
+The first contribution is an improved method of background subtraction in the isolation
 efficiency measurements, which significantly reduces the systematic
 uncertainty for muons with $\pt < 15$ \GeV. The second is an attempt
 to improve muon momentum resolution.
@@ -96,7 +96,7 @@ forward region $2.5 < |\eta| < 2.7$ not covered by the ID \cite{Aad:2016jkr}.
 \end{itemize}
 Finally, overlaps between different muons are resolved by order of
 precedence starting with CB muons, followed by ST muons, and
-finally the CT muons. ME ambiguities are resolved by analysing the
+finally the CT muons. The ME ambiguities are resolved by analysing the
 track fit quality and the number of hits.
 The requirements on the number of hits and holes\footnote{A
 \textit{hole} is an active sensor traversed by the
@@ -137,12 +137,12 @@ restricted to the $|\eta| < 0.1$ \cite{Aad:2016jkr}.
 
 The fraction of prompt muons that are reconstructed and identified
 is called reconstruction efficiency and is in general different
-in data and MC simulation. Efficiencies for Loose, Medium, and Tight
-selections are shown in Figure \ref{fig:muon:reco_eff} for data and
+in the data and MC simulation. Efficiencies for Loose, Medium, and Tight
+selections are shown in Figure \ref{fig:muon:reco_eff} for the data and
 MC simulation as a function of muon pseudorapidity. In the analysis,
-MC simulation is corrected to data by applying weights, known as
+the MC simulation is corrected to the data by applying weights, known as
 scale factors, to account for the differences in efficiencies between
-data and MC simulation. The scale factors (SF) are defined as
+the data and MC simulation. The scale factors (SF) are defined as
 \begin{equation}
 \text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}},
 \end{equation}
@@ -244,18 +244,18 @@ surrounded by other particles. Two sets of variables, one based
 on the tracker information and the other on calorimeter information, are
 used to identify prompt muons.
 
-Track-based isolation variable, $\pt^{\text{varcone}, R}$, is defined
+The track-based isolation variable, $\pt^{\text{varcone}, R}$, is defined
 as the scalar sum of $\pt$ of non-muon tracks inside the cone of radius
 $\Delta R = \min(R, 10~\GeV/\pt^\mu)$, where $R = \sqrt{\Delta \eta^2 +
 \Delta \phi^2}$, $\Delta \eta$ and $\Delta \phi$ are the differences
 in pseudorapidity and azimuthal angle between the muon and the track, 
 and $\pt^\mu$ is the transverse momentum of the muon.
 The tracks used in the sum have $\pt > 1~\GeV$,
-$|\eta| < 2.5$, longitudinal impact parameter smaller than $3~\mm$, and satisfy a
+$|\eta| < 2.5$, the longitudinal impact parameter smaller than $3~\mm$, and satisfy a
 Loose track quality. The cone size is chosen to vary with $\pt^\mu$
 to follow the collimation of tracks in highly boosted systems \cite{Aad:2016jkr}.
 
-Calorimeter-based isolation variable relies on the notion of a topological
+The calorimeter-based isolation variable relies on the notion of a topological
 cluster, built by seeding the cluster with a calorimeter cell with
 signal-to-noise (S/N) greater than four, adding the neighbouring cells with
 S/N $ > 2$, and finally adding the surrounding cells \cite{Aad:2011he}. The
@@ -266,7 +266,7 @@ and the estimate of the energy coming from \pileup~related effects. The
 \pileup~contributions are estimated using the jet area technique \cite{CACCIARI2008119}
 and are corrected on ithe event-by-event basis \cite{Aad:2016jkr}.
 
-Isolation selections are defined as cuts on these variables which
+The isolation selections are defined as cuts on these variables which
 may or may not depend on the muon kinematics. Various
 selections have been supported in the past few years to target the needs
 of different analyses and to adapt to the higher \pileup~conditions. The 
@@ -278,12 +278,12 @@ of muon $\pt$. The measurement of the efficiencies is performed on
 $Z\rightarrow\mu\mu$ events in data and MC simulation using the
 tag-and-probe method \cite{Aad:2016jkr}.
 
-Tag-and-probe method selects events with a pair of muons with the invariant mass
+The tag-and-probe method selects events with a pair of muons with the invariant mass
 within 10 GeV of the $Z$ boson mass, where the tag muon is required to
 have triggered the event, and the probe muon is used for the efficiency
 measurements. More precisely, the tag muon is required to satisfy
-$\pt > 24~\GeV$, pass Loose isolation selection, and must be trigger
-matched to the muon firing the trigger. Both tag and probe muons are
+$\pt > 24~\GeV$, pass Loose isolation selection, and must be trigger-matched
+to the muon firing the trigger. Both tag and probe muons are
 required to be CB muons, pass the Medium quality requirements,
 and pass requirements on transverse and longitudinal impact parameters
 or their significances $d_0/\sigma_{d_0} < 3.0$, $|z_0| < 10~\mm$ and
@@ -294,11 +294,11 @@ be separated from jets ($R_{j,\mu} > 0.4$).
 The MC simulation contains a pure sample of $Z\rightarrow\mu\mu$ events,
 but the recorded data consists of an unknown mixed stream of underlying
 processes, including both the $Z\rightarrow\mu\mu$ decays as well events with fake
-or non-prompt muons, collectively referred to as background. In order
+or non-prompt muons, collectively referred to as the background. In order
 to measure the efficiency of prompt muons, the background must be
-subtracted for the efficiency measurement in data. The old method of
+subtracted for the efficiency measurement in the data. The old method of
 background subtraction relied on the assumption that the number of
-background events in data is the same in the same charge
+background events in the data is the same in the same charge
 (SC) as in the opposite charge (OC) phase space:
 \begin{equation}
 \epsilon_{\zmumu} =
@@ -353,8 +353,8 @@ SC and OC events. The SC region is used to determine the shape
 of the background events, while the normalisation is determined
 from the template fit to OC data.
 
-Efficiency measured in data is a sum of efficiencies of the
-components, weighted by the component fractions
+The efficiency measured in the data is a sum of efficiencies of the
+components, weighted by the component fractions,
 \begin{equation}
 \epsilon_\text{measured} =
 \text{f}_{\zmumu}   \cdot \epsilon_{\zmumu} +
@@ -362,7 +362,7 @@ components, weighted by the component fractions
 \text{f}_\text{QCD} \cdot \epsilon_\text{QCD},
 \end{equation}
 where $f$ represents the fraction of the component, and $\epsilon$
-the efficiency of the component. Subscript QCD refers to the
+the efficiency of the component. The subscript QCD refers to the
 background component due to muons in jets, and EWK refers to the
 background from electroweak processes\footnote{Consists of
 $W^\pm\rightarrow\mu^\pm \nu$, $Z\rightarrow \tau\tau$,
@@ -370,15 +370,15 @@ $WW\rightarrow \ell \nu \ell \nu$, $WZ\rightarrow \ell \nu \ell \ell$,
 $WZ\rightarrow qq \ell \ell$, $ZZ\rightarrow\ell\ell\ell\ell$,
 $ZZ\rightarrow\nu\nu\ell\ell$, $ZZ\rightarrow qq\ell\ell$,
 $t\bar t$ MC samples generated with \textsc{Powheg}+\textsc{Pythia}8.}.
-The efficiency of $\zmumu$ events in data can therefore be expressed as
+The efficiency of $\zmumu$ events in the data can therefore be expressed as
 \begin{equation}
 \epsilon_{\zmumu} = \frac
 {\epsilon_\text{measured} - \text{f}_\text{EWK} \cdot \epsilon_\text{EWK} - \text{f}_\text{QCD} \cdot \epsilon_\text{QCD}}
 {1 - \text{f}_\text{EWK} - \text{f}_\text{QCD}},
 \end{equation}
 where $\text{f}_{\zmumu} = 1 - \text{f}_\text{EWK} - \text{f}_\text{QCD}$
-is used. The efficiency $\epsilon_\text{EWK}$ is measured in MC,
-while the efficiency $\epsilon_\text{QCD}$ is measured in SC data.
+is used. The efficiency $\epsilon_\text{EWK}$ is measured in the MC simulation,
+while the efficiency $\epsilon_\text{QCD}$ is measured in the SC data.
 
 The fractions $\text{f}_\text{EWK}$ and $\text{f}_\text{QCD}$ are
 determined via a template fit to the OC data, shown in Figure
@@ -424,10 +424,10 @@ Recall, the nominal QCD template is taken from the SC data, where the number of
 genuine $\zmumu$ events is negligible. Similarly, two other QCD templates are
 constructed in the $\zmumu$ depleted regions, where the requirement on the
 impact parameter significance ($|d_0/\sigma_{d_0}|$) is inverted in both
-the SC and OC data. Region definitions are shown in Table \ref{tab:muon:reg}.
+the SC and OC data. The region definitions are shown in Table \ref{tab:muon:reg}.
 \begin{table}[h]
 \centering
-\caption{Region definitions from which the QCD template shape is taken
+\caption{The region definitions from which the QCD template shape is taken
 for the isolation background subtraction fit.}
 \label{tab:muon:reg}
 \begin{tabular}{c c c c c}
@@ -509,7 +509,7 @@ These runs were used to perform a study on isolation performance at high
 Figure \ref{fig:muon:highmu} shows the efficiency of the FixedCutTight
 selection as a function of muon $\pt$, recorded in 2017 data, separately
 for events with more and less than 50 additional interaction vertices
-due to \pileup. The  isolation efficiency for the FixedCutTight
+due to \pileup. The isolation efficiency for the FixedCutTight
 selection drops by more than 10\% for muons with $10 < \pt < 20~\GeV$.
 \begin{figure}[h!]
   \centering
@@ -547,7 +547,7 @@ robust in high \pileup~conditions \cite{Zgubic:2320874}.
 
 \section{VADER4$\mu$}
 
-Search for the decay of the Higgs boson to a pair of muons, described
+The search for the decay of the Higgs boson to a pair of muons, described
 in detail in the next chapter, proceeds as a search for a peak in the invariant mass spectrum on top
 of the smooth Drell-Yan background. According to the Standard Model,
 the width of the Higgs boson is much narrower than the experimental
@@ -572,7 +572,7 @@ of the invariant mass measurement of the muon pair. Finally, the estimate
 can be used to split events in resolution categories and the sensitivity of
 the analysis may be improved. This can be done directly on the CB muons.
 
-\item Uncertainties on the $\pt$ of ID and MS tracks are known to be
+\item The uncertainties on the $\pt$ of ID and MS tracks are known to be
 poorly modelled, which is the reason a combined re-fit is used instead of
 the statistical combination of the ID and MS tracks. If the uncertainties
 on the ID and MS $\pt$ can be estimated more accurately, a statistical
@@ -668,7 +668,7 @@ tracks as a sanity check. The results are shown in Figure
 of 7.5\% in the FWHM. However, no improvement is observed for CB tracks.
 Upon further study it turns out that the improvement for ID muons comes
 from the SNS and SCS variables, which contain information about the CB
-tracks in some convoluted way, and that no improvement is achievable
+tracks in a non-obvious way, and that no improvement is achievable
 for the CB tracks. This shows that if any biases are present in
 the muon reconstruction algorithms their effect on performance is minimal.
 \begin{figure}[h!]
@@ -684,7 +684,7 @@ the muon reconstruction algorithms their effect on performance is minimal.
   \label{fig:muon:vader-dimuon}
 \end{figure}
 
-To test the first two ideas a model for the prediction of the uncertainty
+To test the first two ideas, a model for the prediction of the uncertainty
 on the $\pt$ measurement is constructed. An estimate of the uncertainty
 of the sagitta measurement (equivalent to $q/p$ measurement) exists in the
 ATLAS event model, but it is poorly modelled. More precisely, the
@@ -773,10 +773,10 @@ using uncorrected uncertainties.
   }
   \label{fig:muon:std-dimuon}
 \end{figure}
-Hyperparameter search over the same grid space as shown in Table
+The hyperparameter search over the same grid space as shown in Table
 \ref{tab:muon:grid} is performed by using the Kolmogorov-Smirnov (KS)
 statistic \cite{ks-test} as a way to quantify the performance of the
-hyperparameter choice. KS statistic is the supremum of the set of
+hyperparameter choice. The KS statistic is the supremum of the set of
 distances between an empirical cumulative distribution and a reference
 cumulative distribution. In this case, the unit normal distribution is
 the reference distribution and the pull distribution, computed with
@@ -806,7 +806,7 @@ to the unit normal distribution.
 The $\pt$ uncertainty corrections with the chosen hyperparameters,
 shown on the left of Figure \ref{fig:muon:std-dimuon}, are then applied
 to events passing $\hmumu$ selection described in Ref.
-\cite{ATLAS-CONF-2018-026}. For each event the corrected uncertainty
+\cite{ATLAS-CONF-2018-026}. For each event, the corrected uncertainty
 on the invariant mass measurement is computed and the distribution
 shown in Figure \ref{fig:muon:hmumu} for each of the cut-based categories
 described in detail in Ref. \cite{ATLAS-CONF-2018-026}. The non-central
