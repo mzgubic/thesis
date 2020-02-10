@@ -18,11 +18,11 @@ in this thesis relies on the data collected by the ATLAS
 detector and focuses on the search for the decay of the
 Higgs boson to muon pairs.
 
-Muons are reconstructed in ATLAS by using information
-from the inner tracker, muon spectrometer, and the
+Muons are reconstructed in ATLAS by using the information
+from the inner tracker, the muon spectrometer, and the
 calorimeter system. Muon momentum is measured to the
 precision of a few percent at the scales relevant for
-the search and is calibrated in MC simulation by using
+the search and is calibrated in the MC simulation by using
 the invariant mass peak of the $Z$ boson as a standard
 candle. Muon isolation, important for distinguishing
 between real prompt muons and fake muons or muons from
@@ -32,7 +32,7 @@ efficiency in MC simulation is corrected by the scale
 factors, measured using the tag-and-probe method. A
 novel method of background subtraction reduces the
 systematic uncertainties associated with the
-scale factors by up to 75\% in the low transverse
+scale factor measurments by up to 75\% in the low transverse
 momentum regime. A machine learning approach to
 estimating and eventually improving muon resolution
 with the goal of improving analysis sensitivity is
@@ -42,21 +42,21 @@ to justify the additional complexity of the analysis.
 The search for the $\hmumu$ decay proceeds by selecting
 events which pass the loosest available unprescaled
 single muon triggers and have two oppositely charged
-muons. To reduce backgrounds from $\ttbar$ and diboson
-backgrounds events with a $b$-tagged jet are rejected.
+muons. To reduce the backgrounds from $\ttbar$ and diboson
+processes, events with a $b$-tagged jet are rejected.
 The selected events are then split based on the number
 of jets in the event and further categorised using a 
 gradient boosting classifier. The classifiers are trained
-with MC simulation and data sidebands using a four-fold
+with the MC simulation and the data sidebands using a four-fold
 validation approach to avoid overtraining. The boundaries
 defining the categories are determined using an exhaustive
-grid search maximising the significance proxy combined
+grid search, maximising the significance proxy combined
 across the categories. Signal models are fit separately
 in all categories to determine the shape of the signal.
 The background model is selected using a dedicated
 high-statistics MC simulation of Drell-Yan events, which
 is also used to determine the spurious signal systematic
-uncertainty. Finally, a combined maximum likelihood fit
+uncertainty. Finally, a combined maximum-likelihood fit
 is performed simultaneously in all categories to
 extract the signal strength and the associated confidence
 interval, as well as the discovery significance of the
@@ -67,7 +67,9 @@ the data.
 
 Finally, sensitivity projection studies are presented
 that estimate the analysis sensitivity achievable
-with future datasets. The analysis is on the verge of
+with future datasets. The coupling between the Higgs boson
+and the muons is expected to be measured to $\sim$13 \%.
+The analysis is approaching the
 sensitivity to obtain evidence for the decay of the 
 Higgs boson to muon pairs, and exciting results are
 expected from both ATLAS and CMS experiments in the 
