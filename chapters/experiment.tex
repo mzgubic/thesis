@@ -42,7 +42,7 @@ desirable because it allows the study of processes with lower cross-sections, wh
 the high centre-of-mass energy enables the production of heavy particles as
 well as increases the probability of proton-proton interactions.
 
-The protons are obtained by stripping electrons from the hydrogen atoms,
+The protons are obtained by stripping electrons from hydrogen atoms,
 and then pre-accelerated by a sequence of linear and circular accelerators
 before entering the main ring. In the main ring, the proton beams are
 accelerated to 6.5 TeV and are moving in the opposite directions next to each other
@@ -103,11 +103,12 @@ the data-taking runs in the 2015--2018 period.
 \section{Detector overview}
 
 The ATLAS detector schematic is shown in Figure \ref{fig:exp:atlas} and
-reveals its cylindrical geometry that divides most systems in a coaxial 
-tubular ``barrel'' parts, and disc-shaped ``endcap'' parts, providing
+reveals its cylindrical geometry that divides most systems
+in tubular ``barrel'' components, coaxial with the beam pipe, 
+and disc-shaped ``endcap'' components, providing
 a nearly $4\pi$ solid angle coverage.
 
-The ATLAS coordinate system places
+The ATLAS coordinate system, shown in Figure \ref{fig:exp:coordinate_system}, places
 the origin at the centre of the detector at the nominal collision point,
 points the $x$-axis towards the centre of the ring, the $y$-axis vertically
 upwards, and the $z$-axis along the beampipe in the direction that
@@ -125,10 +126,22 @@ limit, pseudorapidity
 \end{equation}
 can be used instead \cite{Thomson:2013zua}.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/experiment/ATLAS_coordinate_system}
+  \caption[ATLAS coordinate system]{The ATLAS coordinate system. The origin is placed
+  at the centre of the detector at the nominal collision point, the $x$-axis
+  points to the centre of the LHC ring, the $y$-axis points vertically upwards and
+  the $z$-axis completes the right-handed coordinate system.
+  }
+  \label{fig:exp:coordinate_system}
+\end{figure}
+
 The ATLAS magnet system consists of a solenoid just outside the tracker,
-which provides a relatively uniform 2 T magnetic field for the
-tracker, and a toroidal magnet system outside the calorimeters, which provides
-magnetic field for the muon spectrometer.
+which provides a relatively uniform 2 T magnetic field along the $z$-axis
+for the tracker,
+and a toroidal magnet system outside the calorimeters, which provides a
+magnetic field pointing in the $\phi$ direction for the muon spectrometer.
 
 \begin{figure}[h]
   \centering
@@ -167,16 +180,25 @@ impossible for the readout system to record and store every event. A fast
 event filtering is performed by the ATLAS trigger, a two-level system
 designed to reduce event rates from 40 MHz to a more manageable 1 kHz.
 
-Level-1 trigger is implemented in hardware and reduces the rate of
+The Level-1 (L1) trigger is implemented in hardware and reduces the rate of
 collisions from 40 MHz to 100 kHz. It works by utilising information
 from the calorimeters and the dedicated muon triggers using simple
-and fast logic. High-level trigger (HLT) is software-based and further
+and fast logic. The high-level trigger (HLT) is software-based and further
 reduces event rates to 1 kHz, using basic tracking information from both
 the tracker and the muon spectrometer.
 
 Events can be selected by the trigger by passing one of the several
-requirements, motivated by different physics purposes. These requirements
-can be changed in different data-taking periods to balance physics needs
+requirements, motivated by different physics purposes. For example,
+high-$\pt$ muons are targetted by the \texttt{HLT\_mu26\_ivarmedium} trigger
+requirement. For the requirement to be satisfied, the HLT
+must identify a muon with at least 26 \GeV~of transverse momentum and
+a medium level of isolation, computed using the inner detector tracks,
+as reconstructed by the HLT, within a cone around the muon with a variable
+size, that depends on the $\pt$ of the muon.
+
+The collection
+of these requirements is collectively known as the trigger menu and can
+be changed in different data-taking periods to balance physics needs
 and the changing beam conditions. Some requirements are satisfied too
 often and need to be prescaled, i.e. keeping only a certain fraction of events
 passing the trigger. Un-prescaled triggers keep all of the events that
@@ -191,7 +213,8 @@ the ability to associate tracks to vertices, and flavour tagging.
 
 Arguably the most important task of the tracker is to precisely measure
 the momentum of the charged particles. The trajectories of charged
-particles follow a helical path in an axial magnetic field provided
+particles follow a helical path in an approximately uniform magnetic
+field in the direction of the $z$-axis, provided
 by the solenoid. Particles passing the tracker layers ionise the active material,
 which is digitised and recorded as hits, and finally a fit is performed
 to obtain the parameters of the tracks and the associated uncertainties.
@@ -221,21 +244,21 @@ then innermost pixel layer in order to provide robustness against
 inefficiencies in the pixels caused by radiation damage and to improve
 the momentum resolution. The pixel pitch in the bending plane, relevant for the
 measurement of $\pt$, is 50 $\um$ \cite{CERN-LHCC-97-016, Aad:2008zzm, Capeans:1291633}. 
-\item SCT, a silicon microstrip detector, is the intermediate subcomponent
+\item The SCT, a silicon microstrip detector, is the intermediate subcomponent
 of the tracker and consists of four cylindrical layers in the barrel region
 and nine disks in each of the endcaps with a total of approximately 6 million
 channels. The strip pitch in the bending plane is 80 $\um$ to maintain
 precision in the $\pt$ measurement, while the reduction in the number of
-channels is achieved by longer sensors in $z$ direction \cite{CERN-LHCC-97-016, Aad:2008zzm}.
-\item TRT, the transition radiation tracker, is the outermost part of the
+channels is achieved by longer sensors in the $z$ direction \cite{CERN-LHCC-97-016, Aad:2008zzm}.
+\item The TRT, the transition radiation tracker, is the outermost part of the
 tracker system. Unlike its silicon counterparts, it does not come in layers
 but rather a homogenous set of straw drift tubes, as illustrated in
 Figure \ref{fig:exp:tracker}. It measures the distance between the track
 and the central wire by measuring the time it takes for the ionisation
 created by the track to drift to the central wire. The tubes are 4 $\mm$
 in diameter, but their resolution in the bending plane for individual
-straws is about 130 $\um$ and combined with a large number (typically 36)
-of hits per track the TRT provides a meaningful contribution to the
+straws is about 130 $\um$ and combined with a large number of hits (typically 36)
+per track the TRT provides a meaningful contribution to the
 $\pt$ measurement \cite{CERN-LHCC-97-016, Aad:2008zzm}.
 \end{itemize}
 
@@ -269,7 +292,7 @@ the relative energy resolution improves with increasing $\pt$ of
 the traversing particle, in contrast to the performance of the
 tracker.
 
-Radiation length ($X_0$) of a material is the length that a high
+The radiation length ($X_0$) of a material is the length that a high
 energy electron traverses before its energy decreases to $1/e$ of
 its initial energy, primarily via bremsstrahlung and e$^+$e$^-$
 pair production. A related quantity for hadrons is the nuclear
@@ -279,13 +302,13 @@ hadron before an inelastic nuclear interaction.
 While complex geometrically, the calorimeter system can be divided
 in two parts based on their physics task:
 \begin{itemize}
-\item The electromagnetic calorimeter (ECAL) is used for precision
-energy measurements of electrons and photons up to $|\eta| < 3.2$.
-It is divided in the barrel and endcap parts and uses lead as
+\item The electromagnetic calorimeter (ECAL) consists of the barrel
+and two endcaps and is used for precision energy measurements of electrons
+and photons up to $|\eta| < 3.2$. It uses lead as
 the passive material causing the development of electromagnetic
-showers, and the liquid argon as the active material. The total
-material budget of the ECAL is larger than 22 $X_0$ radiation
-lengths in the barrel and larger than 24 $X_0$ in the endcaps 
+showers, and liquid argon as the active material. The total
+material budget of the ECAL is greater than 22 $X_0$ radiation
+lengths in the barrel and greater than 24 $X_0$ in the endcaps 
 \cite{CERN-LHCC-96-041, Aad:2008zzm}.
 \item The hadronic calorimeter (HCAL), used for energy measurements
 of hadronic showers and containment of neutral particles, extends
@@ -332,7 +355,9 @@ the solenoid, calorimeter, and the tracker. Another gap is required
 for the detector support structure. The chambers are typically
 made of three layers of tubes on each side of the support structure
 and achieve a resolution of about 80 $\um$ per tube and about
-35 $\um$ per chamber. The relative position of the chambers must also be
+35 $\um$ per chamber in the direction of the azimuthal angle, which is
+the direction relevant for the measurement of the $\pt$.
+The relative position of the chambers must also be
 known to about 30 $\um$ to achieve the required precision on the sagitta
 measurement, which is made possible by a combination of an optical alignment
 system and track-based alignment \cite{Aad:2010ag, Aefsky:1380912, Aad:2008zzm}.
