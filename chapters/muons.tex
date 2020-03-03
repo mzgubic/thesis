@@ -17,11 +17,11 @@ the reconstruction of physics objects.
 
 Muons, the central physics object in this thesis, are reconstructed
 by combining the information from the tracker and the muon spectrometer.
-In order to be able to do precision studies, the MC
+In order to be able to conduct precision studies, the MC
 simulation of the detector response needs to be calibrated to match
 the response in the real detector. In particular, the transverse momentum of
 muons needs to be calibrated to the scale and resolution obtained in the data.
-Similarly, the reconstruction, track-to-vertex-association (TTVA),
+Similarly, the reconstruction, the track-to-vertex-association (TTVA),
 and isolation efficiencies need to be calibrated to match those in 
 the recorded data. These calibrations are obtained through measurements
 using the data and MC simulation and carry associated uncertainties.
@@ -59,6 +59,7 @@ straight line to the associated hits. The segments are combined to
 form MS tracks starting from the middle layer and finding compatible
 segments in the inner and outer layers of the spectrometer. At least two
 segments are needed to form a track, apart from the transition region
+between the barrel and the endcaps ($1.0 < |\eta| < 1.4$)
 in which a single high-quality segment can be used to build a track.
 Finally, a global $\chi^2$ fit of the track is performed and the track
 accepted if it satisfies the quality criteria. Otherwise, hits with 
@@ -67,7 +68,7 @@ Hits can also be added to the track if they are consistent with the
 track and the track is re-fit if these candidates are found \cite{Aad:2016jkr}.
 
 Finally, the information from subdetectors is combined to form muon
-candidates. Depending on which subdetectors are used for building the
+candidates. Depending on which subdetectors are used to build the
 candidate, four muon types are defined:
 \begin{itemize}
 \item Combined (CB) muons are reconstructed from a pair of tracks
@@ -75,8 +76,12 @@ in the ID and the MS. A global re-fit is performed using hits from
 both subdetectors with the flexibility to add or remove hits in the
 MS to improve the fit quality. Most muons are reconstructed by the
 outside-in approach extrapolating the MS tracks to the ID, but the
-inside-out reconstruction is also used as the complementary approach 
-\cite{Aad:2016jkr}.
+inside-out reconstruction is also used as a complementary approach 
+\cite{Aad:2016jkr}. The advantage of the outside-in approach is the
+small number of muon tracks in the MS, resulting in low combinatorics
+compared to the busy ID environment. The disadvantage is inefficient
+reconstruction in the regions of poor MS coverage, which is mitigated
+by the complementary inside-out algorithm.
 \item Segment-tagged (ST) muons are formed by combining the ID track
 with a single segment in the MDT or CSC chambers and were designed
 to recover muon reconstruction efficiency for muons in the regions of
@@ -84,14 +89,14 @@ MS with poor acceptance, and for low $\pt$ muons which
 only cross a single layer of the MS \cite{Aad:2016jkr}.
 \item Calorimeter-tagged (CT) muons match an ID track with a 
 calorimeter deposit consistent with a minimum-ionising particle.
-This type recovers the muon reconstruction efficiency in the regions
+This muon type recovers the reconstruction efficiency in the regions
 not covered by the MS, for example in the $|\eta|<0.1$, where cabling
 and services to the ID are located, and where the support structure
 is located. As a consequence of using the calorimeter, this type has
 the lowest purity \cite{Aad:2016jkr}.
 \item Extrapolated (ME) muons are built from tracks in the MS that
 are loosely compatible with originating from the interaction point.
-This type is used to recover the reconstruction efficiency in the 
+This muon type is used to recover the reconstruction efficiency in the 
 forward region $2.5 < |\eta| < 2.7$ not covered by the ID \cite{Aad:2016jkr}.
 \end{itemize}
 Finally, overlaps between different muons are resolved by order of
@@ -100,14 +105,16 @@ finally the CT muons. The ME ambiguities are resolved by analysing the
 track fit quality and the number of hits.
 The requirements on the number of hits and holes\footnote{A
 \textit{hole} is an active sensor traversed by the
-track that contains no hits. It also falls between two hits assigned to the track.}
+track that contains no hits and also falls between two layers with hits
+assigned to the track.}
 in the ID and MS detectors are also used to guarantee a robust
 measurement of $\pt$ \cite{Aad:2016jkr}.
 
 In addition to that, a number of quality requirements must be
 satisfied to differentiate between muons originating from the
 interaction point (prompt muons) and the muons coming from the
-decay of light hadrons. To this end the following variables are
+decay of light hadrons, for example kaon and pion decay.
+To this end the following variables are
 defined for CB muons:
 \begin{itemize}
 \item normalised $\chi^2$ of the combined track fit.
@@ -133,7 +140,7 @@ requirements on the track quality. Medium muons include CB and ME
 muon types and are the default selection that minimises the systematic
 uncertainties. Loose muons are designed to maximise the selection
 efficiency and include all four muon types, with the CT and ST types
-restricted to the $|\eta| < 0.1$ \cite{Aad:2016jkr}.
+restricted to $|\eta| < 0.1$ \cite{Aad:2016jkr}.
 
 The fraction of prompt muons that are reconstructed and identified
 is called reconstruction efficiency and is in general different
@@ -146,10 +153,15 @@ the data and MC simulation. The scale factors (SF) are defined as
 \begin{equation}
 \text{SF} = \frac{\epsilon_\text{Data}}{\epsilon_\text{MC}},
 \end{equation}
-where SF is the scale factor, and $\epsilon$ is some efficiency,
+where SF is the scale factor, and $\epsilon$ is an efficiency,
 as measured in data or MC simulation. The measurement of the
 efficiencies, scale factors, and the associated
-uncertainties is described in detail in Ref. \cite{Aad:2016jkr}.
+uncertainties is performed using a sample of $\zmumu$ events using the
+tag-and-probe method, using one of the muons to tag the event and the other
+to perform the identification efficiency measurement. The method measures
+efficiencies separately in the ID and MS systems and combines them
+with the assumption that they are independent, which has been tested in MC simulation.
+The measurement of scale factors is described in full detail in Ref. \cite{Aad:2016jkr}.
 
 \begin{figure}[h]
   \centering
@@ -187,8 +199,12 @@ $\Delta r_m (\eta, \phi)$ are the resolution corrections,
 and $g_m$ is a random variate from a normal distribution with zero mean
 and variance of 1, 
 can be computed from the uncorrected transverse momentum in simulation,
-$\pt$, once the values of $s_n$ and $\Delta r_m$ are known \cite{Aad:2016jkr}. The
-denominator in Eq. \ref{eq:muon:calibration} assumes that the relative
+$\pt$, once the values of $s_n$ and $\Delta r_m$ are known \cite{Aad:2016jkr}.
+Indices $n$ take on the values of 0 and 1 which formalises the assumption
+that the momentum scale can be corrected by a combination of a constant offset
+and a term proportional to the $\pt$.
+Indices $m$ take on the values 0, 1, and 2, i.e. 
+the denominator in Eq. \ref{eq:muon:calibration} assumes that the relative
 transverse momentum resolution can be parametrised as
 \begin{equation}
 \frac{\sigma(\pt)}{\pt} = \frac{r_0}{\pt} \oplus r_1 \oplus r_2 \cdot \pt
@@ -213,7 +229,7 @@ It extracts the constants by binned maximum likelihood fits of the
 invariant mass spectra of $Z\rightarrow\mu\mu$ and $J/\psi\rightarrow\mu\mu$.
 The validation of the calibration using CB muons in $Z\rightarrow\mu\mu$
 events is shown in Figure \ref{fig:muon:calibration} as a function of the
-pseudorapidity of the leading muon. 
+pseudorapidity of the muon with the larger $\pt$ (leading muon). 
 
 \begin{figure}[h!]
   \centering
