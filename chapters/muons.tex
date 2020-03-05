@@ -252,7 +252,7 @@ Prompt muons, produced at the interaction point or from the decay of heavy
 bosons, often need to be distinguished from muons coming from a secondary
 vertex as a result of the decay of a $\tau$ lepton, heavy quarks, or
 hadrons. Other processes can also fake a muon signature in the detector,
-for example, a jet punching through the hadron calorimeter in the muon
+for example, a jet punching through the hadron calorimeter into the muon
 spectrometer could be reconstructed as a muon. The key to the identification
 of non-fake prompt muons is that they are produced in isolation from
 other particles, unlike fake or non-prompt muons which are usually
@@ -261,26 +261,28 @@ on the tracker information and the other on calorimeter information, are
 used to identify prompt muons.
 
 The track-based isolation variable, $\pt^{\text{varcone}, R}$, is defined
-as the scalar sum of $\pt$ of non-muon tracks inside the cone of radius
+as the scalar sum of the $\pt$ of non-muon tracks inside a cone of radius
 $\Delta R = \min(R, 10~\GeV/\pt^\mu)$, where $R = \sqrt{\Delta \eta^2 +
 \Delta \phi^2}$, $\Delta \eta$ and $\Delta \phi$ are the differences
 in pseudorapidity and azimuthal angle between the muon and the track, 
 and $\pt^\mu$ is the transverse momentum of the muon.
 The tracks used in the sum have $\pt > 1~\GeV$,
-$|\eta| < 2.5$, the longitudinal impact parameter smaller than $3~\mm$, and satisfy a
+$|\eta| < 2.5$, a longitudinal impact parameter smaller than $3~\mm$, and satisfy a
 Loose track quality. The cone size is chosen to vary with $\pt^\mu$
 to follow the collimation of tracks in highly boosted systems \cite{Aad:2016jkr}.
 
 The calorimeter-based isolation variable relies on the notion of a topological
 cluster, built by seeding the cluster with a calorimeter cell with
 signal-to-noise (S/N) greater than four, adding the neighbouring cells with
-S/N $ > 2$, and finally adding the surrounding cells \cite{Aad:2011he}. The
+S/N $ > 2$, and finally adding all the surrounding cells \cite{Aad:2011he}. The
 variable $E_\text{T}^\text{topocone20}$ is defined as the sum of
 the transverse energy of topological clusters in a cone of size $\Delta
 R = 0.2$, after subtracting for the energy deposited by the muon itself
 and the estimate of the energy coming from \pileup~related effects. The
-\pileup~contributions are estimated using the jet area technique \cite{CACCIARI2008119}
-and are corrected on ithe event-by-event basis \cite{Aad:2016jkr}.
+\pileup~contributions are estimated using the jet area technique \cite{CACCIARI2008119},
+which multiplies the ambient minimum-bias energy density, computed on
+event-by-event basis, with the area of the isolation cone.
+\cite{Aad:2016jkr}.
 
 The isolation selections are defined as cuts on these variables which
 may or may not depend on the muon kinematics. Various
@@ -312,7 +314,7 @@ but the recorded data consists of an unknown mixed stream of underlying
 processes, including both the $Z\rightarrow\mu\mu$ decays as well events with fake
 or non-prompt muons, collectively referred to as the background. In order
 to measure the efficiency of prompt muons, the background must be
-subtracted for the efficiency measurement in the data. The old method of
+subtracted for the efficiency measurement in the data. An earlier method of
 background subtraction relied on the assumption that the number of
 background events in the data is the same in the same charge
 (SC) as in the opposite charge (OC) phase space:
@@ -325,7 +327,8 @@ where $T$ is the transfer factor, $N_\text{probe}$ is the number of
 probe muons and $N_\text{match}$ is the number of probe muons passing
 the isolation selection in either SC or OC phase space, as indicated by
 the superscript. The leading systematic uncertainty at low muon $\pt$
-comes from the background subtraction, namely the assumption $T=1$.
+comes from the background subtraction, namely the assumption $T=1$, which
+is conservatively varied to 0.5 and 2.0.
 Additional systematic uncertainties on the scale factor
 measurement are computed by varying the selection requirements and
 adding individual uncertainties in quadrature, and adding a fixed
@@ -335,7 +338,9 @@ summarised in Table \ref{tab:muon:systs} below.
 \begin{table}[h]
 \centering
 \caption{Systematic uncertainties in the measurement of the isolation
-selection scale factors.}
+selection scale factors. Background estimation uncertainty is replaced
+by Eq. \ref{eq:muon:unc} in the novel background subtraction method described
+in section \ref{sec:muon:bkg_sub}.}
 \label{tab:muon:systs}
 \begin{tabular}{c c}
 \toprule
@@ -360,6 +365,7 @@ which prompted the development of a new background subtraction
 method, described in the next section.
 
 \subsection{Isolation efficiency background subtraction}
+\label{sec:muon:bkg_sub}
 
 The core idea of the novel background subtraction method is to
 reduce the assumption that the number of SC events is the same as
@@ -368,6 +374,11 @@ invariant mass spectrum for background events is the same in the
 SC and OC events. The SC region is used to determine the shape
 of the background events, while the normalisation is determined
 from the template fit to OC data.
+
+The shape assumption is more accurate than the normalisation assumption
+because the production of pions and kaons, which are a source of
+background muons, is charge asymmetric in terms of normalisation,
+but is has similar kinematic properties.
 
 The efficiency measured in the data is a sum of efficiencies of the
 components, weighted by the component fractions,
@@ -380,12 +391,13 @@ components, weighted by the component fractions,
 where $f$ represents the fraction of the component, and $\epsilon$
 the efficiency of the component. The subscript QCD refers to the
 background component due to muons in jets, and EWK refers to the
-background from electroweak processes\footnote{Consists of
+background from electroweak processes\footnote{The electroweak processes are:
 $W^\pm\rightarrow\mu^\pm \nu$, $Z\rightarrow \tau\tau$,
 $WW\rightarrow \ell \nu \ell \nu$, $WZ\rightarrow \ell \nu \ell \ell$,
 $WZ\rightarrow qq \ell \ell$, $ZZ\rightarrow\ell\ell\ell\ell$,
 $ZZ\rightarrow\nu\nu\ell\ell$, $ZZ\rightarrow qq\ell\ell$,
-$t\bar t$ MC samples generated with \textsc{Powheg}+\textsc{Pythia}8.}.
+$t\bar t$. The MC samples corresponding to these processes are generated
+with \textsc{Powheg}+\textsc{Pythia}8.}.
 The efficiency of $\zmumu$ events in the data can therefore be expressed as
 \begin{equation}
 \epsilon_{\zmumu} = \frac
@@ -461,15 +473,16 @@ Region D & SC & full & $ > 3.0$ & $ > 2.0$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-Region C definition becomes tighter above $\pt^\text{probe} > 10~\GeV$
+The region C definition becomes tighter above $\pt^\text{probe} > 10~\GeV$
 in order to reduce the number of $\zmumu$ events to negligible levels. The
 systematic uncertainty is taken to be the largest variation in efficiency
 compared to the nominal efficiency obtained by taking the QCD template
 from region B. Denoting the $\zmumu$ efficiency computed by taking the
-QCD template from region $X$ with $\epsilon_X$, the systematic
+The QCD template from region $X$ with $\epsilon_X$, the systematic
 uncertainty associated with the novel method of background subtraction
 can be written as
 \begin{equation}
+\label{eq:muon:unc}
 \text{bkg. sub. syst. unc.} = \max_{X \in \{C, D\}} \{ \vert \epsilon_B - \epsilon_X\vert \}.
 \end{equation}
 and is computed in each $\pt^\text{probe}$ bin separately. The effect
@@ -507,14 +520,14 @@ Overall, the method greatly reduces the systematic uncertainty from
 background subtraction in the determination of isolation scale factors.
 At low $\pt$, where background subtraction used to be the leading
 uncertainty, the overall systematic uncertainty on the scale factors
-is reduced by up to 75\%. This enabled a better reach in searches for
+is reduced by up to 75\%. This enabled greater sensitivity in searches for
 electroweak SUSY scenarios with compressed mass spectra
-\cite{PhysRevD.97.052010} and more precise studies of low mass
+\cite{PhysRevD.97.052010} and more precise studies of the low mass
 Drell-Yan double differential cross section \cite{Giuli:2681125}.
 
 \subsection{Other isolation studies}
 
-The muon performance was studied during the collection of 2017 dataset
+The muon performance was studied during the collection of the 2017 dataset
 in order to monitor for any potential problems. No issues were 
 found in muon isolation \cite{Bellomo:2282672}.
 
@@ -564,12 +577,13 @@ robust in high \pileup~conditions \cite{Zgubic:2320874}.
 \section{VADER4$\mu$}
 
 The search for the decay of the Higgs boson to a pair of muons, described
-in detail in the next chapter, proceeds as a search for a peak in the invariant mass spectrum on top
+in detail in the next chapter, proceeds as a search for a peak in the
+opposite sign dimuon invariant mass spectrum on top
 of the smooth Drell-Yan background. According to the Standard Model,
 the width of the Higgs boson is much narrower than the experimental
 resolution of the ATLAS detector. The sensitivity of the search is
-therefore limited by experimental muon resolution, meaning that its
-understanding could potentially be exploited
+therefore limited by experimental muon resolution, suggesting that an
+understanding of the muon resolution could potentially be exploited
 to improve the sensitivity of the search. This prompted the study to
 understand the \textbf{V}ariables \textbf{A}ffecting \textbf{DE}tector
 \textbf{R}esolution \textbf{for} \textbf{mu}ons (VADER4$\mu$).
@@ -580,13 +594,13 @@ complexity.
 
 There are three main motivations for the study in the context of
 improving the sensitivity of the $\hmumu$ analysis:
-\begin{itemize}
+\begin{enumerate}
 \item The muon $\pt$ resolution can be estimated for each individual muon
 based on its kinematics and reconstruction quality metrics. The estimated
 resolution of individual muons can be propagated to estimate the resolution
 of the invariant mass measurement of the muon pair. Finally, the estimate
 can be used to split events in resolution categories and the sensitivity of
-the analysis may be improved. This can be done directly on the CB muons.
+the analysis may be improved. This can be applied directly to the CB muons.
 
 \item The uncertainties on the $\pt$ of ID and MS tracks are known to be
 poorly modelled, which is the reason a combined re-fit is used instead of
@@ -604,7 +618,7 @@ resolution in data, meaning that the momentum corrections for MC
 simulation would have to be re-derived. For this reason, the
 corrections would have to be derived separately for the ID and MS
 tracks, along with their uncertainties, and combined statistically.
-\end{itemize}
+\end{enumerate}
 Two datasets are prepared to facilitate the study. The ``single muon"
 dataset consists of reconstructed prompt muons from the MC simulation
 of a variety of physics processes\footnote{$\zmumu$ is not included to avoid overlap
