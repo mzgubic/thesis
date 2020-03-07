@@ -34,10 +34,11 @@ interactions between the Higgs boson and the second generation
 fermions.
 
 In the Standard Model the branching ratio of the Higgs boson with a
-mass of 125.09 \GeV~is predicted to be $2.17 \times 10^{-4}$
+mass of 125.09 \GeV~to a muon pair is predicted to be $2.17 \times 10^{-4}$
 \cite{deFlorian:2016spz}. This could be modified by physics beyond the
-SM \cite{Giudice:2008uua, Dery:2013rta, PhysRevD.80.095023}, meaning
-that any deviation from the predicted value could be a sign of new
+SM, for example a model in which the Yukawa couplings depend on the Higgs field,
+or a dilaton model with shifts in its Yukawa couplings \cite{Giudice:2008uua, Dery:2013rta, PhysRevD.80.095023}.
+This means that any deviation from the predicted value could be a sign of new
 physics.
 
 The ATLAS and CMS experiments have already conducted searches using
@@ -46,7 +47,7 @@ and 8 \TeV, both setting the 95\% confidence level upper limits on the
 product of the Higgs production cross-section and the branching ratio
 to muon pairs \cite{Aad:2014xva, Khachatryan:2014aep} of about seven
 times the SM expectation. Using the data collected at $\sqrts = 13$
-\TeV in years 2015 and 2016, the observed upper limit was further
+\TeV~in years 2015 and 2016, the observed upper limit was further
 decreased to 2.8 and 2.9 by ATLAS and CMS respectively
 \cite{Aaboud:2017ojs, CMS-PAS-HIG-17-019}, with ATLAS
 further updating its result to 2.1 using the data collected in 2017
@@ -54,8 +55,8 @@ further updating its result to 2.1 using the data collected in 2017
 significance, meaning that the analysis is near to seeing evidence
 for the decay.
 
-This chapter presents the search for the Higgs boson decay to muon
-pairs using full ATLAS Run 2 dataset collected between 2015 and 2018
+This chapter presents the search for the Higgs boson decay to a muon
+pair using the full ATLAS Run 2 dataset collected between 2015 and 2018
 at $\sqrts = 13$ \TeV, almost doubling the integrated luminosity of
 the dataset since the last result to $139~\ifb$. The Higgs boson mass
 is assumed to be 125.09 \GeV~for all presented results.
@@ -83,14 +84,14 @@ the background modelling, assessed using a dedicated simulated sample.
 Additional systematic uncertainties arise from the normalisation 
 of signal sample and the migration between the categories, such as
 the uncertainty on the production cross-section and branching ratio
-from the theoretical side, and luminosity, muon momentum resolution
-and detector calibration from the experimental side.
+from theory, and luminosity, muon momentum resolution
+and detector calibration from the experiment.
 
 A number of improvements were introduced with respect to the
 previous result. The selection was improved by including additional
 muons from the corners of detector acceptance, by improving
-the resolution of the invariant mass by recovering the final
-state radiation, and by the better rejection of \pileup~jets in the
+the resolution of the invariant mass by recovering the muon final
+state radiation, and by better rejection of \pileup~jets in the
 forward region. The allocation of events in the categories was
 improved by employing a fully multivariate approach in lieu
 of a hybrid approach combining a multivariate discriminant and 
@@ -131,7 +132,7 @@ The leading irreducible background for the analysis is the
 Drell-Yan (DY) production of muon pairs. It is simulated using
 \textsc{Sherpa} 2.2.1 with the NNPDF3.0 set of parton
 distribution functions (PDF) \cite{Ball:2014uwa} in slices of
-$\HT$ and with $c$- and $b$-quark filters, simulating 0--2
+scalar sum of jet transverse momenta ($\HT$) and with $c$- and $b$-quark filters, simulating 0--2
 jet events at next-to-leading order (NLO) and at leading order
 (LO) for 3 and 4 jets using \textsc{Comix} \cite{Gleisberg:2008fv}
 and \textsc{OpenLoops} \cite{Cascioli:2011va, Denner:2016kdg}
@@ -141,7 +142,7 @@ libraries. The matching with \textsc{Sherpa} parton showering
 In order to populate the tails of the
 DY invariant mass distribution relevant for the analysis an
 additional high-statistics sample is generated with identical
-setup an additional cut of $\mmumu > 100$ \GeV. Finally, 
+setup and an additional cut of $\mmumu > 100$ \GeV. Finally, 
 \textsc{Sherpa} is also used to model the electroweak $Z$+jets
 process with up to two additional jets at LO accuracy beyond
 the first two jets.
@@ -151,7 +152,7 @@ $\ttbar$ and single-top samples are generated using
 \textsc{Powheg-Box} \cite{powheg, Frixione_2007, Alioli_2010}
 with NNPDF3.0 PDF set and parton showering and hadronisation
 done in \textsc{Pythia} 8.186 using the A14 parameter set
-\cite{ATL-PHYS-PUB-2014-021}. $\ttbar$ cross-section is
+\cite{ATL-PHYS-PUB-2014-021}. The $\ttbar$ cross-section is
 computed to next-to-next-to-leading order (NNLO) in
 QCD with next-to-next-to-leading logarithmic
 (NNLL) soft gluon terms taken into account. The cross-section
@@ -183,7 +184,7 @@ showering, and hadronisation.
 
 $\vbf$ and $q\bar{q}/qg \rightarrow \vh$ production modes are
 generated to NLO accuracy in QCD using \textsc{Powheg-Box},
-while the $gg \rightarrow ZH$ is generated to LO accuracy. Same
+while the $gg \rightarrow ZH$ is generated to LO accuracy. The same
 PDF set and \textsc{Pythia} tunes are used as in the $\ggf$
 generation. The VBF cross-section is computed with full NLO QCD
 and electroweak corrections \cite{Ciccolini:2007jr, Ciccolini:2007ec,
@@ -296,7 +297,7 @@ of the analysis requires an understanding of other objects as well.
 Photons are used to recover the final-state radiation in order to improve
 the resolution of the invariant mass spectrum. Jets are used
 as a handle to select events produced in the VBF production mode
-and to improve separation from the other backgrounds. Even electrons
+and to improve separation from the other backgrounds. Electrons
 are reconstructed, albeit solely in order to reject fake jets. Finally,
 missing transverse energy is used to suppress top and diboson
 backgrounds.
@@ -385,13 +386,13 @@ Photons are reconstructed in ATLAS via its energy deposits
 in the eletromagnetic calorimeter. Unlike electrons, photons
 are electrically neutral and do not leave tracks in the
 tracker, unless they are converted to electron-positron
-pairs before reaching the calorimeter. The details on the
+pairs before reaching the calorimeter. The details of the
 reconstruction algorithm and its performance are described
 in Ref. \cite{Aaboud:2018yqu}.
 
 Muons may radiate a photon and thus lose energy, meaning that
 the invariant mass of the muon pair is no longer equal to the
-mass of the mediator. In order to mitigate this effect up to
+mass of the parent. In order to mitigate this effect up to
 one final-state photon candidate is added to the mass
 calculation, using a procedure similar to the one used in
 Ref. \cite{Aad:2014eva}, but optimised for the high-purity
@@ -401,14 +402,14 @@ larger than a linearly increasing threshold, from
 $\pt^\gamma > 3$ \GeV~at $\Delta R(\gamma, \mu) = 0$ to
 $\pt^\gamma > 8$ \GeV~at $\Delta R(\gamma, \mu) = 0.2$.
 Non-collinear photons ($\Delta R(\gamma, \mu) > 0.20$)
-are required to have $\pt^\gamma > 8$ \GeV~and tight \cite{Aaboud:2018yqu}
+are required to have $\pt^\gamma > 8$ \GeV~and a tight \cite{Aaboud:2018yqu}
 identification requirement for photons. When multiple
 photon candidates are found only the one with the highest $\pt$
-is included in the invariant mass calculation, with priority
-to the collinear photons over non-collinear ones.
+is included in the invariant mass calculation, with priority given
+to the collinear photons over non-collinear photons.
 
 Around 5\% of all signal events have at least one FSR candidate,
-of which approximately 90\% are the collinear photons.
+of which approximately 90\% are collinear photons.
 The distribution of invariant mass for the MC simulation of
 $\ggf$ signal events with at least one reconstructed FSR
 candidate is shown in Figure \ref{fig:hmumu:fsr}
@@ -440,9 +441,9 @@ from a parton in the final state of the interaction, the remnants
 of the proton not participating in the hard scatter (underlying event),
 or from \pileup~interactions. They are used to identify events
 which could have been produced via the VBF production mode by
-exploiting its typical dijet signature. Jets are experimentally the richest
+exploiting its characteristic dijet signature. Jets are experimentally the richest
 objects in ATLAS, reconstructed either from the deposits in the
-calorimeters, tracks that the charged hadrons leave in the tracker,
+calorimeters, tracks that charged hadrons leave in the tracker,
 or both. The optimal use of substructure has been extensively
 studied both theoretically \cite{Altheimer:2012mn} and using
 a wide variety of modern machine learning techniques \cite{Larkoski:2017jix}.
@@ -525,7 +526,7 @@ $\pt$          & $\pt > 7$ \GeV \\
 \midrule
 $\eta$         & $|\eta| < 2.47$ excluding $1.37 < |\eta| < 1.52$ \\
 \midrule
-Quality        & Not "BADCLUSELECTRON" \\
+Quality        & No dead or faulty cells  \\
 \midrule
 \multirow{2}{*}{Impact parameters} & $|d_0/\sigma_{d_0}| < 5$ \\
                                    & $|z_0 \cdot\sin{\theta}| < 0.5$ mm\\
@@ -535,9 +536,10 @@ Quality        & Not "BADCLUSELECTRON" \\
 \end{table}
 
 Missing transverse energy is defined as the magnitude of the vectorial
-sum of $\pt$ of all calibrated muons, electrons, jets, and other tracks
-not used in the reconstruction of any objects, referred to as the ``soft
-term". The details on the reconstruction algorithm, in particular on the
+sum of $\pt$ of all calibrated muons, electrons, jets, and the soft term.
+The soft term is defined as the vectorial sum
+of the $\pt$ of other tracks not used in the reconstruction of any objects.
+The details of the reconstruction algorithm, in particular the
 treatment of the soft term, are available in Ref. \cite{Aaboud:2018tkc},
 along with performance studies.
 
@@ -575,7 +577,7 @@ in approximately 59\% acceptance for the $\ggf$ and VBF signal events.
 \begin{tabular}{c c}
 \toprule
 \midrule
-\multirow{3}{*}{Cleaning} &  Pass GRL \\
+\multirow{3}{*}{Cleaning} &  Pass GoodRunList \\
                           &  Pass single muon trigger \\
                           &  Primary vertex ($> 2$ tracks with $\pt > 0.5$ \GeV)\\
 \midrule
@@ -589,7 +591,7 @@ Jets                   & Zero $b$-tagged jets \\
 \end{tabular}
 \end{table}
 
-The ATLAS detector is a complex machine composed of many independent
+The ATLAS detector is a complex instrument composed of many independent
 subcomponents that are being pushed to the limits of their performance.
 Failure of detector subcomponents is a normal part of detector operations
 and is dealt with by detailed monitoring of performance and the
@@ -600,22 +602,22 @@ The data used in the analysis is required to be collected in one of those
 luminosity blocks in order to veto pathological events.
 
 Furthermore, the data is required to pass the lowest unprescaled single
-muon triggers, being \texttt{HLT\_mu20\_iloose} or \texttt{HLT\_mu50}
+muon triggers, these are \texttt{HLT\_mu20\_iloose} or \texttt{HLT\_mu50}
 in the 2015 and \texttt{HLT\_mu26\_ivarmedium} or \texttt{HLT\_mu50}
-in 2016-2018 data-taking period. These triggers require at least one
-isolated muon with a $\pt$ larger than 20 or 26 \GeV~ respectively, or
+in the 2016--2018 data-taking period. These triggers require at least one
+isolated muon with a $\pt$ larger than 20 or 26 \GeV~respectively, or
 one non-isolated muon with at least 50 \GeV~\cite{Aad:2014sca}. The increase in trigger
 thresholds was required to deal with higher rates of events at an
 increased instantaneous luminosity between 2016 and 2018.
 
 Events are required to have at least one reconstructed primary vertex
-candidate with at least two tracks with $\pt > 0.5$ \GeV in the inner
+candidate with at least two tracks with $\pt > 0.5$ \GeV~in the inner
 detector. When multiple vertices are reconstructed, the one with the 
 highest scalar sum of $\pt$ of the associated tracks is considered
 to be the hard scatter vertex.
 
 Events are required to have exactly two oppositely charged muons.
-The leading muon has a $\pt > 27$ \GeV~requirement in order to pass
+The leading muon has $\pt > 27$ \GeV~in order to pass
 the trigger thresholds, while the sub-leading muon is required to
 have $\pt > 15$ \GeV, with both having a pseudorapidity requirement
 of $|\eta| < 2.7$. Additionally, events are required to have zero
@@ -728,7 +730,8 @@ sensitive to the spin of the mediator \cite{PhysRevD.16.2219,
 Sirunyan:2018swq}. In the 1-jet channel, the set of variables is 
 extended by adding the kinematics of the leading jet. In the 2-jet
 channel, the kinematics of the subleading jet are added, along with
-$\met$ and a couple of variables related to the dijet system.
+$\met$ and a couple of variables related to the dijet system,
+detailed in Table \ref{tab:hmumu:variables}.
 \begin{table}[h]
 \centering
 \caption{Summary of the training variables.}
@@ -818,11 +821,15 @@ separation between the signal and the background.
 
 In each jet multiplicity channel, a four-fold approach is used to
 prevent bias from overfitting to the training and validation sets.
+The four-fold approach refers to reshuffling the same dataset four times,
+with each reshuffle referred to as a fold.
 In each fold, events are split in a training set (50\% of events),
-a validation set (25\% of events), and a test set (25\% of events).
+a validation set (25\% of events), and a test set (25\% of events),
+such that every sample from the dataset is present in the test set in exactly one fold.
+
 The training set is used in the training of the models. The validation
 set is used for early stopping of the training and to assess the
-performance of models using the area under the ROC
+performance of models using the area under the receiver operating characteristic (ROC)
 \cite{journals/prl/Fawcett06} curve. This is used to guide the
 Bayesian optimisation \cite{gp} to tune the hyperparameters of the
 model in each fold. Finally, the model is evaluated on the test set,
