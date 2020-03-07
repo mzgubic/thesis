@@ -365,17 +365,33 @@ system and track-based alignment \cite{Aad:2010ag, Aefsky:1380912, Aad:2008zzm}.
 % drift time ~ 700 ns, counting rates 30kHz per tube expected at 'full LHC lumi'
 % which gives 30us to each if equally spaced arrivals
 
-Cathode strip chambers (CSC) are multiwire proportional chambers
-used in the very forward region ($2 < |\eta| < 2.7$)
-in the innermost layer in the two endcaps because of their capability
-to deal with a higher rate of collisions and better time resolution
-\cite{Aad:2010ag}.
+Cathode strip chambers (CSC) are used to extend the capability to measure
+muons with excellent spatial resolution to the very forward region
+($2 < |\eta| < 2.7$) where the rates are too high for the MDT chambers.
+There are 16 chambers in each endcap, alternating between 8 large and 8 small
+overlapping chambers to ensure full $\phi$ coverage.
+Each chamber is a multiwire chamber with segmented readouts at both cathodes,
+one providing the pseudorapidity precision coordinate with a pitch of
+approximately 5 mm, and the other the $\phi$ coordinate measurement. 
+By interpolating the charge between neighbouring strips a resolution
+better than 60 $\mu$m is achieved in the precision coordinate
+\cite{CERN-LHCC-97-022, Argyropoulos:2009zz, Aad:2010ag}.
 
-Resistive plate chambers (RPC) are gaseous detectors used for
-triggering in the barrel ($|\eta| < 1.05$) due to their good time resolution
-and tolerance to high rates \cite{Cattani_2011}. In the endcaps ($1.05 < |\eta| < 2.4$)
-thin gap chambers (TGC), operating on the same principle as the multiwire
-proportional chambers, are used instead \cite{Nagai:1996mf}.
+Muon triggering is achieved by a combination of the resistive plate
+chamber (RPC) in the barrel region ($|\eta| < 1.05$) and thin gap
+chambers (TGC) in the endcap region ($1.05 < |\eta| < 2.4$).
+RPCs are gaseous detectors and operate by detecting the ionisation
+of traversing charged particles under a strong electric fields
+provided by the resistive electrodes. The plates are 2 mm thick
+and kept at 2 mm from each other with the help of insulating spacers.
+The spatial resolution is on the order of a few centimeters but
+the excellent time resolution of about 1 ns makes it ideal for
+the trigger \cite{CERN-LHCC-97-022, Cattani_2011}. TGCs operate
+similarly to the multiwire proportional chambers used in the CSCs,
+but with a smaller distance (1.4 mm) between the wire and the readout strips.
+Combined with the large electric field strength (3.1 kV) this achieves
+the time resolution and high-rate capability required for
+the trigger in the forward region \cite{Nagai:1996mf}.
 
 \section{ATLAS data and Monte Carlo simulation}
 
