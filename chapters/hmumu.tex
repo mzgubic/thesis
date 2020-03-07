@@ -960,7 +960,7 @@ Since the analysis measures the signal strength multiplier,
 defined with respect to the expected SM value, it is important
 to evaluate the theoretical and experimental systematic
 uncertainties which affect the signal normalisation.
-Furthermore, since analysis sensitivity greatly depends on the
+Furthermore, since analysis sensitivity depends greatly on the
 distribution of the signal among the different categories, the
 systematic uncertainties which affect the kinematics of events,
 not just their total normalisation, need to be evaluated.
@@ -999,16 +999,16 @@ invariant mass where the function transitions to the $n_\text{low}$
 the spectrum.
 
 An alternative functional form, a sum of
-a Gaussian and a one-sided Crystal-Ball has been tested with similar
-results. Double-sided Crystal-Ball was chosen because its
+a Gaussian and a one-sided Crystal-Ball with the tail towards lower values of the mass has been tested with similar
+results. The double-sided Crystal-Ball model was chosen because its
 parametrisation has a single mean and width and is more stable
 during the fit.
 
 The signal shape is obtained in each category separately by fitting
 the combined signal from all main production modes. An alternative
 approach, fitting production modes separately and combining them
-in the proportions predicted by the SM, yielded very similar results
-and was abandoned for simplicity.
+in the proportions predicted by the SM, yields very similar results
+and is not used for simplicity.
 
 The detailed form of the signal shape is expected to have little
 impact on the result at the search stage. Nevertheless, injection
@@ -1069,14 +1069,10 @@ between per mille level and 7\%.
 
 Experimental systematic uncertainties affect the normalisation
 and shape of the signal events as well as their distribution
-between the categories.
-
-For muons, the normalisation uncertainties come from the 
+between the categories. For muons, the normalisation uncertainties come from the 
 uncertainty in the scale factors for the reconstruction and
 identification efficiencies, trigger, isolation selection, and
-the impact parameter efficiencies.
-
-The only uncertainties which significantly alter the shape of the 
+the impact parameter efficiencies. The only uncertainties which significantly alter the shape of the 
 signal are the uncertainties on the muon scale and resolutions,
 which affect the position and the width of the Higgs boson mass peak.
 
@@ -1100,7 +1096,7 @@ the muon momentum resolution affects the fitted yields at the
 Additionally, an uncertainty on the Higgs boson mass from Ref.
 \cite{Aad:2015zhl} is found to have a
 small impact. Finally, the uncertainty on the combined integrated
-luminosity of the dataset at the level of 1.7\% is considered
+luminosity of the dataset is 1.7\%
 \cite{ATLAS-CONF-2019-021, Aaboud:2016hhf}.
 
 
@@ -1173,7 +1169,7 @@ where
 \end{align}
 and $\hat s = \mmumu^2$, $Q_q$ is the electric charges of the quarks,
 $V_f$ and $A_f$ are the vector and axial-vector couplings of the fermions,
-$\alpha$, $G_F$ are the electroweak couplings,
+$\alpha$, and $G_F$ are the electroweak couplings,
 $m_Z$ and $\Gamma_Z$ are the mass and the width of the $Z$ boson with values
 taken from Ref. \cite{Patrignani:2016xqp},
 and $N_c = 3$ is the number of colour charges.
@@ -1201,15 +1197,15 @@ The empirical function is chosen separately in each analysis
 category, by first reducing the set of functions to those
 satisfying the following criteria:
 \begin{itemize}
-\item $\chi^2$ probability of the background-only fit must
+\item The $\chi^2$ probability of the background-only fit must
 be larger than 1\% for:
 \begin{itemize}
-\item data in the fit region (excluding the $120-130$ \GeV),
-\item ATLAS MC simulation of DY, diboson, and top backgrounds in the fit region,
-\item custom DY sample, reweighted to the data sidebands using a second order polynomial.
+\item the data in the fit region (excluding the range $120-130$ \GeV),
+\item the ATLAS MC simulation of DY, diboson, and top backgrounds in the fit region,
+\item the custom DY sample, reweighted to the data sidebands using a second order polynomial.
 \end{itemize}
-\item Pass the spurious signal test, defined in Section \ref{sec:hmumu:sstest},
-i.e. require the $\text{SS} < 20\%~\delta$S, where SS is the fitted signal
+\item The spurious signal test, as defined in Section \ref{sec:hmumu:sstest},
+is satisfied: $\text{SS} < 20\%~\delta$S, where SS is the fitted signal
 yield (the spurious signal), and $\delta$S is the statistical uncertainty
 on the signal strength obtained from the data corresponding to 139 $\ifb$.
 \item If multiple functions pass the first two criteria,
@@ -1273,17 +1269,17 @@ MC simulation.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT10}
-  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT7}
-  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT4}
-  \includegraphics[width=0.47\textwidth]{figures/hmumu/SS/BDT1}
+  \includegraphics[width=0.45\textwidth]{figures/hmumu/SS/BDT10}
+  \includegraphics[width=0.45\textwidth]{figures/hmumu/SS/BDT7}
+  \includegraphics[width=0.45\textwidth]{figures/hmumu/SS/BDT4}
+  \includegraphics[width=0.45\textwidth]{figures/hmumu/SS/BDT1}
   \caption[Spurious signal fit to custom DY mass spectrum]{
   The combined signal and background fit to the custom DY invariant
-  mass spectrum in 0-jet High, 1-jet High, 2-jet High, and VBF-high
+  mass spectrum in 0-jet High, 1-jet High, 2-jet High, and VBF High
   analysis categories. The top panel shows the custom DY template
-  as black points, fixed core function as a dashed green line,
+  as black points, the fixed core function as a dashed green line,
   and the full background model as a solid blue line. The signal shape,
-  normalised to the SM prediction, is shown as a red line.
+  normalised to the SM prediction, is shown as a red line and only clearly visible in the VBF High category.
   The reduced $\chi^2$ value of the fit and the corresponding
   $\chi^2$-probability are also shown. The middle panel shows
   the custom DY template, divided by the core function (black
@@ -1305,7 +1301,7 @@ as the total spurious signal, denoted as SS.
 
 The sensitivity of the SS value to the shape of the custom DY
 spectrum was evaluated by fitting the combined signal and
-background model to the systematic variations of custom DY
+background model to the systematic variations of the custom DY
 spectrum. For theoretical systematic uncertainties, the variations
 of the QCD renormalisation scale and using alternative PDF sets
 were considered. From the experimental side, the systematic
@@ -1338,7 +1334,8 @@ in the background.
 The results are obtained by a combined signal and background
 binned maximum-likelihood fit, performed simultaneously in the
 twelve analysis categories. The fit is performed in the 120--130
-\GeV~region, with the bin size of 0.1 \GeV.
+\GeV~region, with the bin size of 0.1 \GeV, chosen as a suitable trade-off
+between sensitivity and computation time.
 
 \subsection{Likelihood function}
 
@@ -1365,11 +1362,12 @@ terms for the nuisance parameters,
 \end{equation}
 where $\mathcal{S}$ is the set of parameters $p$ with constraint
 terms, $f_p$ is the Gaussian or log-normal constraint term for parameter $p$
-with taking on the value $a_p$, and parametrised by $\alpha_p$. For example, parameter
-$p$ can be the muon trigger efficiency scale factor, which takes on a
-value of $a_p$ and is constrained by a Gaussian term $f_p$ with
+with value $a_p$, and parametrised by $\alpha_p$. For example, parameter
+$p$ can be the muon trigger efficiency scale factor with
+value $a_p$ and is constrained by a Gaussian term $f_p$ with
 $\alpha_s$ being the nominal value of the scale factor and its uncertainty,
-obtained from previous independent measurements.
+obtained from previous a previous dedicated measurement performed by the
+muon performance group.
 %\footnote{For practical reasons
 %the treatment of theoretical parameters also uses constraint terms. However,
 %in many cases the associated uncertainty does not reflect a previous measurement but
