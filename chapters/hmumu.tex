@@ -725,9 +725,25 @@ matches the number of data events.
 The variables used in the training in each of the jet channels are
 summarised in Table \ref{tab:hmumu:variables}. The 0-jet channel uses
 only three variables, related to the kinematics of the dimuon system:
-$\pt$ and rapidity in addition to $|\cos{\theta*}|$, a variable
+$\pt$ and rapidity in addition to $|\cos{\theta^*}|$, a variable
 sensitive to the spin of the mediator \cite{PhysRevD.16.2219,
-Sirunyan:2018swq}. In the 1-jet channel, the set of variables is 
+Sirunyan:2018swq}, defined as
+\begin{equation}
+\label{eq:hmumu:costhetastar}
+|\cos{\theta^*}| =
+\left |
+\frac{2(P_1^+P_2^- - P_1^-P_2^+)}{\sqrt{m^2_{\ell\ell}(m^2_{\ell\ell} + p^2_{\text{T},\ell\ell})}}
+\frac{p_{z, \ell\ell}}{|p_{z, \ell\ell}|}
+\right |,
+\end{equation}
+where $m_{\ell\ell}$, $p_{\text{T},\ell\ell}$, $p_{z,\ell\ell}$ are
+the mass, transverse momentum, and longitudinal momentum, respectively, of the 
+dimuon system, and the $P^{\pm}_i$ are defined as
+$P^{\pm}_i = (E_i \pm p_{z,i}) / \sqrt{2}$, where $E_i$ and $p_{z,i}$
+are the energy and the longitudinal momentum of a muon $i$, with $i=1$
+corresponds to the muon with larger $\pt$.
+
+In the 1-jet channel, the set of variables is 
 extended by adding the kinematics of the leading jet. In the 2-jet
 channel, the kinematics of the subleading jet are added, along with
 $\met$ and a couple of variables related to the dijet system,
@@ -741,7 +757,7 @@ detailed in Table \ref{tab:hmumu:variables}.
 \midrule
 \multirow{3}{*}{0-jet} & $\pt^{\mu\mu}$      & $\pt$ of the dimuon system \\
                        & $Y^{\mu\mu}$        & Rapidity of the dimuon system\\
-                       & $|\cos{\theta*}|$   & Spin-related variable \\
+                       & $|\cos{\theta^*}|$   & Spin-related variable (see Eq. \ref{eq:hmumu:costhetastar}) \\
 \midrule
 \multirow{4}{*}{1-jet} & 0-jet variables            &  \\
                        & $\pt^{j_1}$                & $\pt$ of the lead jet \\
