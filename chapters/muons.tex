@@ -295,20 +295,59 @@ and the estimate of the energy coming from \pileup~related effects. The
 \pileup~contributions are estimated using the jet area technique \cite{CACCIARI2008119},
 which multiplies the ambient minimum-bias energy density, computed on
 event-by-event basis, with the area of the isolation cone.
-\cite{Aad:2016jkr}.
+\cite{Aad:2016jkr}. In order to deal with the higher \pileup~rates an
+additional variable, $E^{\text{neflow20}}$, is constructed. It is
+computed in the same way as the $E_\text{T}^\text{topocone20}$ variable,
+apart from the weighting of the clusters which is unity for clusters
+matched to the charged particle tracks, while the others are weighted
+according to the expected fraction of neutral particles in the isolation
+cone.
 
 The isolation selections are defined as cuts on these variables which
 may or may not depend on the muon kinematics. Various
 selections have been supported in the past few years to target the needs
 of different analyses and to adapt to the higher \pileup~conditions. The 
 selections differ in signal efficiency and background rejection
-throughout the $\pt$ regime. For each of the isolation selections, a
+throughout the $\eta$ and $\pt$ range. A few selections are defined in Table
+\ref{tab:muon:iso}.
+\begin{table}[h]
+\centering
+\caption{Isolation selections definitions}
+\label{tab:muon:iso}
+\begin{tabular}{c c}
+\toprule
+\midrule
+Isolation Selection & Definition \\
+\midrule
+GradientLoose & Cuts such that $\epsilon(25 \GeV) = 95\%$, $\epsilon(60 \GeV) = 99\%$\\
+\midrule
+\multirow{2}{*}{FixedCutLoose} & $\pt^{\text{varcone30}}/\pt^\mu < 0.15$ \\
+                               & $E^{\text{etcone20}}/\pt^\mu < 0.30$ \\
+\midrule
+\multirow{2}{*}{FixedCutTight} & $\pt^{\text{varcone30}}/\pt^\mu < 0.06$ \\
+                               & $E^{\text{etcone20}}/\pt^\mu < 0.06$ \\
+\midrule
+\multirow{5}{*}{FixedCutHighMuLoose} & $\pt^{\text{varcone30}}/\pt^\mu < 0.15$ ($\pt^\mu < 50$ \GeV) \\
+                                     & $\pt^{\text{varcone30}}/\pt^\mu < 0.15$ ($\pt^\mu > 50$ \GeV) \\
+                                     & $E^{\text{etcone20}}/\pt^\mu < 0.30$ \\
+                                     & where track isolation variables have been computed \\
+                                     & with a tighter track-to-vertex requirement.\\
+\midrule
+\multirow{4}{*}{FixedCutPflowLoose}  & max($\pt^{\text{varcone30}}/\pt^\mu$, $\pt^{\text{cone20}}/\pt^\mu$) + \\
+                                     & $0.4 \cdot E^{\text{neflow20}}/\pt^\mu < 0.16$ \\
+                                     & where track isolation variables have been computed \\
+                                     & with a tighter track-to-vertex requirement.\\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each of the isolation selections, a
 measurement of efficiencies in data and MC simulation is performed, as
 well as the evaluation of scale factors, which vary as a function
 of muon $\pt$. The measurement of the efficiencies is performed on
 $Z\rightarrow\mu\mu$ events in data and MC simulation using the
 tag-and-probe method \cite{Aad:2016jkr}.
-
 The tag-and-probe method selects events with a pair of muons with the invariant mass
 within 10 GeV of the $Z$ boson mass, where the tag muon is required to
 have triggered the event, and the probe muon is used for the efficiency
