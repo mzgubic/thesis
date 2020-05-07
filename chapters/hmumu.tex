@@ -216,7 +216,7 @@ simulation samples in order to make them mimic the collected data.
 \label{sec:hmumu:customDY}
 
 Extracting the signal strength paramater relies on a
-maximum likelihood fit to the invariant mass spectrum in data,
+maximum-likelihood fit to the invariant mass spectrum in data,
 using parametrised models of both signal and background. The choice
 of the functional form describing the background is crucial because
 a mismodelling of the background may result in a bias on the extracted
@@ -653,7 +653,7 @@ particular to check the muon resolution in the data and the MC simulation.
 The sideband region contains approximately two million events
 in the data, which are used to train the multivariate classifier
 and to validate the background modelling. The central region
-contains approximately 250,000 events in the data, of which about
+contains approximately 450,000 events in the data, of which about
 860 are expected from the SM signal. The final maximum-likelihood
 fit is performed in the fit region.
 
@@ -1417,7 +1417,7 @@ by numerically minimising the value of $-\ln{\mathcal{L}}(\mu, \theta | \mathcal
 and is found to be 0.5. The values of nuisance parameters at this
 point are denoted as $\hat\theta$.
 
-The results of the maximum likelihood fit are shown in Figure
+The results of the maximum-likelihood fit are shown in Figure
 \ref{fig:hmumu:fit-high} for the ``High" categories, Figure
 \ref{fig:hmumu:fit-medium} for the ``Medium" categories,
 and in Figure \ref{fig:hmumu:fit-low} for the ``Low" categories.
@@ -1429,7 +1429,7 @@ and background events in the Central region in the category.
 Table \ref{tab:hmumu:results} shows the number of observed data events
 in each of the analysis categories, along with the number of signal events
 predicted by the Standard Model, and the values of signal and background
-events obtained from the maximum likelihood fit. The significance proxy
+events obtained from the maximum-likelihood fit. The significance proxy
 S/$\sqrt{\text{B}}$ and the signal purity (S/B) are also shown.
 
 \begin{table}[htb]
@@ -1438,7 +1438,7 @@ S/$\sqrt{\text{B}}$ and the signal purity (S/B) are also shown.
   Number of events in the central region in all the analysis categories,
   as observed in data (Data), predicted for signal by the Standard Model
   (S$_\text{SM}$), and events from signal (S) and background (B) derived
-  from the results of the maximum likelihood fit. Additionally, the
+  from the results of the maximum-likelihood fit. Additionally, the
   number of observed signal events over the square root of the number of
   observed background events (S/$\sqrt{\text{B}}$) and the signal purity
   (S/B) are shown. Reproduced from Ref. \cite{ATLAS-CONF-2019-028}.
@@ -1476,8 +1476,8 @@ First, a profile likelihood ratio is defined as
      {\mathcal{L}(\hat\mu, \hat\theta)},
 \end{equation}
 where $\hat{\hat\theta}(\mu)$ are the nuisance parameters which maximise
-the likelihood with $\mu$ fixed, called the conditional maximum
-likelihood estimates. Clearly, $0 \leq \lambda(\mu) \leq 1$, with $\lambda(\mu)$
+the likelihood with $\mu$ fixed, called the conditional maximum-likelihood
+estimates. Clearly, $0 \leq \lambda(\mu) \leq 1$, with $\lambda(\mu)$
 values near 1 signalling good agreement between the data and the
 hypothesised $\mu$.
 
@@ -1543,7 +1543,7 @@ defining $\tilde\lambda(\mu)$ as
      \frac{\mathcal{L}(\mu, \hat{\hat\theta}(\mu))}{\mathcal{L}(0, \hat{\hat\theta}(0))} & \hat\mu < 0,
     \end{cases}
 \end{equation}
-where $\hat{\hat\theta}(0))$ are the values of nuisance parameters
+where $\hat{\hat\theta}(0)$ are the values of nuisance parameters
 that maximise the likelihood conditioned on $\mu=0$. Using $\tilde\lambda(\mu)$,
 $\tilde{t}_\mu$ can be defined as $\tilde{t}_\mu = -2 \ln{\tilde\lambda(\mu)}$.
 The background-only hypothesis can then be tested by considering the
