@@ -837,7 +837,19 @@ separation between the signal and the background.
 
 In each jet multiplicity channel, a four-fold approach is used to
 prevent bias from overfitting to the training and validation sets.
-The four-fold approach refers to reshuffling the same dataset four times,
+Overfitting refers to the adjustments of the model parameters
+to the random fluctuations in the training set. As a result, the model performance
+on the training set is better than a new dataset sampled from the same population.
+This is undesirable because it leads to a bias. In order to avoid this, a model is evaluated
+on an independent dataset, called the test set. When a number of models are trained
+on the training set, their performance is monitored using the validation dataset, and
+the model performing best on the validation dataset is selected. Its performance 
+is then evaluated, again, on the independent test set. A drawback of this approach
+is that once the dataset is used for training or validation, it can not be used
+for the test set and as a result only a fraction of available data and MC is used
+in the analysis, which is undesirable.
+
+The four-fold approach solves this problem by reshuffling the same dataset four times,
 with each reshuffle referred to as a fold.
 In each fold, events are split in a training set (50\% of events),
 a validation set (25\% of events), and a test set (25\% of events),
@@ -1514,7 +1526,32 @@ from theoretical (0.08) and experimental (0.07) effects. The effect
 of the spurious signal uncertainty is 0.06. The expected and observed signal
 strengths in all twelve analysis categories are shown in Figure
 \ref{fig:hmumu:fit-pulls}.
-The asymmetry in the systematic uncertainty
+
+The leading systematic uncertainties are shown in Figure \ref{fig:hmumu:systs},
+ordered by their impact on the signal strength. The single most important
+systematic uncertainty is the uncertainty on the muon spectrometer momentum
+calibration, which affects the width of the signal shape in the fit.
+These are followed by a theoretical systematic uncertainties affecting the
+overall normalisation and distribution of signal between the analysis categories.
+Spurious signal systematics are denoted as \texttt{ATLAS\_bias\_BDT\textit{N}}.
+Other important experimental systematic uncertainties are the muon momentum
+resolution in the inner detector, and jet systematics which affect 
+the yields in the VBF categories.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/hmumu/systematics}
+  \caption[Systematic uncertainties ranking]{
+  Systematic uncertainties affecting the measurement of the signal
+  strength ordered by their impact. The coloured bars show the postfit impact
+  on the signal strength and their size corresponds to the scale at the top of
+  the figure. The pull is shown as black lines and the size corresponds to the
+  scale at the bottom of the figure.
+  Figure produced by a collaborator.
+  }
+  \label{fig:hmumu:systs}
+\end{figure}
+
+The asymmetry in the total systematic uncertainty
 arises as a combination of systematic uncertainties, apart from the
 spurious signal uncertainty, being relative
 and the statistical uncertainties being much larger than systematic
